@@ -17,6 +17,8 @@ The course main webpage is here: https://oucru-modelling.github.io/R-training-20
         - Slides should have `format: revealjs` in the YAML headers
     - Handouts go into `handouts/`
         - Handouts should have `format: html` in the YAML headers (or `pdf` if you wish)
+    - Custom CSS rules go into `styles.css`
+        - Append your own CSS rules here
 - Test **locally** with
     - `quarto preview`: live preview and continuously render on save
     - `quarto render`: one-time render; resulting main page is `_render/index.html`
