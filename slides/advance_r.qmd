@@ -221,7 +221,7 @@ summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))
 is exactly the same as
 
 ```{.r}
-mtcars %>% group_by(gear) %>% summarise(mean_mpg = mean(mpg))
+mtcars |> group_by(gear) |> summarise(mean_mpg = mean(mpg))
 ```
 
 ## Piping with `|>`
@@ -229,12 +229,12 @@ mtcars %>% group_by(gear) %>% summarise(mean_mpg = mean(mpg))
 - Using pipe, we can now rewrite the code as:
 
 ```{.r}
-plot_dat <- mtcars %>% 
-  group_by(gear) %>% 
-  summarise(mean_mpg = mean(mpg)) %>% 
+plot_dat <- mtcars |> 
+  group_by(gear) |> 
+  summarise(mean_mpg = mean(mpg)) |> 
   ungroup()
 
-plot_dat %>% 
+plot_dat |> 
   ggplot(aes(x = gear, y = mean_mpg)) +
   geom_col()
 ```
@@ -260,12 +260,12 @@ ggplot(
 vs. 
 
 ```{.r}
-plot_dat <- mtcars %>% 
-  group_by(gear) %>% 
-  summarise(mean_mpg = mean(mpg)) %>% 
+plot_dat <- mtcars |> 
+  group_by(gear) |> 
+  summarise(mean_mpg = mean(mpg)) |> 
   ungroup()
 
-plot_dat %>% 
+plot_dat |> 
   ggplot(aes(x = gear, y = mean_mpg)) +
   geom_col()
 ```
