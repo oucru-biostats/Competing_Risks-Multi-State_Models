@@ -1,5 +1,339 @@
 ---
-title: "advance_r"
-format: revealjs
+title: "Advance R topics"
+author: "Tuyen Huynh - OUCRU Mathematical Modelling group <br/> Hai Ho - OUCRU Emerging Infections group"
+format: 
+    revealjs:
+        theme: serif
+toc: false
+number-sections: false
 ---
+
+## Topic overview {.scrollable}
+
+What will be covered:
+
+1. **Programming logics in R**
+    - If-else statements
+    - For-loops
+    - Piping in R
+2. **Data manipulation in R**
+    - Into the `tidyverse`
+    - Data manipulation with `mutate()`
+    - Joining dataframes
+    - Pivotting dataframes into long and wide formats
+3. **Advance advance R**
+    - Vectorisation in R with `map()`
+
+# Programming logics in R
+
+## If-else
+
+- R has a *conditional* logic: depending on the outcome of a test, execute one or another statement
+
+```{.r }
+if (logical statement) {
+    do this
+} else {
+    do that
+}
+```
+## If-else
+
+- Example:
+
+```{r}
+x <- 10
+
+if (x == 10) {
+  print("x is 10")
+} else {
+  print("x is not 10")
+}
+
+```
+
+## If-else
+
+- You can infinitely* add more "branches" to if-else with `else if`
+
+```{.r }
+if (logical statement 1) {
+    do this
+} else if (logical statement 2) {
+    do that
+} else if (logical statement 3) {
+    do something different
+} else {
+    do something other thing
+}
+```
+
+::: {.footnote}
+*: it is technically possible but of course you should not add too much `else if`s; make sure that your code is readable and understandable
+:::
+
+## If-else
+
+- Example:
+
+```{r}
+x <- 24
+
+if (x < 10) {
+  print("x is less than 10")
+} else if (x < 20) {
+  print("x is greater than 10 and less than 20")
+} else if (x < 30) {
+  print("x is greater than 20 and less than 30")
+} else {
+  print("x is greater or equal to 30")
+}
+```
+
+## For-loop
+
+- Imagine that you have to repeat the same analysis for many files that are all in the same folder on your computer
+- A short solution using an iterative construct would be:
+
+```{.r}
+files <- dir()
+
+for (filename in files) {
+    infile <- read.table(filename, ...)
+    do something with `infile`
+}
+```
+
+## For-loop
+
+- Example:
+
+```{r}
+vec <- seq(0, 1, 0.1)
+
+for (n in vec) {
+  n_sqr <- n^2
+
+  print(n_sqr)
+}
+```
+
+## Piping in R {.scrollable}
+
+::: {.incremental}
+-   Typically in R, we perform a sequence of operations on a dataset, changing it as we go
+-   R has a *functional style*, which means the structure is typically: `new_data <- function(data, extra_arguments)`
+    -   `function` describes your **action**, what you want to do
+    -   `data` is the data that you are execute the action on
+    -   `extra_arguments` are (optional) **settings** that changes how the action is performed
+    -   `new_data` is the **output**, what you get after performing the action
+:::
+
+## Piping in R
+
+- Example code
+
+```{.r}
+plot_dat <- ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg)))
+
+ggplot(plot_dat, aes(x = gear, y = mean_mpg)) +
+  geom_col()
+```
+
+::: {.fragment}
+- How easy is it to understand/follow this code?
+- Can we improve the readability?
+:::
+
+## Piping in R {.scrollable}
+
+::: {.fragment}
+-   The example code can be rewritten as:
+
+```{.r}
+grouped_by_gear <- group_by(mtcars, gear)
+mean_mpg_by_gear  <- summarise(grouped_by_gear, mean_mpg = mean(mpg))
+ungrouped_data <- ungroup(mean_mpg_by_gear)
+
+ggplot(
+  data = ungrouped_data,
+  aes(x = gear, y = mean_mpg)
+) +
+  geom_col()
+```
+:::
+
+
+::: {.fragment}
+-   Is this a better way to write it? Can we improve it even further?
+-   If we are performing a sequence of actions, each using the output of the previous action, we can use **pipe**
+:::
+
+
+## Piping with `|>` {.scrollable}
+
+::: {.incremental}
+-   **Pipe** is a powerful tool to express a sequence of actions (functions)
+-   It helps you write code that is easier to read and understand
+-   In R, you can **pipe** between functions using the `|>` *operator*
+-   Rstudio shortcut: **Cmd+Shift+M** or **Ctrl+Shift+M**
+:::
+
+::: {.callout-note .fragment}
+### `|>` vs. `%>%`
+
+- `|>` comes from R since version 4.1.0. It functions largely the same as `%>%` but not identical
+- `%>%` comes from the `magrittr` package which is used by all of `tidyverse`
+- **In this course we will use `|>`**
+:::
+
+
+## Piping with `|>`
+
+- Pipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) **as the first argument of that function**
+- The structure: 
+```{.r}
+new_data <- data |> function(extra_arguments)
+```
+
+## Piping with `|>`
+
+For example:
+
+```{.r}
+group_by(mtcars, gear)
+```
+
+is exactly the same as
+
+```{.r}
+mtcars |> group_by(gear)
+```
+
+## Piping with `|>`
+
+Another example:
+
+```{.r}
+summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))
+```
+
+is exactly the same as
+
+```{.r}
+mtcars %>% group_by(gear) %>% summarise(mean_mpg = mean(mpg))
+```
+
+## Piping with `|>`
+
+- Using pipe, we can now rewrite the code as:
+
+```{.r}
+plot_dat <- mtcars %>% 
+  group_by(gear) %>% 
+  summarise(mean_mpg = mean(mpg)) %>% 
+  ungroup()
+
+plot_dat %>% 
+  ggplot(aes(x = gear, y = mean_mpg)) +
+  geom_col()
+```
+
+- For you, is it better/faster to understand what's happening now?
+
+## Piping with `|>` {.scrollable}
+
+Quick comparison
+
+```{.r}
+grouped_by_gear <- group_by(mtcars, gear)
+mean_mpg_by_gear  <- summarise(grouped_by_gear, mean_mpg = mean(mpg))
+ungrouped_data <- ungroup(mean_mpg_by_gear)
+
+ggplot(
+  data = ungrouped_data,
+  aes(x = gear, y = mean_mpg)
+) +
+  geom_col()
+```
+
+vs. 
+
+```{.r}
+plot_dat <- mtcars %>% 
+  group_by(gear) %>% 
+  summarise(mean_mpg = mean(mpg)) %>% 
+  ungroup()
+
+plot_dat %>% 
+  ggplot(aes(x = gear, y = mean_mpg)) +
+  geom_col()
+```
+
+# Data manipulation in R
+
+## Into the `tidyverse`
+
+- `tidyverse` is a **collection of R packages** built for data science
+- Provide alternatives to base R functionalities  
+- All packages shared the same principle of **tidy data**
+
+## Tidy data
+
+- A dataset with rows and columns
+- Each *column* is a *variable*
+- Each *row* is an *observation*
+- Each *cell* contains *1 value* only
+
+## Tidy data
+
+Which of these is a *tidy data* table
+
+```{r}
+#| echo: false
+tibble::tribble(
+  ~country, ~code, ~"2015", ~"2016",
+  "Aruba", "ABW", 28419.264, 28449.713,
+  "Albania", "ALB", 3952.8036, 4124.055
+)
+```
+
+or
+
+```{r}
+#| echo: false
+tibble::tribble(
+  ~country, ~code, ~year, ~gdp,
+  "Aruba", "ABW", 2015, 28419.2645,
+  "Aruba", "ABW", 2016, 28449.713,
+  "Albania", "ALB", 2015, 3952.8036,
+  "Albania", "ALB", 2016, 4124.055,
+)
+```
+
+## Why `tidyverse`?
+
+::: {.callout-important}
+### Takeaway points
+
+1.  `tidyverse` is not a replacement of base R. **It is just a collection of R packages**
+2.  You don't have to use `tidyverse` when using R
+3.  `tidyverse` has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster
+:::
+
+## Into the `tidyverse` {.scrollable}
+
+`tidyverse` functions that we will be using:
+
+::: {.incremental style="font-size: 75%;"}
+- `dplyr::select()` to select columns from a `tibble`
+- `dplyr::mutate()` to change and create columns in a `tibble`
+- `tidyr::pivot_longer()` to transform a `tibble` from wide to long format (less columns, more rows)
+- `tidyr::pivot_wider()` to transform a `tibble` from long to wide format (less rows, more columns)
+- `purrr::map()` to performing vectorisation of function on vectors in R
+:::
+
+::: {.callout-note .fragment}
+`tibble` is a type of dataframe that is used by all `tidyverse` functions
+:::
 
