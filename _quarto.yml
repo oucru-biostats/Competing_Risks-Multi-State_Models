@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _render
+  
+website:
+  title: "OUCRU R training 2025"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides/intro_to_r.qmd
+        text: Introduction to R
+      - href: slides/data_viz.qmd
+        text: Principles of data visualisation
+      - href: slides/advance_r.qmd
+        text: Advance R topics
+      - href: slides/quarto.qmd
+        text: Using Quarto for reproducible research
+
+toc: true
+number-sections: true
+
+execute: 
+  echo: true
+
+format:
+  html:
+    theme: cosmo
+  revealjs:
+    css: styles.css

@@ -1,0 +1,67 @@
+---
+format: html
+toc: false
+number-sections: false
+---
+
+# Welcome to the OUCRU R training course - 2025
+
+Course structure: 
+![course-structure](imgs/R_course_schedule.png)
+
+- The training will be **09:00 – 17:00 (UTC +7)** for everyday
+- There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
+- Lunch will be provided for in-person attendees
+
+# Topics
+
+## Introduction to R
+
+- Lead instructors: Ronald and Thinh
+
+- Day 1 contents ([slides]()):
+
+  - Open and inspect datasets, understand their structure
+  - Make selections and extract relevant data
+  - Perform basic data exploration, including calculating summaries and identifying missing values
+  - Navigate RStudio with confidence
+
+- Day 2 contents ([slides]()):
+
+  - Write simple functions to automate tasks
+  - Create visualisations using Base R graphics
+  - Understand the R working environment, including file paths and workspace management
+  - Find and use R documentation and resources to solve problems on your own
+
+## Principles of data visualisation
+
+- Lead instructors: Ronald and Thinh
+
+- Contents ([slides]()): 
+
+  - The step-by-step process of creating graphs in R
+  - The grammar of graphics—understanding how plots are built
+  - How to design clear and impactful visualisations
+
+## Advance R topics
+
+- Lead instructors: Tuyen and Hai
+
+- Contents ([slides]()):
+
+  - Logics with if-else statements and for-loops
+  - Piping in R
+  - Data manipulation with `mutate()`
+  - Joining dataframes
+  - Pivotting dataframes into long and wide formats
+  - Vectorisation in R with `map()`
+
+## Using Quarto for reproducible research
+
+- Lead instructor: Thinh
+
+- Contents ([slides]()):
+  - Write papers with reproducible tables and figures using Quarto
+  - Generate reports in multiple formats: Word, PDF, slides, web pages…
+  - Easily update analyses when new data becomes available
+
