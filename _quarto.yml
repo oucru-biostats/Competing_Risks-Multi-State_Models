@@ -27,4 +27,4 @@ format:
   html:
     theme: cosmo
   revealjs:
-    css: styles.css
+    css: ../styles.css
