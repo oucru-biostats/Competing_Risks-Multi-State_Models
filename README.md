@@ -12,6 +12,11 @@ The course main webpage is here: https://oucru-modelling.github.io/R-training-20
 - Make sure you are using `renv` for R package version control
     - Always start your session with `renv::restore()`
     - Before commit and push, run `renv::snapshot()`
+- Locations:
+    - Slides go into `slides/`
+        - Slides should have `format: revealjs` in the YAML headers
+    - Handouts go into `handouts/`
+        - Handouts should have `format: html` in the YAML headers (or `pdf` if you wish)
 - Test **locally** with
     - `quarto preview`: live preview and continuously render on save
     - `quarto render`: one-time render; resulting main page is `_render/index.html`
