@@ -1,6 +1,9 @@
 ---
-format: html
-number-sections: false
+format: 
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
+from: markdown+autolink_bare_uris
 ---
 
 # Welcome to the OUCRU R training course - 2025
