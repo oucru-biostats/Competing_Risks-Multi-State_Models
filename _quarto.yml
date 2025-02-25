@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: slides/intro_to_r.qmd
+      - href: slides/IntroductionRDay1.qmd
         text: Introduction to R
       - href: slides/data_viz.qmd
         text: Principles of data visualisation

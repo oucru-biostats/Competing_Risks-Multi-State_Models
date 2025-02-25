@@ -25,7 +25,7 @@ Please follow [this handout](handouts/precourse_setup.qmd) before joining the co
 
 - Lead instructors: Ronald and Thinh
 
-- Day 1 contents ([slides](slides/IntroductionR.qmd)):
+- Day 1 contents ([slides](slides/IntroductionRDay1.qmd)):
 
   - Open and inspect datasets, understand their structure
   - Make selections and extract relevant data
