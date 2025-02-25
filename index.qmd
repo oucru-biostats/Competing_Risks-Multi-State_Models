@@ -69,3 +69,45 @@ Please follow [this handout](handouts/precourse_setup.qmd) before joining the co
   - Easily update analyses when new data becomes available
 
 # Appendix
+
+## Introduction to R and RStudio
+
+Good introduction, with explanatory videos:
+
+- RStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/
+- Datacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The [introduction](https://www.datacamp.com/courses/free-introduction-to-r) is free
+- A basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction
+- Introduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html
+- Good summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r
+- A comprehensive introduction: https://github.com/matloff/fasteR
+- Introduction to R programming: https://jjallaire.github.io/hopr/
+
+
+## DeepeR into R
+
+- The book [R for Data Science (2e)](https://r4ds.hadley.nz/)
+- ["What They Forgot to Teach You About R"](https://rstats.wtf/index.html)
+- https://www.r-project.org/doc/bib/R-books.html
+- The official R manuals: https://cran.r-project.org/manuals.html
+
+## R and statistics
+
+- A simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/
+- A website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/
+- R by example: http://www.mayin.org/ajayshah/KB/R/index.html 
+- [R course, with focus machine learning](https://www.udemy.com/course/data-science-and-machine-learning-bootcamp-with-r/)
+
+## R Markdown and Quarto
+
+- The main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/
+- [Introduction](https://rmarkdown.rstudio.com/lesson-1.html) from RStudio
+- [Introduction to `knitr`](https://sachsmc.github.io/knit-git-markr-guide/knitr/knit.html)
+- [First steps in Markdown](https://www.r-bloggers.com/2022/02/how-to-use-r-markdown-part-one/)
+- Writing academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/
+- R Markdown tips: https://appsilon.com/r-markdown-tips/
+- Powerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/
+- https://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations
+- R Quarto tutorial: https://appsilon.com/r-quarto-tutorial/
+
+## R GUIs
+
