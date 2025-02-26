@@ -1,9 +1,6 @@
 ---
 title: Introduction to R 2025, Day 1
 author: "Ronald Geskus and Thinh Onh Phuc"
-execute:
-  echo: true
-  eval: false
 engine: knitr
 format-links: 
   - html
@@ -594,10 +591,12 @@ computed, as a numeric or complex vector of length one.
   - ASCII text file (`base` or `readr` package)
   - Excel (`readxl` package)
   - SPSS/Stata/SAS (`haven` package)
-    ```{R}
+
+    ```{.r}
     library(haven)
     titanic <- read_dta("Exercises/titanic3.dta")
     ```
+
   - see [Importing Data with RStudio](https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
   - Imported as a ["tibble"](https://github.com/tidyverse/tibble)
     (enhancement of `data.frame`)
@@ -631,9 +630,11 @@ class(titanic)
 
 - Special value: `NA` (short for "not available")
   The function `is.na` checks for missingness
-  ```{R}
+
+  ```{.r}
   table(is.na(titanic$age))
   ```
+
 - Within functions, missings are often excluded by default, *but not always*
   - `quantile` and `mean` give error if there are missings; specify argument
     `na.rm=TRUE` 
@@ -643,13 +644,14 @@ class(titanic)
 
 - `subset` function: `subset(my.data, subset=...)`,  with ... a logical condition:
 
-```{R}
+```{.r}
 subset(titanic, pclass %in% c("1st","2nd"))
 ```
+
     `%in%` is another logical construct
 - `subset` argument in functions with *formula* structure:
 
-```{R}
+```{.r}
 xtabs(~survived, data=as_factor(titanic), subset=(sex=="male"))	
 ```
 
@@ -658,20 +660,20 @@ xtabs(~survived, data=as_factor(titanic), subset=(sex=="male"))
 
 - `subset` function: `subset(my.data, select=...)`, with ... :
 
-  ```{R}
+  ```{.r}
   head(subset(titanic, select= c(sex,fare)))
   ```
   
-  ```{R}
+  ```{.r}
   head(subset(titanic, select= sex:fare))
   ```
 
-  ```{R}
+  ```{.r}
   head(subset(titanic, select= -(sex:fare)))
   ```
 - `with` function: 
 
-  ```{R}
+  ```{.r}
   with(titanic, table(sex, survived))
   ## same as table(titanic$sex, titanic$survived)
   ```
