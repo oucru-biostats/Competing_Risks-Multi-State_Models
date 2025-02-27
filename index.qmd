@@ -43,7 +43,7 @@ Please follow [this handout](handouts/precourse_setup.qmd) before joining the co
 
 - Lead instructors: Ronald and Thinh
 
-- Contents ([slides](slides/advance_r.qmd)): 
+- Contents ([slides](slides/viz.qmd)): 
 
   - The step-by-step process of creating graphs in R
   - The grammar of graphics—understanding how plots are built
