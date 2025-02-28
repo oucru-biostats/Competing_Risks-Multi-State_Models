@@ -18,7 +18,6 @@ format:
   revealjs:
     slide-number: true
     logo: "Figures/OUCRU.jpg"
-    preview-links: true
     theme: solarized
     transition: fade
     show-slide-number: print
@@ -60,7 +59,7 @@ Not a course on using R for statistics or bioinformatics
 
 ## R: What is it and why use it? 
 
-- On [R Project website](http://www.r-project.org/about.html): "a language and environment for statistical computing and graphics"
+- On [R Project website](http://www.r-project.org/about.html){target="_blank"}: "a language and environment for statistical computing and graphics"
 
 - Free: no money charged and open source
 - Runs on all major operating systems
@@ -90,8 +89,7 @@ Not a course on using R for statistics or bioinformatics
 :::
 
 ::: {.fragment}
-- [Graphical User Interface](https://r4stats.com/articles/software-reviews/r-gui-comparison/)
-            e.g. BlueSky, R-Instat, R-Commander
+- [Graphical User Interface](https://r4stats.com/articles/software-reviews/r-gui-comparison/){preview-link="true"} e.g. BlueSky, R-Instat, R-Commander
 :::
 
 # Basics of the R Language
@@ -163,7 +161,7 @@ x
 - Most often rectangular format
   - Columns: variables
   - Rows: observations
-- Example: [titanic3](https://hbiostat.org/data/repo/ctitanic3) data set; passenger
+- Example: [titanic3](https://hbiostat.org/data/repo/ctitanic3){target="_blank"} data set; passenger
   characteristics and survival status after disaster with the Titanic cruise ship
 
 
@@ -559,24 +557,24 @@ Consists of 4 main panes
 
 - Can make it into a <span style="color:red;">package</span>, i.e. a collection of
     functions (and data):
-  - [survival](https://github.com/therneau/survival)
-  - [ggplot2](https://ggplot2.tidyverse.org/index.html)
-  - [tidyverse](https://www.tidyverse.org)
-  - [WHO TB data](https://github.com/seabbs/getTBinR)
-  - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html),
-  - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html),
-  - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html),
-  - [rStrava](https://cran.r-project.org/web/packages/rStrava/index.html)
+  - [survival](https://github.com/therneau/survival){target="_blank"}
+  - [ggplot2](https://ggplot2.tidyverse.org/index.html){preview-link="true"}
+  - [tidyverse](https://www.tidyverse.org){preview-link="true"}
+  - [WHO TB data](https://github.com/seabbs/getTBinR){target="_blank"}
+  - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html){preview-link="true"}
+  - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html){preview-link="true"}
+  - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html){preview-link="true"}
+  - [rStrava](https://cran.r-project.org/web/packages/rStrava/index.html){preview-link="true"}
 
--   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/)
+-   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/){preview-link="true"}
 	
 	
 ## Packages, where to find them?
 
 - Objects created by others 
-  - [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html):
+  - [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html){preview-link="true"}:
     1000's of extra packages
-  - Many more on [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=) and [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software)
+  - Many more on [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=){target="_blank"} and [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software){preview-link="true"}
 - R program itself also based on packages. Some loaded at startup 
     *base*, *graphics*, *stats*, *utils* ...
 
@@ -628,7 +626,7 @@ computed, as a numeric or complex vector of length one.
 
 ## Data import {.smaller}
 
-1. R: see [R Data Import/Export](https://cran.r-project.org/manuals.html)
+1. R: see [R Data Import/Export](https://cran.r-project.org/manuals.html){preview-link="true"}
 
 2. RStudio:
   - **Environment** pane: **Import Dataset**
@@ -642,11 +640,11 @@ computed, as a numeric or complex vector of length one.
   - SPSS/Stata/SAS (`haven` package)
 
 
-  - see [Importing Data with RStudio](https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio)
-  - Imported as a ["tibble"](https://github.com/tidyverse/tibble)
+  - see [Importing Data with RStudio](https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio){target="_blank"}
+  - Imported as a ["tibble"](https://github.com/tidyverse/tibble){target="_blank"}
     (enhancement of `data.frame`)
 
--   Database: [MS Access, SQLite, ...](https://solutions.posit.co/connections/db/databases/)
+-   Database: [MS Access, SQLite, ...](https://solutions.posit.co/connections/db/databases/){preview-link="true"}
 	
 ## Missing data {.smaller}
 
