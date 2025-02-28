@@ -4,12 +4,14 @@ format:
     link-external-icon: true
     link-external-newwindow: true
 from: markdown+autolink_bare_uris
+date: last-modified
+date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
 
-# Welcome to the OUCRU R training course - 2025
+# Welcome to the OUCRU R training course - 2025 {.unnumbered}
 
-Course structure: 
-![course-structure](imgs/R_course_schedule.png)
+## Course structure {.unnumbered}
+![](imgs/R_course_schedule.png)
 
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
