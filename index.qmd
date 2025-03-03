@@ -82,7 +82,7 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
 
 - Lead instructor: Thinh
 
-- Contents ([slides]()):
+- Contents ([slides](slides/qt-repro-res.qmd)):
   - Write papers with reproducible tables and figures using Quarto
   - Generate reports in multiple formats: Word, PDF, slides, web pages…
   - Easily update analyses when new data becomes available

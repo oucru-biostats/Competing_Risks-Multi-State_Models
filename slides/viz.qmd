@@ -7,24 +7,12 @@ format-links:
   - html
 toc: false
 number-sections: false
-webr:
-  channel-type: "shared-array-buffer"
-  cell-options:
-    autorun: true
-    message: true
-    warning: true
-    eval: false
-    echo: false
 format:
   revealjs:
     slide-number: true
-    logo: "figures/OUCRU.jpg"
+    logo: "Figures/OUCRU.jpg"
     preview-links: auto
-    theme: solarized
     show-slide-number: print
-    include-in-header: 
-      - text: |
-          <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
     chalkboard: true
 revealjs-plugins:
   - codewindow
@@ -34,7 +22,7 @@ revealjs-plugins:
 
 :::::: columns
 :::: {.column width="50%"}
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 ::: {style="font-size: 50%;"}
 "Mapping routine measles vaccination in low-and middle-income countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).
@@ -50,7 +38,7 @@ How do you read this plot?
 
 :::::: columns
 :::: {.column width="50%"}
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 ::: {style="font-size: 50%;"}
 "Mapping routine measles vaccination in low-and middle-income countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).
@@ -97,7 +85,7 @@ head(df)
 
 :::::: columns
 :::: {.column width="50%"}
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 ::: {style="font-size: 50%;"}
 "Mapping routine measles vaccination in low-and middle-income countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).
@@ -113,7 +101,7 @@ Let's draw this by hand
 
 :::::: columns
 :::: {.column width="50%"}
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 ::: {style="font-size: 50%;"}
 "Mapping routine measles vaccination in low-and middle-income countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).
@@ -307,7 +295,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ::: {.column width="50%"}
 
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 :::
 
@@ -456,7 +444,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ::: {.column width="50%"}
 
-![](../site_imgs/viz/nature.png)
+![](Figures/viz/nature.png)
 
 :::
 

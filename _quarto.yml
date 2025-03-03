@@ -17,7 +17,7 @@ website:
         text: Principles of data visualisation
       - href: slides/advance_r.qmd
         text: Advance R topics
-      - href: slides/quarto.qmd
+      - href: slides/qt-repro-res.qmd
         text: Using Quarto for reproducible research
 
 toc: true
