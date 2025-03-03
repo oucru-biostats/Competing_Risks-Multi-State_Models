@@ -33,7 +33,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 
 # Pre-course setups and requirements
 
-Please follow [this handout](handouts/precourse_setup.qmd) before joining the course.
+Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} before joining the course.
 
 # Course topics
 
@@ -69,7 +69,7 @@ Please follow [this handout](handouts/precourse_setup.qmd) before joining the co
 
 - Lead instructors: Tuyen and Hai
 
-- Contents ([slides]()):
+- Contents ([slides](slides/advance_r.qmd)):
 
   - Logics with if-else statements and for-loops
   - Piping in R
