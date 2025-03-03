@@ -10,7 +10,7 @@ number-sections: false
 format:
   revealjs:
     slide-number: true
-    logo: "Figures/OUCRU.jpg"
+    logo: "figures/OUCRU.jpg"
     preview-links: auto
     show-slide-number: print
     chalkboard: true
@@ -547,6 +547,7 @@ head(simulated_covid)
 ## Some frequently used `geom_*`
 
 ::: {.r-fit-text}
+
 **Example:** creating a bar chart for number of covid incidence over time 
 
 
