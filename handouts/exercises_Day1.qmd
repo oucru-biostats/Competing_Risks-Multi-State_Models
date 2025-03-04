@@ -42,7 +42,7 @@ b. Verify your answer by using the built-in R functions `mean` and `sd`.
 
 We will work with the dataset that gives the survival status of passengers on the
 Titanic. We provide the dataset in **Excel** format
-([Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/blob/main/slides/data/Titanic3.xlsx)).
+([Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx)).
 See [this link](https://hbiostat.org/data/repo/ctitanic3) for a description of the
 variables. Our data set has three additional columns: `dob` (date of birth), `family`
 (whether the person tarvelled with family) and `agecat` (age categorized in age
