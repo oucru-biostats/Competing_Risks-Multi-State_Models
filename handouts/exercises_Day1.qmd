@@ -9,12 +9,6 @@ date-format: '[Last version:] MMMM DD, YYYY'
 format: 
   pdf:
     fontsize: 12pt
-  html:
-    scrollable: true
-    code-tools:
-      source: true
-      toggle: false
-      caption: Code    
 toc: TRUE
 lof: FALSE
 lot: FALSE
