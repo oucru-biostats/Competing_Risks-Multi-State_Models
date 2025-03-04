@@ -41,14 +41,14 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
 
 - Lead instructors: Ronald and Thinh
 
-- Day 1 contents ([slides](slides/IntroductionRDay1.qmd)):
+- Day 1 ([slides](slides/IntroductionRDay1.qmd)):
+  - Contents:
+    - Open and inspect datasets, understand their structure
+    - Make selections and extract relevant data
+    - Perform basic data exploration, including calculating summaries and identifying missing values
+    - Navigate RStudio with confidence
 
-  - Open and inspect datasets, understand their structure
-  - Make selections and extract relevant data
-  - Perform basic data exploration, including calculating summaries and identifying missing values
-  - Navigate RStudio with confidence
-
-- Day 1 [exercises](handouts/exercises_Day1.qmd){target="_blank"}
+  - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
 
 - Day 2 contents ([slides](slides/IntroductionRDay2.qmd)):
 
