@@ -354,8 +354,7 @@ give_feedback(type = "manuscript", which = "measles model", deadline = "next Fri
   
   `goal( input1, input2, ...)`
   - **goal**: what do we want; function name
-  - **input**: what information does R need for this; <span
-    style="color:red;">arguments</span> of the function
+  - **input**: what information does R need for this; <span style="color:red;">arguments</span> of the function
 - Output: a value (often assigned to an object for further use); a figure; a help page, ...
  
   E.g. `help(mean)`: `mean` is argument of function `help`. Output is the appearance
@@ -484,26 +483,6 @@ Select fares between 10 and 40
 ```{webr-r}
 
 ```
-
-
-
-<!-- ## Selection by name -->
-
-<!-- ```{webr-r} -->
-<!-- teacher <- c("Ronald","Thinh","Tuyen") -->
-<!-- room <- c(306,305,305) -->
-<!-- names(room) <- teacher -->
-<!-- room -->
-<!-- ``` -->
-
-<!-- ```{webr-r} -->
-<!-- room["Ronald"] -->
-<!-- ``` -->
-
-<!-- - Same for selection of columns -->
-<!--  ```{webr-r} -->
-<!--  titanic[c(2,3),c("name","age")] -->
-<!--  ``` -->
 
 
 # RStudio
@@ -716,8 +695,9 @@ Variable summaries
 - `mean`: mean value
 - `quantile`: quantiles
 - `IQR`: inter-quartile range
+- `table`: tabulation of one or two categorical variables
 
-## Make exercises 3 to 7 {.scrollable}
+## Make exercises 3 and 4 {.scrollable}
 
 Package readxl needs to be installed (not sure whether it comes with RStudio)
 
@@ -744,6 +724,26 @@ table(titanic$sex, titanic$survived)
 table(titanic$sex, titanic$survived, useNA="always") # has no added value
 addmargins(table(titanic$sex, titanic$survived))
 ```
+
+## Selection by name
+
+```{webr-r}
+teacher <- c("Ronald","Thinh","Tuyen")
+room <- c(306,305,305)
+names(room) <- teacher
+room
+names(room)
+```
+
+```{webr-r}
+room["Ronald"]
+```
+
+- Same for data sets
+ ```{webr-r}
+ dimnames(titanic)
+ titanic[c(2,3),c("name","age")]
+ ```
 
 ## More efficient row selections: "subset" 
 
@@ -810,7 +810,7 @@ xtabs(~titanic$survived, data=titanic, subset=(titanic$sex=="male"))
   titanic$sex <- factor(titanic$sex, labels=c("M","F"))
   ```
 
-- [Good explanation](https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial){preview-link="true"}
+- [Good introduction to factors](https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial){preview-link="true"}
   
 ## Dates {.smaller}
 
