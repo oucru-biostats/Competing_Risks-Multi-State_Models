@@ -75,8 +75,9 @@ You now can start to write your codes in the script.
 
 ```{r, echo=TRUE}
 library(readxl)
+
 titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
-View(titanic)
+titanic
 ```
 
 ::: callout-note
