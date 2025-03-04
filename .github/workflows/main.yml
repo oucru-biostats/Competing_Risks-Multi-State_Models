@@ -30,6 +30,8 @@ jobs:
 
       - name: Setup renv
         uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 2
 
       - name: Setup `tlmgr` through R `tinytex`
         run: Rscript -e "tinytex::install_tinytex();tinytex::tlmgr_update();"
