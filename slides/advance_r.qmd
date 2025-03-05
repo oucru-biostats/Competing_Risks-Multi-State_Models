@@ -2,8 +2,9 @@
 title: "Advance R topics"
 author: "Tuyen Huynh - OUCRU Mathematical Modelling group <br/> Hai Ho - OUCRU Emerging Infections group"
 format: 
-    revealjs:
-        theme: serif
+  revealjs:
+    theme: serif
+    code-copy: true
 toc: false
 number-sections: false
 ---
@@ -16,11 +17,13 @@ What will be covered:
     - If-else statements
     - For-loops
     - Piping in R
+
 2. **Data manipulation in R**
     - Into the `tidyverse`
-    - Data manipulation with `mutate()`
+    - Data manipulation with `tidyverse` functions
     - Joining dataframes
     - Pivotting dataframes into long and wide formats
+
 3. **Advance advance R**
     - Vectorisation in R with `map()`
 
@@ -28,7 +31,7 @@ What will be covered:
 
 ## If-else
 
-- R has a *conditional* logic: depending on the outcome of a test, execute one or another statement
+- R provides *conditional* logic: depending on the outcome of a test, execute a specific statement
 
 ```{.r}
 if (logical statement) {
@@ -37,6 +40,20 @@ if (logical statement) {
     do that
 }
 ```
+
+## If-else
+
+- Logic statements are any statement (piece of R code) that provides a TRUE/FALSE result
+
+```{r}
+24 < 50 # This is a logic statement
+TRUE & FALSE # This is also a logic statement
+"R programming" == "fun" # Still a logic statement
+TRUE # Believe it or not, still a logic statement
+100 %in% seq(50, 120, 2) # Also logic statement
+```
+
+
 ## If-else
 
 - Example:
@@ -90,10 +107,57 @@ if (x < 10) {
 }
 ```
 
+## If-else
+
+- Another example:
+
+```{r}
+target_year <- 2025
+
+if ((target_year %% 4 == 0 & target_year %% 100 != 0) |
+  (target_year %% 400 == 0)) {
+  print(paste0(target_year, " is a leap year."))
+} else {
+  print(paste0(target_year, " is not a leap year."))
+}
+```
+
+## If-else
+
+- You can assign the resulting value if you want:
+
+```{r}
+x <- 24
+
+y <- if (x < 10) {
+  "x is less than 10"
+} else if (x < 20) {
+  "x is greater than 10 and less than 20"
+} else if (x < 30) {
+  "x is greater than 20 and less than 30"
+} else {
+  "x is greater or equal to 30"
+}
+
+print(y)
+```
+
+
+## If-else
+
+- You may also stumble into `ifelse()`
+
+```{r}
+print(ifelse(x > 10, "x is larger than 10", "x is smaller than 10"))
+# ?ifelse
+```
+
+- It is basically the same, a one-liner version of the typical `if (...) {...} else {...}` structure
+
 ## For-loop
 
 - Imagine that you have to repeat the same analysis for many files that are all in the same folder on your computer
-- A short solution using an iterative construct would be:
+- A solution for that might be an iterative construct like a for-loop:
 
 ```{.r}
 files <- dir()
@@ -106,17 +170,59 @@ for (filename in files) {
 
 ## For-loop
 
-- Example:
+- An simple example simulating $R_0$:
 
 ```{r}
-vec <- seq(0, 1, 0.1)
+vec <- rep(0, 50) # 50 time steps
+vec[1] <- 2 # starting number of infectious
+r0 <- 1.5 # basic reproduction number R_0
 
-for (n in vec) {
-  n_sqr <- n^2
-
-  print(n_sqr)
+# loop from the 2nd time step to the end of vector
+for (i in 2:length(vec)) {
+  # get the number of infectious at current time step (starting at 2)
+  vec[i] <- vec[i - 1] * r0
 }
+
+vec
 ```
+
+## For-loop
+```{r}
+#| fig-align: center
+plot(vec)
+lines(vec)
+```
+
+## Conditionals within for-loops {.scrollable}
+
+- Let's combine if-else logics with for-loops:
+
+![](figures/leaky_relu.png)
+
+```{r}
+vec <- seq(-10, 10)
+neg_slope <- 0.01
+
+for (i in 1:length(vec)) {
+  x <- vec[i]
+  if (x >= 0) {
+    vec[i] <- x
+  } else {
+    vec[i] <- x * neg_slope
+  }
+}
+
+vec
+```
+
+## Conditionals within for-loops
+
+```{r}
+#| fig-align: center
+plot(vec)
+lines(vec)
+```
+
 
 ## Piping in R {.scrollable}
 
@@ -278,6 +384,10 @@ plot_dat |>
 - Provide alternatives to base R functionalities  
 - All packages shared the same principle of **tidy data**
 
+## Into the `tidyverse`
+
+![](figures/tidy-packages.png)
+
 ## Tidy data
 
 - A dataset with rows and columns
@@ -327,7 +437,7 @@ tibble::tribble(
 
 ::: {.incremental style="font-size: 75%;"}
 - `dplyr::select()` to select columns from a `tibble`
-- `dplyr::mutate()` to change and create columns in a `tibble`
+- `dplyr::mutate()` to modify and create columns in a `tibble`
 - `tidyr::pivot_longer()` to transform a `tibble` from wide to long format (less columns, more rows)
 - `tidyr::pivot_wider()` to transform a `tibble` from long to wide format (less rows, more columns)
 - `purrr::map()` to performing vectorisation of function on vectors in R
@@ -337,3 +447,138 @@ tibble::tribble(
 `tibble` is a type of dataframe that is used by all `tidyverse` functions
 :::
 
+## Before we start {.scrollable}
+
+- Create a new R script
+- Import `tidyverse` (or install first if you don't have it) and `readxl`
+- Import the `Titanic3.xlsx` dataset
+
+```{r}
+# install.packages("tidyverse")
+library(tidyverse)
+library(readxl)
+
+titanic_df <- read_excel("data/Titanic3.xlsx")
+
+# check if `titanic_df` is a tibble
+# (`read_excel()` is part of the `tidyverse` so it automatically converts the dataset into a `tibble`)
+is_tibble(titanic_df)
+
+titanic_df
+```
+
+## Select columns
+
+- You can select columns from a `tibble` with `select()`
+
+```{r}
+titanic_df |> select(pclass, survived, sex, age)
+```
+
+## Select columns
+
+- You can *unselect* columns with the `-` operator
+```{r}
+titanic_df |>
+  select(-sex, -age) |>
+  colnames()
+
+titanic_df |>
+  select(-c(name, embarked, boat, body)) |>
+  colnames()
+```
+
+## Create and/or modify columns {.scrollable}
+
+- You can create new columns or modify existing columns with `mutate()`
+- Example: modify columns to their correct data type and create a new column for year of birth
+
+```{r}
+titanic_df |>
+  select(pclass, survived, sex, age) |>
+  mutate(
+    pclass = as.factor(pclass),
+    survived = as.factor(survived),
+    sex = as.factor(sex),
+    age = as.numeric(age),
+    yob = 1912 - age
+  )
+```
+
+## Create and/or modify columns {.scrollable}
+
+- You can also work on the same column multiple times in one `mutate()`, the modifications will be run sequentially
+
+```{r}
+titanic_df |>
+  select(pclass, survived, sex, age) |>
+  mutate(
+    pclass = as.factor(pclass),
+    survived = as.factor(survived),
+    sex = as.factor(sex),
+    age = as.numeric(age),
+    age = round(age),
+    yob = 1912 - age
+  )
+```
+
+## Create and/or modify columns {.scrollable}
+
+- To run the same function for multiple columns, you can use `across()`
+```{r}
+titanic_df |>
+  select(pclass, survived, sex, age) |>
+  mutate(
+    across(c(pclass, survived, sex), as.factor),
+    age = as.numeric(age),
+    age = round(age),
+    yob = 1912 - age
+  )
+```
+
+## Joining dataframes
+
+![](figures/tibble_joinings.svg)
+
+
+## Joining dataframes
+
+- Example: you have a dataframe that maps the passenger class to its ticket name
+```{r}
+pclass_names <- tribble(
+  ~pclass, ~name,
+  "1st", "First class",
+  "2nd", "Business",
+  "3rd", "Economy"
+)
+
+pclass_names
+```
+
+
+## Joining dataframes {.scrollable}
+
+- Now, for that to be a new column of the dataset, you can **join** the dataframes
+- ... but which type of join do we want to use?
+
+![](figures/tibble_joinings.svg)
+
+
+## Joining dataframes
+
+::: {.callout-important}
+- Direction matters: the left dataframe and right dataframe are **not interchangable**
+- Make sure the key columns exist on both dataframes
+:::
+
+
+## Joining 
+
+- For our example, we will do a left join, where the original dataframe is the left, and the passenger class name dataframe is on the right
+```{r}
+left_join(
+  titanic_df |> select(pclass, name),
+  pclass_names,
+  by = "pclass"
+)
+```
