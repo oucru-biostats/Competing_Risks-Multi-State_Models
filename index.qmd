@@ -4,6 +4,8 @@ format:
     link-external-icon: true
     link-external-newwindow: true
 from: markdown+autolink_bare_uris
+number-depth: 2
+toc-depth: 2
 date: last-modified
 date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
@@ -28,7 +30,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Marc Choisy, Mathematical Modeling group, OUCRU HCM
 - Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
 - Dr. Dung Vu Tien Viet, Biostatistician, OUCRU Hanoi
-- Dr. Trinh Dong Huu Khanh, previously: Biostatistics group, OUCRU HCM
+- Dr. Trinh Dong Huu Khanh, formerly: Biostatistics group, OUCRU HCM
 
 
 # Pre-course setups and requirements
@@ -39,55 +41,63 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
 
 ## Introduction to R
 
-- Lead instructors: Ronald and Thinh
+### 🧑‍🏫️ Lead instructors: Ronald and Thinh
 
-- Day 1 ([slides](slides/IntroductionRDay1.qmd)):
-  - Contents:
-    - Open and inspect datasets, understand their structure
-    - Make selections and extract relevant data
-    - Perform basic data exploration, including calculating summaries and identifying missing values
-    - Navigate RStudio with confidence
+### Day 1 
 
-  - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
+- [Lecture slides](slides/IntroductionRDay1.qmd)
+- Contents:
+  - Open and inspect datasets, understand their structure
+  - Make selections and extract relevant data
+  - Perform basic data exploration, including calculating summaries and identifying missing values
+  - Navigate RStudio with confidence
+- [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
 
-- Day 2 contents ([slides](slides/IntroductionRDay2.qmd)):
+### Day 2
 
+- [Lecture slides](slides/IntroductionRDay2.qmd)
+- Contents:
   - Write simple functions to automate tasks
   - Create visualisations using Base R graphics
   - Understand the R working environment, including file paths and workspace management
   - Find and use R documentation and resources to solve problems on your own
+- [Exercises]{style="cursor:not-allowed;user-select:none;"}
 
 ## Principles of data visualisation
 
-- Lead instructors: Ronald and Thinh
+### 🧑‍🏫️ Lead instructors: Ronald and Thinh
 
-- Contents ([slides](slides/viz.qmd)): 
-
+- [Lecture slides](slides/viz.qmd)
+- Contents:
   - The step-by-step process of creating graphs in R
   - The grammar of graphics—understanding how plots are built
   - How to design clear and impactful visualisations
+- [Exercises]{style="cursor:not-allowed;user-select:none;"}
 
 ## Advanced R topics
 
-- Lead instructors: Tuyen and Hai
+### 🧑‍🏫️ Lead instructors: Tuyen and Hai
 
-- Contents ([slides](slides/advance_r.qmd)):
-
+- [Lecture slides](slides/advance_r.qmd)
+- Contents:
   - Logics with if-else statements and for-loops
   - Piping in R
   - Data manipulation with `mutate()`
   - Joining dataframes
   - Pivotting dataframes into long and wide formats
   - Vectorisation in R with `map()`
+- [Exercises]{style="cursor:not-allowed;user-select:none;"}
 
 ## Using Quarto for reproducible research
 
-- Lead instructor: Thinh
+### 🧑‍🏫️ Lead instructor: Thinh
 
-- Contents ([slides](slides/qt-repro-res.qmd)):
+- [Lecture slides](slides/qt-repro-res.qmd)
+- Contents:
   - Write papers with reproducible tables and figures using Quarto
   - Generate reports in multiple formats: Word, PDF, slides, web pages…
   - Easily update analyses when new data becomes available
+- [Exercises]{style="cursor:not-allowed;user-select:none;"}
 
 # Appendix
 

@@ -89,40 +89,48 @@ The data is imported via the `readxl` package. `View(titanic)` makes the whole d
 <details>
 
 <summary>[Click to see the dataset]{style="color:blue"}</summary>
+
 ```{r echo=F}
 print(titanic)
 ```
+
 </details>
 
 ### Exercise 7
+
 Use `head` and `tail` functions to inspect the first 4 and last 4 records (instead of 6 which is the default).
 
 Override the **tibble** format using function `as.data.frame` in order to show all columns.
 
 ::: callout-note
-Often, it is sufficient to show a few records of the total data set. This can be done via selections on the rows, but another option is to use the functions `head` and `tail`. 
+Often, it is sufficient to show a few records of the total data set. This can be done via selections on the rows, but another option is to use the functions `head` and `tail`.
 :::
 
 <details>
 
 <summary>[Click to see the answers]{style="color:blue"}</summary>
+
 ```{r head-tail}
 head(titanic,4)
 tail(titanic,4)
 head(as.data.frame(titanic),4)
 tail(as.data.frame(titanic),4)
 ```
+
 </details>
+
 ### Exercise 8
 
-Use the `dim` function to find the number of rows (passengers) and columns (variables) in the data. 
+Use the `dim` function to find the number of rows (passengers) and columns (variables) in the data.
 
 <details>
 
 <summary>[Click to see the answers]{style="color:blue"}</summary>
+
 ```{r}
 dim(titanic)
 ```
+
 </details>
 
 Use the `str` and `glimpse` function to inspect the dataset
@@ -135,10 +143,12 @@ Use the `str` and `glimpse` function to inspect the dataset
 <details>
 
 <summary>[Click to see the answers]{style="color:blue"}</summary>
+
 ```{r}
 str(titanic)
 dplyr::glimpse(titanic)
 ```
+
 </details>
 
 ## 4. Data Summarization
@@ -162,9 +172,11 @@ We will come back to that later. First we give some further summaries.
 <details>
 
 <summary>[Click to see the answers]{style="color:blue"}</summary>
+
 ```{r}
 summary(titanic)
 ```
+
 </details>
 
 ### Exercise 10
@@ -190,6 +202,7 @@ Summarize the `survived` variable using the `table` function.
 <details>
 
 <summary>[Click to see the answers]{style="color:blue"}</summary>
+
 ```{r}
 ## some quantiles
 quantile(titanic$age, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
@@ -201,4 +214,5 @@ table(titanic$sex, titanic$survived)
 table(titanic$sex, titanic$survived, useNA="always") # has no added value
 addmargins(table(titanic$sex, titanic$survived))
 ```
+
 </details>
