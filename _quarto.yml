@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _render
+  render:
+    - "*.qmd"
+    - "!*_answer.qmd"
   
 website:
   title: "OUCRU R training 2025"

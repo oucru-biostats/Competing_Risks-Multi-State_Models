@@ -52,7 +52,7 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
   - Perform basic data exploration, including calculating summaries and identifying missing values
   - Navigate RStudio with confidence
 - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
-- [Exercise answer keys](handouts/exercises_Day1_answer.qmd){style="cursor:not-allowed;user-select:none;"}
+- [Exercise answer keys](#){style="cursor:not-allowed;user-select:none;"}
 
 ### Day 2
 
