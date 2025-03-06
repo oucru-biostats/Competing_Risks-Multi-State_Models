@@ -85,10 +85,9 @@ Import the dataset by clicking on **Import Dataset** from the **Environment** pa
 #| warning: false
 library(readxl)
 titanic <- read_excel("../slides/data/Titanic3.xlsx")
-View(titanic)
 ```
 
-a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane).
+a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane). Do the variables make sense? Are there any weird values? Sort the data in ascending order of age by clicking on the **age** in the data set.
 
 b.  Use the function `dim` to find the number of rows (passengers) and columns (variables) in the data set.
 
@@ -107,11 +106,15 @@ mode(titanic)
 
 A problem with the mode for age is that missing values are coded as a character value `"NA"` in our Excel file; it is not recognized as an R type NA value. In the future, you may encounter other representations of missing values, such as `missing`, `404`, `-99` or `unknown`, which should also be treated as `NA`. Read in the data set as `titanic` object again, but specify `NA` as the missing value indicator under **Code Preview**. Your code under **Code Preview** should now look like
 
-```{r}
-#| echo: true
+```{.r}
 library(readxl)
 titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
 View(titanic)
+```
+
+```{r}
+#| echo: false
+titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
 ```
 
 a.  Issue the commands
