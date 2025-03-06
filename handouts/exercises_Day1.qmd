@@ -1,18 +1,29 @@
 ---
 title: "Exercises Day 1"
-author: 
-  name: Tran Thai Hung
+author:
+- name: Ronald Geskus
   affiliations:
-    OUCRU biostat
+    - OUCRU biostat
+- name: Tran Thai Hung
+  affiliations:
+    - OUCRU biostat
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
   pdf:
     fontsize: 12pt
+  html:
+    scrollable: true
+    code-tools:
+      source: true
+      toggle: false
+      caption: Code    
 toc: TRUE
+lof: FALSE
+lot: FALSE
 number-sections: FALSE
 thanks: "Please do not circulate."
-editor: visual
+abstract: You might have done exercises 1 and 2 directly on the material slide. For exercises 3 to 7, you will do them in RStudio. Please make sure that you have R and RStudio installed on your laptop.
 execute:
   echo: false
   eval: false
@@ -54,33 +65,48 @@ Write the code in that R Script file.
 Over time it is useful to learn a couple of RStudio shortcuts that you frequently use. You can find an overview of them under the **Help → Keyboard Shortcuts help**. More shortcuts and tips can be found on the [Appsilon](https://www.appsilon.com/post/rstudio-shortcuts-and-tips) website.
 
 ::: callout-note
--   **Alt + -**: Insert assignment `<-`
+On the mac, Ctrl → Cmd, Alt → Option, and Enter → Return.
+
+-   **Ctrl+Enter**: Run current line
+-   **Ctrl+Alt+I**: Insert new chunk
+-   **Alt+-**: Insert assignment `<-`
 -   **F1**: Show function help page when cursor is on function name
--   **Ctrl + 1 / Ctrl + 2**: Move focus to Source/Console
--   **Tab / Ctrl + Space**: Code suggestion/completion
--   **In source editor**:
-    -   **Ctrl + Enter**: Run current line
-    -   **Ctrl + Tab**: Switch between tabs in Source Editor
+-   **Ctrl+Tab**: Switch between tabs in Source Editor
+-   **Ctrl+1 / Ctrl+2**: Move focus to Source/Console
+-   **Tab / Ctrl+Space**: Code suggestion/completion
 -   **In Console**:
     -   Arrows **Up/Down** to navigate earlier commands
-    -   **Ctrl + Up** pops up a listing of latest commands
+    -   **Ctrl+Up** pops up a listing of latest commands
+
 :::
 
 </details>
 
-On the Mac... (**Hung please add the difference to Windows**)
-
 ## Exercise 3: importing data from Excel and first check
 
-Import the dataset by clicking on **Import Dataset** from the **Environment** pane. Browse for the Excel file. Assign the R object name `titanic` to the dataset under **Import Options**. Copy the code under **Code Preview** to your script file. Click on the "Import" button.
+Import the dataset by clicking on **Import Dataset** from the **Environment** pane. Browse for the Excel file. Assign the R object name `titanic` to the dataset under **Import Options**. Copy the code under **Code Preview**. Click on the "Import" button. Paste the code you have copied earlier to your **Script File**.
+
+```{r}
+#| echo: false
+library(readxl)
+titanic <- read_excel("../slides/data/Titanic3.xlsx")
+View(titanic)
+```
 
 a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane).
 
 b.  Use the function `dim` to find the number of rows (passengers) and columns (variables) in the data set.
 
+```{r}
+dim(titanic)
+```
+
 c.  Use the `str` function to obtain a summary of the basic characteristics per variable. Have a look at the columns for `survived` and `age`. Do they have the mode that you expect? (You can also use the `mode` function to check their modes.)
 
-Use the `str` function to obtain a summary of the basic characteristics per variable. Have a look at the columns for `survived` and `age`. Do they have the mode that you expect? (You can also use the `mode` function to check their modes.)
+```{r}
+str(titanic)
+mode(titanic)
+```
 
 ## Exercise 4: some columns summarized
 
@@ -89,7 +115,7 @@ A problem with the mode for age is that missing values are coded as a character 
 ```{r}
 #| echo: true
 library(readxl)
-titanic <- read_excel("data/Titanic3.xlsx", na = "NA")
+titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
 View(titanic)
 ```
 
