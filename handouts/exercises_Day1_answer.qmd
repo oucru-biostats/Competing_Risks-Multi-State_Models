@@ -1,40 +1,66 @@
 ---
-title: "Exercises 6-10"
-author: 
+title: "Exercises Day 1"
+author:
+- name: Ronald Geskus
+  affiliations:
+    - OUCRU biostat
 - name: Tran Thai Hung
   affiliations:
     - OUCRU biostat
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
-  html:
-    scrollable: true
-    code-tools:
-      source: true
-      toggle: false
-      caption: Code    
+  pdf:
+    fontsize: 12pt
 toc: TRUE
 lof: FALSE
 lot: FALSE
 number-sections: FALSE
 thanks: "Please do not circulate."
-editor: visual
+abstract: You might have done exercises 1 and 2 directly on the material slide. For exercises 3 to 7, you will do them in RStudio. Please make sure that you have R and RStudio installed on your laptop.
 execute:
   echo: true
   eval: true
 ---
 
-## 1. External Data
+## Exercise 1: selection within a vector
 
-We will work with a dataset that gives the survival status of passengers on the Titanic. See [this link](https://hbiostat.org/data/repo/ctitanic3) for a description of the variables. Some background information on the data can be found [here](https://hbiostat.org/data/repo/titanic). We provide the dataset in **Excel** format ([Titanic3.xlsx](../slides/data/Titanic3.xlsx)).
+a.  Create a vector named `vec` that consists of the numbers from 11 to 30
+b.  Select the 7th element of the vector
+c.  Select all elements except the 15th. Hint: use a minus sign
+d.  Select the 2nd and 5th element of the vector
+e.  Select only the odd valued elements of `vec`.
 
-Until now, you have only used the base R program. We now switch to RStudio, which provides a much nicer and richer interface when working with R. Start the RStudio program.
+*Remark: Exercise e. is not an easy exercise. We advise you to do this is in two steps. First create a vector `index` that selects the odd numbers in `vec`, using the function `seq`. You may need to consult the help page of `seq` via `help(seq)`.*
+
+## Exercise 2: some calculations
+
+a.  Use the elementary functions `/`, `-`, `^` and the function `sum` to calculate the mean $$\bar{x}=\sum_{i=1}^n x_i/n$$ and the standard deviation $$\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2/(n-1)}$$ of the fare paid by the titanic passengers. Note: $n=10$.
+b.  Verify your answer by using the built-in R functions `mean` and `sd`.
+
+## RStudio
+
+We will work with the dataset that gives the survival status of passengers on the Titanic. We provide the dataset in **Excel** format ([Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx)). See [this link](https://hbiostat.org/data/repo/ctitanic3) for a description of the variables. Our data set has three additional columns: `dob` (date of birth), `family` (whether the person tarvelled with family) and `agecat` (age categorized in age ranges).
+
+We assume that you have created a folder on your computer for the R course. Start the RStudio program from within that folder. Your working directory should be that folder. If it is not, set the working directory via
+
+**Session → Set Working Directory → Choose Directory…**
+
+Open a new R Script file via the menu:
+
+**File → New File → R Script…**
+
+Write the code in that R Script file.
 
 <details>
 
-<summary>[Useful Keyboard Shortcuts in RStudio]{style="color:blue"}</summary>
+<summary>[Some useful Keyboard Shortcuts in RStudio for Windows]{style="color:blue"}</summary>
+
+Over time it is useful to learn a couple of RStudio shortcuts that you frequently use. You can find an overview of them under the **Help → Keyboard Shortcuts help**. More shortcuts and tips can be found on the [Appsilon](https://www.appsilon.com/post/rstudio-shortcuts-and-tips) website.
 
 ::: callout-note
+On the mac, Ctrl → Cmd, Alt → Option, and Enter → Return.
+
 -   **Ctrl+Enter**: Run current line
 -   **Ctrl+Alt+I**: Insert new chunk
 -   **Alt+-**: Insert assignment `<-`
@@ -45,174 +71,179 @@ Until now, you have only used the base R program. We now switch to RStudio, whic
 -   **In Console**:
     -   Arrows **Up/Down** to navigate earlier commands
     -   **Ctrl+Up** pops up a listing of latest commands
+
 :::
 
 </details>
 
-## 2. Setting Up the R Script File
+## Exercise 3: importing data from Excel and first check
 
-You are asked to make the exercises into an R Script file. Open an R Script file via the menu:
+Import the dataset by clicking on **Import Dataset** from the **Environment** pane. Browse for the Excel file. Assign the R object name `titanic` to the dataset under **Import Options**. Copy the code under **Code Preview**. Click on the "Import" button. Paste the code you have copied earlier to your **Script File**.
 
-**File → New File → R Script…**
-
-Set the working directory to the one that contains the Titanic dataset via the menu:
-
-**Session → Set Working Directory → Choose Directory…**
-
-Save the file in that working directory and name it **"Analysis of the Titanic Dataset"**.
-
-You now can start to write your codes in the script.
-
-## 3. Data Import and Initial Inspection
-
-### Exercise 6
-
-**Import the dataset** by clicking on `Import Dataset` from the **Environment** pane.
-
-1.  Assign an appropriate name to the `dataset` as an R object under **Import Options**; here, we use `titanic`, but you may choose a different name. Specify `NA` as the missing value indicator since, in our Excel file, missing values are coded as `NA`. In the future, you may encounter other representations of missing values, such as `missing`, `404`, `-99` or `unknown`, which should also be treated as `NA`.
-
-2.  The code needed to import the dataset is generated in the **Code Preview** pane. Copy this to your R Script file in case you need to load the data again later or if you need to share your code with a colleague. The code will look like this.
-
-```{r, echo=TRUE}
+```{r}
+#| echo: false
+#| warning: false
 library(readxl)
-
-titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
-titanic
+titanic <- read_excel("../slides/data/Titanic3.xlsx")
+View(titanic)
 ```
 
-::: callout-note
-The data is imported via the `readxl` package. `View(titanic)` makes the whole dataset visible in a spreadsheet-like format.
-:::
+a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane).
 
-3.  What are the values of the `survived` variable?
-
-<details>
-
-<summary>[Click to see the dataset]{style="color:blue"}</summary>
-
-```{r echo=F}
-print(titanic)
-```
-
-</details>
-
-### Exercise 7
-
-Use `head` and `tail` functions to inspect the first 4 and last 4 records (instead of 6 which is the default).
-
-Override the **tibble** format using function `as.data.frame` in order to show all columns.
-
-::: callout-note
-Often, it is sufficient to show a few records of the total data set. This can be done via selections on the rows, but another option is to use the functions `head` and `tail`.
-:::
-
-<details>
-
-<summary>[Click to see the answers]{style="color:blue"}</summary>
-
-```{r head-tail}
-head(titanic,4)
-tail(titanic,4)
-head(as.data.frame(titanic),4)
-tail(as.data.frame(titanic),4)
-```
-
-</details>
-
-### Exercise 8
-
-Use the `dim` function to find the number of rows (passengers) and columns (variables) in the data.
-
-<details>
-
-<summary>[Click to see the answers]{style="color:blue"}</summary>
+b.  Use the function `dim` to find the number of rows (passengers) and columns (variables) in the data set.
 
 ```{r}
 dim(titanic)
 ```
 
-</details>
-
-Use the `str` and `glimpse` function to inspect the dataset
-
-::: callout-note
--   The functions `str` and `glimpse` give a summary of the basic characteristics per column: **type of variable, first records, levels in case of factor variables, as well as the total number of rows and columns**.
--   We have the package `tidyverse` installed on out computer, so we can directly refer to the `glimpse` function; we do not need to load the package `dplyr`.
-:::
-
-<details>
-
-<summary>[Click to see the answers]{style="color:blue"}</summary>
+c.  Use the `str` function to obtain a summary of the basic characteristics per variable. Have a look at the columns for `survived` and `age`. Do they have the mode that you expect? (You can also use the `mode` function to check their modes.)
 
 ```{r}
 str(titanic)
-dplyr::glimpse(titanic)
+mode(titanic)
 ```
 
-</details>
+## Exercise 4: some columns summarized
 
-## 4. Data Summarization
+A problem with the mode for age is that missing values are coded as a character value `"NA"` in our Excel file; it is not recognized as an R type NA value. In the future, you may encounter other representations of missing values, such as `missing`, `404`, `-99` or `unknown`, which should also be treated as `NA`. Read in the data set as `titanic` object again, but specify `NA` as the missing value indicator under **Code Preview**. Your code under **Code Preview** should now look like
 
-### Exercise 9
+```{r}
+#| echo: true
+library(readxl)
+titanic <- read_excel("../slides/data/Titanic3.xlsx", na = "NA")
+View(titanic)
+```
 
-Next, we give a summary of all variables. Summarize the dataset using the `summary` function.
+a.  Issue the commands
 
-::: callout-note
-`summary` gives a summary of all the variables in the data set.
+```{r}
+#| echo: true
+head(titanic, 10)
+tail(titanic, 10)
+```
 
-We can see that for categorical variables like `pclass` a frequency distribution is given, whereas for continuous variables like `age` numerical summaries are given. Still, for some variables we may not get what we expect or prefer.
+What do you observe?
 
--   The variable `survived` is dichotomous with values zero and one, which are interpreted and summarized as numbers.
--   The categorical variable `pclass` is represented differently from the categorical variable `home_dest`.\
--   The variable `dob`, which gives the date of birth, is represented by large negative numbers.
+b.  The `readxl` package that is used to import the data stores the data as a `tibble`, which is a special type of format on top of the `data.frame` format to store data in R. Override the `tibble` format using the function `as.data.frame`.
 
-We will come back to that later. First we give some further summaries.
-:::
+```{r}
+#| echo: true
+titanic <- as.data.frame(titanic)
+```
 
-<details>
+Run the `head` and `tail` functions again.
 
-<summary>[Click to see the answers]{style="color:blue"}</summary>
+```{r}
+head(titanic, 10)
+tail(titanic, 10)
+```
+
+c.  Summarize the whole dataset using the `summary` function. What do you observe for each of the variables?
+
+```{r summary}
+summary(titanic)
+```
+
+d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may have to take a look at the `help` files for the functions `quantile`, `IQR` and `sd`.
+
+```{r}
+## some quantiles
+quantile(titanic$age, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
+quantile(titanic$fare, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
+## the IQR (note that this is a single number)
+IQR(titanic$age, na.rm=TRUE)
+IQR(titanic$fare, na.rm=TRUE)
+## the the standard deviation
+sd(titanic$age, na.rm = TRUE)
+sd(titanic$fare, na.rm = TRUE)
+```
+
+e.  For categorical variables, `summary` is not very informative. Use the `table` function to summarize the variables `pclass`, and `sex`. Also give a two-by-two table for sex and survival status using the same `table` function. Again, have a look at the help file if needed.
+
+```{r}
+## basic tables
+table(titanic$pclass)
+table(titanic$sex)
+table(titanic$sex, titanic$survived)
+# has no added value because no missings
+table(titanic$sex, titanic$survived, useNA = "always")
+```
+
+f.  The function `addmargins` adds the row sums and the column sums to the table of survival status by sex. The function `proportions` tabulates proportions instead of absolute numbers.
+
+```{r}
+#| echo: true
+addmargins(table(titanic$sex, titanic$survived))
+proportions(table(titanic$sex, titanic$survived))
+```
+
+Use the `proportions` function to compute the fraction (or percentage) of survivors by sex.
+
+```{r}
+## basic tables
+proportions(table(titanic$sex, titanic$survived), margin = 2)
+```
+## Exercise 5: work with subsets
+
+a.  Take a look at the name, and the home town/destination of all passengers who were older than 70 years. Use the appropriate selection functions.
+
+```{r}
+subset(titanic,age>70)[,c("name","home_dest")]
+```
+
+It is seen that there is one person from Uruguay in this group. Select the single record from that person. Did this person travel with relatives?
+
+```{r}
+subset(titanic, name=="Artagaveytia, Mr. Ramon")
+```
+
+b.  Make a table of survivor status by sex, but only for the first class passengers. What do you observe? Compare this with the survival status for the 3rd class passengers.
+
+```{r}
+first <- xtabs(~sex+survived, data=titanic, subset=(pclass=="1st"))
+first
+third <- xtabs(~sex+survived, data=titanic, subset=(pclass=="3rd"))
+third
+```
+
+## Exercise 6: make factor variables
+
+a.  Make passenger class and sex into factor variables.
+
+b.  Add a variable `status` to the Titanic data set, which gives the survival status of the passengers as a factor variable with labels "no" and "yes" describing whether individuals survived. Make the value "no" the first level.
+
+```{r add-status}
+titanic$status <- factor(titanic$survived, labels=c("no","yes"))
+```
+
+c.  Run the `summary` function again. What change do you observe compared to Exercise 4?
 
 ```{r}
 summary(titanic)
 ```
 
-</details>
 
-### Exercise 10
+## Exercise 7: working with dates
 
-::: callout-note
-We can also summarize specific columns (variables) of a `data.frame`. There are many ways to summarize a variable, depending on its structure and variability.
-
--   For continuous variables, the same summary function can be used, but other options are the functions `mean, quantile, IQR, sd` and `var`.
-
--   For categorical summaries, one may use `summary` and `table`.
-
--   Note that the way missing values are dealt with is not the same for all functions.
-:::
-
-Summarize the age variable in the `Titanic data set` (the age column is selected via `titanic$age`).
-
--   Give the 5%, 25%, 50%, 75% and 95% quantiles and the inter-quartile range. You may have to take a look at the `help` files for the functions.
-
-Summarize the `survived` variable using the `table` function.
-
--   Also give a two-by-two table for sex and survival status using the same `table` function.
-
-<details>
-
-<summary>[Click to see the answers]{style="color:blue"}</summary>
+a.  The variable `dob` gives the date of birth, using days since January 1st, 1960 (this is the time origin used by Stata). Transform this to a true date value using the function `as.Date` (specify the origin argument).
 
 ```{r}
-## some quantiles
-quantile(titanic$age, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
-## the IQR (note that this is a single number)
-IQR(titanic$age, na.rm=TRUE)
-## survival status
-table(titanic$survived)
-table(titanic$sex, titanic$survived)
-table(titanic$sex, titanic$survived, useNA="always") # has no added value
-addmargins(table(titanic$sex, titanic$survived))
+#| echo: true
+titanic$dob <- as.Date(titanic$dob, origin = "1960/1/1")
 ```
 
-</details>
+b.  The default display is "year/month/day". Make a table of the day of the month that the passengers were born, using the `format` function.
+
+```{r}
+#| echo: true
+table(format(titanic$dob, "%d"))
+```
+
+c.  What was the earliest date of birth among all the passengers on the boat. Does this correspond to the age of the oldest person on the date that the ship sank (April 15th, 1912)?
+
+```{r}
+#| echo: true
+min(titanic$dob, na.rm = TRUE)
+max(titanic$age, na.rm = TRUE)
+min(titanic$dob, na.rm = TRUE) + max(titanic$age, na.rm = TRUE) * 365.25
+```

@@ -12,12 +12,6 @@ date-format: '[Last version:] MMMM DD, YYYY'
 format: 
   pdf:
     fontsize: 12pt
-  html:
-    scrollable: true
-    code-tools:
-      source: true
-      toggle: false
-      caption: Code    
 toc: TRUE
 lof: FALSE
 lot: FALSE
@@ -88,6 +82,7 @@ Import the dataset by clicking on **Import Dataset** from the **Environment** pa
 
 ```{r}
 #| echo: false
+#| warning: false
 library(readxl)
 titanic <- read_excel("../slides/data/Titanic3.xlsx")
 View(titanic)
@@ -138,9 +133,30 @@ titanic <- as.data.frame(titanic)
 
 Run the `head` and `tail` functions again.
 
+```{r}
+head(titanic, 10)
+tail(titanic, 10)
+```
+
 c.  Summarize the whole dataset using the `summary` function. What do you observe for each of the variables?
 
+```{r summary}
+summary(titanic)
+```
+
 d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may have to take a look at the `help` files for the functions `quantile`, `IQR` and `sd`.
+
+```{r}
+## some quantiles
+quantile(titanic$age, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
+quantile(titanic$fare, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
+## the IQR (note that this is a single number)
+IQR(titanic$age, na.rm=TRUE)
+IQR(titanic$fare, na.rm=TRUE)
+## the the standard deviation
+sd(titanic$age, na.rm = TRUE)
+sd(titanic$fare, na.rm = TRUE)
+```
 
 e.  For categorical variables, `summary` is not very informative. Use the `table` function to summarize the variables `pclass`, and `sex`. Also give a two-by-two table for sex and survival status using the same `table` function. Again, have a look at the help file if needed.
 
@@ -149,7 +165,8 @@ e.  For categorical variables, `summary` is not very informative. Use the `table
 table(titanic$pclass)
 table(titanic$sex)
 table(titanic$sex, titanic$survived)
-table(titanic$sex, titanic$survived, useNA = "always") # has no added value because no missings
+# has no added value because no missings
+table(titanic$sex, titanic$survived, useNA = "always")
 ```
 
 f.  The function `addmargins` adds the row sums and the column sums to the table of survival status by sex. The function `proportions` tabulates proportions instead of absolute numbers.
@@ -166,12 +183,28 @@ Use the `proportions` function to compute the fraction (or percentage) of surviv
 ## basic tables
 proportions(table(titanic$sex, titanic$survived), margin = 2)
 ```
+## Exercise 5: work with subsets
 
 a.  Take a look at the name, and the home town/destination of all passengers who were older than 70 years. Use the appropriate selection functions.
 
+```{r}
+subset(titanic,age>70)[,c("name","home_dest")]
+```
+
 It is seen that there is one person from Uruguay in this group. Select the single record from that person. Did this person travel with relatives?
 
+```{r}
+subset(titanic, name=="Artagaveytia, Mr. Ramon")
+```
+
 b.  Make a table of survivor status by sex, but only for the first class passengers. What do you observe? Compare this with the survival status for the 3rd class passengers.
+
+```{r}
+first <- xtabs(~sex+survived, data=titanic, subset=(pclass=="1st"))
+first
+third <- xtabs(~sex+survived, data=titanic, subset=(pclass=="3rd"))
+third
+```
 
 ## Exercise 6: make factor variables
 
@@ -179,7 +212,16 @@ a.  Make passenger class and sex into factor variables.
 
 b.  Add a variable `status` to the Titanic data set, which gives the survival status of the passengers as a factor variable with labels "no" and "yes" describing whether individuals survived. Make the value "no" the first level.
 
+```{r add-status}
+titanic$status <- factor(titanic$survived, labels=c("no","yes"))
+```
+
 c.  Run the `summary` function again. What change do you observe compared to Exercise 4?
+
+```{r}
+summary(titanic)
+```
+
 
 ## Exercise 7: working with dates
 
