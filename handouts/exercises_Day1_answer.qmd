@@ -31,12 +31,43 @@ c.  Select all elements except the 15th. Hint: use a minus sign
 d.  Select the 2nd and 5th element of the vector
 e.  Select only the odd valued elements of `vec`.
 
-*Remark: Exercise e. is not an easy exercise. We advise you to do this is in two steps. First create a vector `index` that selects the odd numbers in `vec`, using the function `seq`. You may need to consult the help page of `seq` via `help(seq)`.*
+*Remark: Exercise e. is not an easy exercise. We advise you to do this is in two
+steps. First create a vector `index` that selects the odd numbers in `vec`, using the
+function `seq`. You may need to consult the help page of `seq` via `help(seq)`.*
+
+```{r}
+# a.
+vec <- seq(11,30)
+# b.
+vec[7]
+# c.
+vec[-15]
+# d.
+vec[c(2,5)]
+# e.
+index <- seq(1,length(vec),by=2)
+vec[index]
+```
 
 ## Exercise 2: some calculations
 
 a.  Use the elementary functions `/`, `-`, `^` and the function `sum` to calculate the mean $$\bar{x}=\sum_{i=1}^n x_i/n$$ and the standard deviation $$\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2/(n-1)}$$ of the fare paid by the titanic passengers. Note: $n=10$.
 b.  Verify your answer by using the built-in R functions `mean` and `sd`.
+
+```{r}
+# a.
+fare <- titanic$fare
+MeanFare <- sum(fare)/length(fare)
+MeanFare
+# standard deviation (in three baby steps)
+numerator <- sum((fare-MeanFare)^2)
+denominator <- (length(fare)-1)
+StdFare  <- sqrt(numerator/denominator)
+StdFare
+# b.
+mean(fare)
+sd(fare)
+```
 
 ## RStudio
 
