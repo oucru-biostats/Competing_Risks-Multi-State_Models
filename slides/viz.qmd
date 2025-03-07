@@ -1,5 +1,5 @@
 ---
-title: "Visualisation"
+title: "Principles of Data Visualisation"
 subtitle: "The step-by-step process of creating graphs in R"
 author: "Ronald Geskus and Thinh Ong Phuc"
 engine: knitr
@@ -20,6 +20,166 @@ format:
 revealjs-plugins:
   - codewindow
 ---
+
+# Introduction
+
+## What to expect ##
+
+How to make an informative visual representation of data and/or results
+
+- **Part I**: process of graph creation 
+- **Part II**: principles of graph interpretation
+
+::: {.callout-note}
+*Graph* = diagram = chart = figure = picture
+:::
+
+
+
+##  ##
+
+:::::: columns
+:::: {.column width="60%"}
+![ ](figures/viz/picture1000words.jpg){fig-align="left"}
+::::
+
+::: {.column width="40%" .fragment}
+
+But it takes
+
+- knowledge of graphics principles
+- effort; trial and error
+- time
+
+:::
+:::::: 
+
+
+
+
+## Who created this graph? ##
+
+![ ](figures/viz/nightingale-mortality.jpg){fig-align="center"}
+
+
+## Answer: Florence Nightingale ##
+
+Rose plot to convince UK authorities of importance of hygiene
+
+![ ](figures/viz/florencenightingale.jpg){fig-align="center"}
+
+## Example of informative graph ##
+
+![ ](figures/viz/hubeitimeline.png){fig-align="center"}
+
+## Example of noninformative graph {.smaller}
+
+ [Hinrichsen](https://pubmed.ncbi.nlm.nih.gov/11812878/): risk factors for hepatitis G infection in haemodialysis patients
+ 
+- Do we need a graph?
+  
+  Are there enough data points to merit a plot?
+
+    - Depends on mode of presentation: conference lecture (time limit), article
+
+- If we use a graph, is this one the most truthful and informative?
+
+![ ](figures/viz/hgv.jpg){fig-align="center" width=300}
+
+## Graph versus table ## {.smaller}
+
+Cohort study on 1187 HIV infected persons in The Gambia
+
+:::::: columns
+:::: {.column width="20%"}
+![ ](figures/viz/tableage.png){fig-align="center" width=60%}
+::::
+
+::: {.column width="80%" .fragment}
+
+![ ](figures/viz/histage.png){fig-align="center"}
+
+:::
+:::::: 
+
+
+## Pattern discovery (fake results) ##
+
+![ ](figures/viz/ElectionRussia.png){fig-align="center"}
+
+## Points to consider 
+
+-   <span style="color:red;">Why</span> do we make a graph? (purpose)
+
+    1.  We want to explore and inspect our data or results
+
+    2.  Present data or results, often with a message, to others
+	
+::: {.fragment}
+-   <span style="color:red;">Where</span> do we show the graph: research paper, conference,
+    website
+:::
+::: {.fragment}
+-   <span style="color:red;">Who</span> is the audience. Level of background knowledge
+:::
+::: {.fragment}
+
+-   <span style="color:red;">What</span> do we want to show (data)
+
+    -   Graph: visual representation of information ("encoding")
+	
+         mapping from data/results to figure
+:::
+
+# The Grammar of Graphics #
+
+
+## The origin
+
+:::::: columns
+:::: {.column width="60%"}
+The author
+
+- Leland Wilkinson, *The Grammar of Graphics*, Springer 2005
+- Author of SYSTAT; 1995: sold to SPSS
+- 1994 - 2007: Senior VP, SPSS
+::::
+
+::: {.column width="40%"}
+
+![ ](figures/viz/BookSpringerVS1.jpg){fig-align="center"}
+
+:::
+:::::: 
+
+
+## What is a grammar {.smaller}
+
+- Purpose: express ideas or information in a coherent way
+
+- Natural language grammar:
+	- Defines components of a sentence (verb, noun, ...) and rules how to combine
+      them
+	- Does not advise on the choice between synonymous words or whether a sentence is
+meaningful; one can write grammatically correct nonsense
+
+- Graphics grammar: 
+  - Defines components of a statistical graph and rules how to combine them
+  - Does not advise on the best choice of scale (linear, logarithmic), color or line type
+
+
+## Main components of a statistical graph (R terminology)
+
+- Mapping from data to <span style="color:red;">aesthetic attributes</span> of <span
+  style="color:red;">geometric objects</span>
+
+- <span style="color:red;">Geometic objects</span>: what you see on the plot (points, lines, bars)
+
+- <span style="color:red;">Aesthetic attributes</span>: "role" of variables in plot:
+location (often along x-axis and y-axis), colour, size, shape
+
+
+
 
 ## Scatter plot
 
@@ -308,6 +468,19 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ::::
 
+## Main components of a statistical graph (R terminology)
+
+- Mapping from data to aesthetic attributes of geometric objects
+
+- Geometic objects: what you see on the plot (points, lines, bars)
+
+- <span style="color:red;">Aesthetic attributes</span>: "role" of variables in plot:
+location (often along x-axis and y-axis), colour, size, shape
+
+- <span style="color:red;">Scales</span>: map data values to aesthetic attributes
+
+
+
 ## Refine the plot {.smaller}
 
 :::: columns
@@ -542,7 +715,7 @@ simulated_covid <- readRDS("data/simulated_covid.rds")
 simulated_covid
 ```
 
-## Some frequently used `geom_*`
+## Some frequently used `geom_*`
 
 ::: {.r-fit-text}
 **Example:** creating a bar chart for number of covid incidence over time 
@@ -897,6 +1070,27 @@ ggsave(
   dpi = 200 # set resolution
 )
 ```
+
+## Main components of a statistical graph (R terminology)
+
+- Mapping from data to aesthetic attributes of geometric objects
+
+- Geometic objects: what you see on the plot (points, lines, bars)
+
+- Aesthetic attributes: "role" of variables in plot:
+location (often along x-axis and y-axis), colour, size, shape
+
+- Scales: map data values to aesthetic attibutes
+
+Cartesian, polar, map projections. (Networks, trees have no coordinate
+system)
+
+separate panels (subfigures)
+
+Not about [graph type](https://www.data-to-viz.com/); ($\approx$
+language, words).\
+Not about font size, background colour ... Some of these are specified
+in a <span style="color:red;">theme</span>
 
 
 # Advance `ggplot2`

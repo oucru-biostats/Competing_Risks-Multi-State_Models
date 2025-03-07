@@ -302,7 +302,7 @@ class(titanic)
 
 ## The apply  functions
 
-- `apply`: 
+- `apply`: apply a function over all columns or all rows of a data.frame
 
 - `lapply`: apply a function over a list
 
