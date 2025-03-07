@@ -23,9 +23,9 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 
 - Prof. Ronald Geskus, Biostatistics group, OUCRU HCM
 - Dr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
-- Tuyen Huynh, Mathematical Modeling group, OUCRU HCM
+- Mr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
-- Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
+- Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Hai Ho Bich, Emerging Infections group, OUCRU HCM
 - Dr. Marc Choisy, Mathematical Modeling group, OUCRU HCM
 - Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
