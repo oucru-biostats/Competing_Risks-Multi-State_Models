@@ -28,9 +28,6 @@ format:
           <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
 filters: 
   - webr
-  - assign
-profile: 
-  default: assign
 ---
 
 ## Learning goals {.smaller} 
@@ -62,22 +59,15 @@ profile:
   - required: need to be supplied
   - optional: have default values
 
-    Beware of sequence of arguments; required ones come first
-
-	```{webr-r}
-	log(1000)           # natural log, does not give 3
-    help(log)
+    Beware of sequence of arguments; required ones come first. Compare
+	```{.r}
     log(1000, 10) 
-    log(10, 1000)       # gives 1000-log of 10
-    log(base=10, x=1000) # x required, base optional with natural log as default
-    log(b=10,x=1000)     # Argument names can be abbreviated if no risk of ambiguity
+    log(10, 1000) 
 	```
 
 ::: {.fragment}
-- Special "argument": `...`
-  
-  anything that makes sense, e.g. `...` in `c` and `paste` function
-
+- Some functions have special "argument": `...`  
+  Meaning: anything that makes sense. Example: in `c` and `paste` function, which allow for the use of many values to
 - Output: result of calculations (typically assigned to R object), graphics, help
    window, etc.
 
@@ -116,11 +106,11 @@ good.morning()
 - Base graphics (package *graphics*)
   - Straightforward to use
   - Always loaded when R is started
-  - See Ch.\ 12 of manual [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
+  - See Ch.\ 12 of manual [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf){target="_blank"}
 	
 ::: {.fragment}
 - lattice package. Less popular nowadays. Not covered here. 
-- ggplot2 package: Wednesday morning
+- **ggplot2** package: Wednesday morning
 - Note: these systems cannot be mixed
 - Each of these systems has many packages with extensions
 :::
@@ -132,6 +122,9 @@ good.morning()
 ```{.r}
 plot(titanic$age, titanic$fare)
 ```
+What would you like to change to make it good enough for publication? 
+
+::: {.fragment}
 
 - Formula based specification
     - general form: `dependent ~ independent`
@@ -141,26 +134,22 @@ plot(titanic$age, titanic$fare)
     - independent: variable names separated by operator (mostly `+` and `*`)
     - functions with formula (as first argument) have `data` and `subset` argument
     - basis for specification of regression models
-
-::: {.fragment}
-What would you like to change to make it good enough for publication? 
--  [Good summary on base graphics (page 5)](http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf){target="_blank"}
 :::
 
 ::: {.fragment}
-change labels along axes, rotate numbers along y-axis, add regression line, rescale fare
+
+-  Good summary on base graphics on page 5 of [Reference card](http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf){target="_blank"}
+:::
+
+::: {.fragment}
+*Some possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare*
 ::: 
 
 ## Use base graphics for simple tasks
 
-Example: show logarithmic transformation via plot
+Example: explain logarithmic scale via graph
 
-First show exponential increase
-```{.r}
-x <- seq()
-```
-
-## Arguments and parameters that can be changed ##
+## Arguments and parameters that can be changed {.smaller}
 
 - Within function only
   - `xlab`, `ylab`, `main`
@@ -197,10 +186,10 @@ plot(titanic$age, titanic$fare)
 
 2. Make a histogram of age
 
-::: {fragment}
+::: {.fragment}
 3. Make a boxplot of fare by passenger class. 
   
-   There are high values for fare that disturb the plot. Therefore, only show the
+4. There are high values for fare that disturb the plot. Therefore, only show the
 fare up to 300 British Pounds.
 :::
 
@@ -208,36 +197,45 @@ fare up to 300 British Pounds.
 
 ## Export: two types of formats {.smaller}
 
-- Vector format (pdf, eps, wmf, emf)
+- Vector format (pdf, eps, wmf, emf, svg)
   - digital image consisting of independent geometric objects
         (segments, polygons, curves, etc.)
   - can be enlarged without losing resolution
-- Raster (png, jpeg, tiff).
+- Raster (png, jpeg, tiff, bmp).
   - rectangular grid of pixels, possibly with color
   - resolution impaired if image is enlarged
 - Graphics can be saved via the menu in the graphics/plots window, or
-    a specific graphics file type can be created directly (via
-    `pdf("foo.pdf",...)`, or `win.metafile("foo.wmf",...)` or
-    `png("foo.png",...)` and ending with `dev.off()`)
+    a specific graphics file type can be created directly via code
+
+```{.r}
+pdf("foo.pdf",...)
+...
+dev.off()
+```
+or `win.metafile("foo.wmf",...)` or `png("foo.png",...)` and ending with `dev.off()`
 	
 	
 # Some further topics about R
 
 ## Structure of R program {.smaller}
 
-- **Objects**: data, functions, results analysis
+- Everythin created and stored is an **object**: data, functions, results analysis if assigned within R session
 
-- **Environment**: a collection of objects that is accessible in R session.
-  1. Our "Workspace", objects we create/import in RStudio: **Global Environment** in
+::: {.fragment}
+
+- **Environment**: a collection of objects that is accessible in R session
+  1. **Workspace**: objects we create/import in RStudio: **Global Environment** in
         **Environment** pane
   2. Packages with existing functions and data sets: **base**,
         **stats**, **graphics**
-  3. When a package is loaded, a new environment is created
+  3. When a package is loaded in R session, a new environment is created
 
      Listing of environments shown in RStudio via drop-down list under **Global
     Environment** in **Environment** pane
-- Hierarchical structure of environments; needed for dealing with duplicate names
-	
+- Hierarchical structure of environments; needed for dealing with masked objects due
+to duplicate names
+:::
+
 ## R resembles operating system
 
 | R                               |  operating system           |
@@ -248,19 +246,32 @@ fare up to 300 British Pounds.
 | **Environment** pane in RStudio | Explorer window             |
 
 
-## Object specific functions
+## Object specific functionality (I)
 
 - Output of function depends on *class* of object
 
 Examples:
-  -   `summary`: `summary.data.frame`, `summary.factor`, `summary.Date` default: `summary.default`
-  -   `plot`: `plot(y ~ x, data=..., ...)`
+
+-   `summary`:  
+  `summary.data.frame`, `summary.factor`, `summary.Date`  
+   default: `summary.default`
+-  `plot`: `plot(y ~ x, data=..., ...)`
   
         Plot depends on class of `x`: scatterplot is default, but
         boxplot if `x` is of class factor and plot by year if `x` is of class date
 
-## Lists {.smaller}
+## Object specific functionality (II)
 
+Why important to know?
+
+- Finding information in help file
+- Very efficient in use. E.g. `plot` is a *generic function*, with specific methods
+    depending on the class of the object that is the argument of the function.  
+	*We only need to remember `plot`*
+
+## Another object mode: list {.smaller .scrollable}
+
+- General mode to store information
 - Modes cannot be mixed in vectors
 ```{webr-r}
 teacher <- c("Ronald","Thinh","Tuyen")
@@ -288,19 +299,29 @@ class(titanic)
 -   Search on Google (using `language r:`)
 
 -   chatGPT or an R package such as
-    [askgpt](https://www.johannesbgruber.eu/post/2023-04-02-introducing-askgpt-a-chat-interface-that-helps-you-to-learn-r/)
-    or [ellmer](https://cran.r-project.org/web/packages/ellmer/index.html)
+    [askgpt](https://www.johannesbgruber.eu/post/2023-04-02-introducing-askgpt-a-chat-interface-that-helps-you-to-learn-r/){target="_blank"}
+    or [ellmer](https://cran.r-project.org/web/packages/ellmer/index.html){target="_blank"}
 
--   [R documentation](https://www.rdocumentation.org), [Rseek](http://rseek.org)
+-   [R documentation](https://www.rdocumentation.org){target="_blank"}  
+[Rseek](http://rseek.org){target="_blank"}
 
--   [R-universe](https://r-universe.dev/search)
+-   [R-universe](https://r-universe.dev/search){target="_blank"}
 
--   CRAN ([Task Views](https://cran.r-project.org/web/views/), [FAQs](https://cran.r-project.org/faqs.html), Vignettes, list with packages)
-    [CRANsearcher](https://github.com/RhoInc/CRANsearcher) in RStudio
+-   CRAN ([list with packages](https://cloud.r-project.org/){target="_blank"}, [Task Views](https://cran.r-project.org/web/views/){target="_blank"}, [FAQs](https://cran.r-project.org/faqs.html){target="_blank"}, Vignettes)
 
--   [Stack Overflow](http://stackoverflow.com/questions/tagged/r)
+    [CRANsearcher](https://github.com/RhoInc/CRANsearcher){target="_blank"} in RStudio
+
+-   [Stack Overflow](http://stackoverflow.com/questions/tagged/r){target="_blank"}
 
 -   Have a look at the links provided at the end of the handout
+
+## Exercise
+
+Find information on 
+
+- descriptive statistics
+- change several categorical variables into factor
+- recognize nonstandard date formats
 
 ## The apply  functions
 
@@ -314,3 +335,7 @@ class(titanic)
 - `tapply`: can be used to split a vector in subgroups and apply a
     function to each of the subgroups
 
+## Exercise
+
+- Make a summary of age by passenger class
+- 
