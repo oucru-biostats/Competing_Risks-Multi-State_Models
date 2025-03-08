@@ -287,13 +287,15 @@ class(titanic)
 
 -   Search on Google (using `language r:`)
 
--   chatGPT or  [askgpt](https://www.johannesbgruber.eu/post/2023-04-02-introducing-askgpt-a-chat-interface-that-helps-you-to-learn-r/)
+-   chatGPT or an R package such as
+    [askgpt](https://www.johannesbgruber.eu/post/2023-04-02-introducing-askgpt-a-chat-interface-that-helps-you-to-learn-r/)
+    or [ellmer](https://cran.r-project.org/web/packages/ellmer/index.html)
 
 -   [R documentation](https://www.rdocumentation.org), [Rseek](http://rseek.org)
 
 -   [R-universe](https://r-universe.dev/search)
 
--   CRAN (Task Views, Vignettes, list with packages)
+-   CRAN ([Task Views](https://cran.r-project.org/web/views/), [FAQs](https://cran.r-project.org/faqs.html), Vignettes, list with packages)
     [CRANsearcher](https://github.com/RhoInc/CRANsearcher) in RStudio
 
 -   [Stack Overflow](http://stackoverflow.com/questions/tagged/r)

@@ -167,7 +167,7 @@ x
   - Columns: variables
   - Rows: observations
 - Example: [titanic3](https://hbiostat.org/data/repo/ctitanic3){target="_blank"} data set; passenger
-  characteristics and survival status after disaster with the [Titanic cruise ship](https://www.encyclopedia-titanica.org/)
+  characteristics and survival status after disaster with the [Titanic cruise ship](https://www.encyclopedia-titanica.org/){preview-link="true"}
 
 
 ```{webr-r}
@@ -196,6 +196,7 @@ titanic
 Select age of passengers 6 and 10
 ```{webr-r}
 #| label: "age selections 6 and 10"
+titanic$age
 titanic$age[6,10]    # gives an error
 titanic$age[c(6,10)] # c is function to combine values
 ```
@@ -206,7 +207,6 @@ Select age of passengers 6 to 10
 titanic$age[c(6,7,8,9,10)] 
 6:10               # short notation for c(6,7,8,9,10)
 seq(6,10,by=1)     # same as 6:10
-titanic$age[6:10] 
 ```
 
 Flexibility of `seq` function
@@ -219,7 +219,7 @@ seq(1,10,by=2)     # only odd numbers
 
 ## Data: selection of rows and columns {.smaller}
 
-- Via square brackets `dataset[rows, cols]`
+- Via square brackets and a comma: `dataset[rows, cols]`
 
 ```{webr-r}
 #| label: "selections in data"
@@ -229,9 +229,9 @@ titanic[6,10]
 ## That's why titanic$age[6,10] is not allowed
 ```
 
-Columns: selection by name
+Columns: selection by name of columns
 ```{webr-r}
- titanic[c(2,3), c("name","pclass")]
+titanic[c(2,3), c("name","pclass")]
 ```
 
 
@@ -290,7 +290,8 @@ vec[index]
 Use the elementary functions `/`, `-`, `^` and the function `sum` to
     calculate the mean $$\bar{x}=\sum_{i=1}^n x_i/n$$ and the standard deviation
     $$\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2/(n-1)}$$ of the fare paid by the titanic
-    passengers. Note: $n=10$. Verify your answer by using the built-in R functions `mean`
+    passengers. Note: $n=10$.  
+	Verify your answer by using the built-in R functions `mean`
     and `sd`.
 ```{webr-r}
 ## compute mean:
@@ -336,7 +337,9 @@ sd(fare)
 ::: {.fragment fragment-index=2}
 **Example**
 
-Thinh told Ronald: ***"Please give feedback on my measles model manuscript before next Friday"***. How does this translate into R?
+Thinh told Ronald: ***"Please give feedback on my measles model manuscript before
+next Friday"***.  
+How does this translate into R?
 :::
 
 ::: {.fragment fragment-index=3}
@@ -345,7 +348,7 @@ give_feedback(type = "manuscript", which = "measles model", deadline = "next Fri
 ```
 :::
 
-## Functions (II) {.smaller}
+## Functions (II) {.smaller .scrollable}
 
 ::: {.incremental}
 - Everything we do in R boils down to running a function:
@@ -359,19 +362,23 @@ give_feedback(type = "manuscript", which = "measles model", deadline = "next Fri
  
   E.g. `help(mean)`: `mean` is argument of function `help`. Output is the appearance
   of a page with information on the `mean` function
-- Many calculation functions are vectorized
-
-  Example: change unit of age to decade (10 years)
-  ```{webr-r}
-  #| label: "vectorized calculations"
-  titanic$age/10 # age per 10 years for each person  
-  ```
-  What does this give:
-  ```{webr-r}
-  c(2, 15) + c(10, -3)
-  ```
 
 :::
+
+## Many calculation functions are vectorized ##
+
+- Example: change unit of age to decade (10 years)
+```{webr-r}
+#| label: "vectorized calculations"
+titanic$age/10 # age per 10 years for each person 
+```
+
+- What does this code give:
+```{webr-r}
+c(2, 15) + c(10, -3)
+```
+
+- More general: iteration via **apply** functions (Tuesday) and the **purrr** package (Thursday) 
 
 ## Objects {.smaller}
 
@@ -574,6 +581,7 @@ Consists of 4 main panes
   - [tidyverse](https://www.tidyverse.org){preview-link="true"}
   - [WHO TB data](https://github.com/seabbs/getTBinR){target="_blank"}
   - [AMR](https://msberends.r-universe.dev/articles/AMR/welcome_to_AMR.html){preview-link="true"}
+  - [pharmaverse](https://pharmaverse.github.io/blog/posts/2025-02-28_theres_a_pharmaverse_package_for_that/managing-clinical-trial-data.html){preview-link="true"}
   - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html){preview-link="true"}
   - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html){preview-link="true"}
   - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html){preview-link="true"}
@@ -581,20 +589,23 @@ Consists of 4 main panes
 
 -   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/){preview-link="true"}
 	
-## Packages, where to find them?
+## Packages, where to find them? {.smaller}
 
 
 - [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html){preview-link="true"}
     (22127 packages on March 3, 2025)
 - [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=){target="_blank"} (31311 packages on March 3, 2025)
 - [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software){preview-link="true"}
+- [Review](https://rworks.dev/posts/january-2025-top-40-new-cran-packages/){target="_blank"}
+
+::: {.fragment}
 - Need to be installed on your computer
 - R program itself also based on packages. Some loaded at startup 
     *base*, *graphics*, *stats*, *utils* ...
 
   E.g. *base* package contains `sqrt` function
 - Other packages need to be loaded before use, best way is via `library` function
-  
+::: 
 
 # Data: import, inspection and management
 
@@ -743,11 +754,11 @@ names(room)
 room["Ronald"]
 ```
 
-- Same for data sets (dimnames because there are two dimensions):
- ```{webr-r}
- dimnames(titanic)
- titanic[c(2,3),c("name","age")]
- ```
+- Same for data sets (use `dimnames` because there are two dimensions):
+```{webr-r}
+dimnames(titanic)
+titanic[c(2,3),c("name","age")]
+```
 
 ## More efficient row selections: "subset" 
 
@@ -757,9 +768,8 @@ room["Ronald"]
 
 ```{.r}
 subset(titanic, pclass %in% c("1st","2nd"))$survived
-## %in% is another logical construct
 ```
-
+Note:`%in%` is another logical construct
 
 - `subset` argument in functions with *formula* structure:
 
