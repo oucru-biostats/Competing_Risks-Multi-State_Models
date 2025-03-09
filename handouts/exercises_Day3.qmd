@@ -26,17 +26,25 @@ execute:
 
 ## Instructions
 
-Import the data set via the code
+Import the data set and load the **ggplot2** package. Change the path to the Excel
+file if it is in another folder on your computer. 
 
 ```{r echo=T, eval=T}
 library(readxl)
 library(ggplot2)
-titanic <- read_excel("../slides/data/Titanic3.xlsx", na="NA")
+titanic <- read_excel("data/raw/Titanic3.xlsx", na="NA")
 ```
 
 ## Exercise 1
 
-Plot the price that was paid (variable `fare`) as a function of age. Assign/map the appropriate variable to the x-axis and y-axis. Next, define the geometric object. Change the label of fare into "fare paid (GBP)". In R: `ggplot(..., aes(...)) + geom_point(...) + ylab(...)` See what happens if you change the coordinate system to polar via `+coord_polar()`.
+Plot the price that was paid (variable `fare`) as a function of age. Assign/map the
+appropriate variable to the x-axis and y-axis. Next, define the geometric
+object. Change the label of fare into "fare paid (GBP)". In R: 
+
+```{.r}
+ggplot(...) + geom_point(...) + ylab(...)
+```
+See what happens if you change the coordinate system to polar via `+ coord_polar()`.
 
 ```{r warning=TRUE}
 ggplot(titanic, aes(age, fare)) + geom_point() + ylab("fare paid (GBP)")
@@ -45,7 +53,11 @@ ggplot(titanic, aes(age, fare)) + geom_point() +
 ```
 
 ## Exercise 2
-Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence intervals through the scatterplot (this is seen as smoothing, choose as method `lm`). Change the overall theme to `bw` and `minimal`. In R: add `... + geom_smooth(method="lm") + theme_bw()`. Save the graph as a png file.
+Return to the cartesian coordinate system. Add a second layer that fits the linear
+regression line with 95% confidence intervals through the scatterplot (this is seen
+as smoothing, choose as method `lm`). Change the overall theme, trying `bw` and
+`minimal`. In R: add `... + geom_smooth(method="lm") + theme_bw()`. Save the graph as
+a png file using the `ggsave` function. .
 
 ```{r}
 ggplot(titanic, aes(age, fare)) + geom_point() + 

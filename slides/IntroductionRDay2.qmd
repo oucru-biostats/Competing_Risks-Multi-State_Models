@@ -198,7 +198,7 @@ fare up to 300 British Pounds.
   - digital image consisting of independent geometric objects
         (segments, polygons, curves, etc.)
   - can be enlarged without losing resolution
-- Raster (png, jpeg, tiff, bmp).
+- Raster format (png, jpeg, tiff, bmp).
   - rectangular grid of pixels, possibly with color
   - resolution impaired if image is enlarged
 - Graphics can be saved via the menu in the graphics/plots window, or

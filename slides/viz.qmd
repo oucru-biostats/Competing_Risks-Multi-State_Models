@@ -1120,6 +1120,18 @@ ggsave(
 )
 ```
 
+
+## Export: two types of formats 
+
+- Vector format (pdf, eps, wmf, emf, svg)
+  - digital image consisting of independent geometric objects
+        (segments, polygons, curves, etc.)
+  - can be enlarged without losing resolution
+- Raster format (png, jpeg, tiff, bmp).
+  - rectangular grid of pixels, possibly with color
+  - resolution impaired if image is enlarged
+
+	
 ## Main components of a graph (R) {.smaller}
 
 - Mapping from data to aesthetic attributes of geometric objects
