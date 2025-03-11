@@ -620,7 +620,7 @@ class(c(12, 13, 14))
 
 ::: {.fragment}
 ```{r}
-str(covid_cases)
+# str(covid_cases)
 ```
 :::
 
