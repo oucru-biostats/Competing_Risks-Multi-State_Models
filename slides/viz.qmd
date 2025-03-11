@@ -1162,8 +1162,9 @@ Tuyen Huynh
 - What does `mapping = aes()` do?
 - Inheritance of data and aesthetics
 - The `annotate()` layer
+- Splitting up with `facet_wrap()`
 - Extending `ggplot2`
-- Interactive 3d plots with `plotly`
+- Interactive plots with `plotly`
 
 
 ## What does `mapping = aes()` do?
@@ -1468,10 +1469,30 @@ head(df)
 ::: {.callout-important}
 In short:
 
-  - You want the aesthetics to change with the data -> put it **inside** `aes()`
-  - You want the aesthetics to be fixed regardless of data -> put it **outside** `aes()`
+  - You want the aesthetics to **change** with the data -> put it **inside** `aes()`*
+  - You want the aesthetics to **be fixed** regardless of data -> put it **outside** `aes()`*
   - The aesthetics must be supported by the geometry
+
+::: {.footnote}
+* This also means that columns names can only be used inside `aes()`
 :::
+
+:::
+
+## Color transparency
+
+In `ggplot2`, you can add transparency to colors with the `alpha` aesthetics (available for most geometries)
+
+```{r}
+#| echo: false
+tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |> 
+  ggplot() +
+  geom_label(aes(label = as.character(alphas), x = (start_x + 0.5), y = 5)) +
+  geom_rect(aes(xmin = start_x, xmax = end_x, alpha = alphas), ymin = 0, ymax = 10, fill = "blue") +
+  scale_x_continuous("", labels = NULL) + 
+  scale_y_continuous("", labels = NULL) + 
+  scale_alpha_continuous(breaks = seq(0.1, 1, 0.1))
+```
 
 ## The `annotate()` layer {.scrollable}
 
@@ -1491,18 +1512,20 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 ```
 :::
 
+
 ## The `annotate()` layer {.scrollable}
 
-Option 1: Simply just use `geom_*()`s, and that's absolutely a valid way
-
+Adding a vertical line with `geom_vline()` and a label with `geom_label()`
 
 ::: {.fragment}
 ```{r}
 #| out-width: "100%"
-ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +                   
+#| code-line-numbers: 6-7
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # main plotting geoms
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
-  # figure annotation geoms
+  # figure annotation geoms (2)
   geom_vline(xintercept = as.Date("2023-03-01"), linetype = 2) +
   geom_label(label = "Start of outbreak", x = as.Date("2023-03-01"), y = 30) +
   # labels
@@ -1515,20 +1538,26 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 :::
 
 
+
 ## The `annotate()` layer {.scrollable}
 
-Option 2: Use the `annotate()` layer, which was specially made for this (very little effort to switch from `geom_*()`s)
-
+Adding a region with `geom_rect()` and a label with `geom_label()`
 
 ::: {.fragment}
 ```{r}
 #| out-width: "100%"
-ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +                   
+#| code-line-numbers: 3-8
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # figure annotation geoms (1)
+  geom_rect(
+    ymin = -Inf, ymax = Inf,
+    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
+    alpha = 0.2, fill = "red"
+  ) +
+  geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  # main plotting geoms
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
-  # figure annotation geoms
-  geom_vline(xintercept = as.Date("2023-03-01"), linetype = 2) +
-  annotate("label", label = "Start of outbreak", x = as.Date("2023-03-01"), y = 30) +
   # labels
   labs(
     title = "New covid cases over time",
@@ -1538,3 +1567,189 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 ```
 :::
 
+
+## The `annotate()` layer {.scrollable}
+
+```{r}
+#| echo: false
+#| out-width: "100%"
+#| code-line-numbers: 3-8
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # figure annotation geoms (1)
+  geom_rect(
+    ymin = -Inf, ymax = Inf,
+    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
+    alpha = 0.2, fill = "red"
+  ) +
+  geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  # main plotting geoms
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  # labels
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+
+We already said `alpha = 0.2` **outside of `aes()`**, why doesn't it have any transparency at all??
+
+## The `annotate()` layer {.scrollable}
+
+::: {.fragment .incremental}
+- I lied
+- Aesthetics are always dependant on the dataset, whether it is outside or inside `aes()`
+:::
+
+## The `annotate()` layer {.scrollable}
+
+Example:
+
+- Originally the dataset **when used in `ggplot()`** looks like this:
+```{.r}
+ggplot(aggregated_cases, ...) + ...
+```
+```{r}
+#| echo: false
+aggregated_cases
+```
+
+- When you assigned a fixed value to an aesthetic outside of `aes()`, it might look like this:
+```{.r}
+ggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)
+```
+```{r}
+#| echo: false
+aggregated_cases |> mutate(alpha = 0.2)
+```
+
+
+## The `annotate()` layer {.scrollable}
+
+Using the `annotate()` layer, you can separate the annotations from the geometry layer
+
+
+::: {.fragment}
+```{r}
+#| out-width: "100%"
+#| code-line-numbers: 3-8
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # figure annotation geoms (1)
+  annotate("rect",
+    ymin = -Inf, ymax = Inf,
+    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
+    alpha = 0.2, fill = "red"
+  ) +
+  annotate("label", label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  # main plotting geoms
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  # labels
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+:::
+
+## The `annotate()` layer {.scrollable}
+
+Comparing:
+
+```{.r}
+geom_rect(
+  ymin = -Inf, ymax = Inf,
+  xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
+  alpha = 0.2, fill = "red"
+) +
+geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red")
+```
+
+vs.
+
+```{.r}
+annotate("rect",
+  ymin = -Inf, ymax = Inf,
+  xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
+  alpha = 0.2, fill = "red"
+) +
+annotate("label", label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+```
+
+## The `annotate()` layer {.scrollable}
+
+::: {.callout-important}
+In short:
+
+- You can create plot annotations with `geom_label()`, `geom_rect()`, `geom_abline()`, etc. (look at `ggplot2` [website](https://ggplot2.tidyverse.org/))
+- If it's not working correctly (looks blurry, result not as expected), use `annotate()` instead; very easy to switch from `geom_*()` to `annotate()`
+:::
+
+## Splitting up with `facet_wrap()`
+
+- What if you want to split the plot into different panels for each group?
+
+```{r}
+simulated_covid
+```
+
+## Extending `ggplot2`
+
+::: {.incremental}
+- Add specific functionalities to `ggplot2` with extensions!
+- How to use:
+  - Think of a specific figure you want to plot
+  - Try your best to plot it with `ggplot2`
+  - If you think `ggplot2` cannot do what you want. Have a look [here](https://exts.ggplot2.tidyverse.org/gallery/)
+  - Read their documentation to see how to use them
+:::
+
+## Extending `ggplot2`
+
+Some commonly used extensions:
+
+- `patchwork`: to patch multiple `ggplot2` plots together
+- `gganimate`: to create moving/animating plots
+- `ggrepel`: to repel labels on a plot away from each other
+- `ggdist`: to work with distributions
+
+## Interactive plots with `plotly`
+
+- If you need to create interactive `ggplot`s, you can use the `plotly` package
+- You just need to save your `ggplot` into an object
+
+```{r}
+p <- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+
+## Interactive plots with `plotly` {.scrollable}
+
+- Then use it in the `plotly::ggplotly()` function
+
+```{r}
+# install.packages("plotly")
+library(plotly)
+ggplotly(p)
+```
+
+## Interactive plots with `plotly` {.scrollable}
+
+- You can also create 3d plots with `plotly`
+
+```{r}
+plot_ly(
+  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),
+  x = ~x, 
+  y = ~y,
+  z = ~z
+)
+```
