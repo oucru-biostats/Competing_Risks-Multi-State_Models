@@ -8,9 +8,8 @@ log(b=10,x=1000)     # Argument names can be abbreviated if no risk of ambiguity
 help(c)
 c(3,6,8)
 help(paste)
-OUCRU <- c("Oxford","University","Clinical","Research","Unit")
-paste(OUCRU)
-paste(OUCRU, collapse=" ")
+paste("Oxford","University","Clinical","Research","Unit")
+
 
 good.morning <- function(work){
   if(work==TRUE) cat("wake up") else
@@ -30,14 +29,14 @@ help(par)
 
 ## colour by passenger class
 plot(fare ~ age, data=titanic, las=1, log="y", col=pclass)
-legend(70,5,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
+legend(70,7,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
 title("Fare vs age by pclass")
 
 
 ## Open the PDF device
 pdf("FareAgePclass.pdf")
 plot(fare ~ age, data=titanic, las=1, log="y", col=pclass)
-legend(70,5,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
+legend(70,7,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
 title("Fare vs age by pclass")
 ## Close the device again to save the file
 dev.off()
@@ -45,7 +44,7 @@ dev.off()
 ## Open the PDF device
 pdf("FareAgePclassX.pdf", width=21, height=21)
 plot(fare ~ age, data=titanic, las=1, log="y", col=pclass)
-legend(70,5,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
+legend(70,7,legend=c("1st","2nd","3rd"), col=1:3, pch=1)
 title("Fare vs age by pclass")
 ## Close the device again to save the file
 dev.off()

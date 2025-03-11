@@ -171,6 +171,9 @@ proportions(table(titanic$sex, titanic$survived), margin = 1)
 
 ## Exercise 5
 subset(titanic,age>70)[,c("name","home_dest")]
+## or
+subset(titanic,subset=age>70,select=c(name,home_dest))
+
 subset(titanic, name=="Artagaveytia, Mr. Ramon")
 
 first <- xtabs(~sex+survived, data=titanic, subset=(pclass=="1st"))

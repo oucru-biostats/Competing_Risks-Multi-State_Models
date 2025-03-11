@@ -30,12 +30,12 @@ abline(lm(fare~age, data=titanic), col="red")
 plot(log10(fare)~age, data=titanic)
 abline(lm(log10(fare)~age, data=titanic, subset=fare>0), col="red")
 
-## Use logarihmic scale for fare
+## Use logarithmic scale for fare
 plot(log10(fare)~age, data=titanic)
 plot(fare ~ age, data=titanic, las=1, log="y")
 ## Warning: log(0) does not exist
 table(titanic$fare==0) # 17 paid fare 0
-points(I(fare+3)~age, data=titanic, col="red", subset=fare==0)
+points(fare+3~age, data=titanic, col="red", subset=fare==0)
 title("Fare paid for ticket on Titanic versus age")
 ## Why do you see only 7 red circles?
 
@@ -46,7 +46,7 @@ title("Fare paid for ticket on Titanic versus age")
 ## change plotting character
 plot(fare ~ age, data=titanic, las=1, log="y")
 colors()
-points(I(fare+3)~age, data=titanic, col="red", subset=fare==0, pch=25, bg="red")
+points(fare+3~age, data=titanic, col="red", subset=fare==0, pch=25, bg="red")
 title("Fare by age")
 
 ## add text and arrows
@@ -83,4 +83,4 @@ boxplot(fare ~ pclass, data=titanic, ylim=c(0,300))
 
 ## Exercise 5:
 sapply(titanic, mode)
-with(titanic,tapply(fare, pclass, summary))
+with(titanic,tapply(fare, pclass, FUN= summary))

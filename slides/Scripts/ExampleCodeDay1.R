@@ -7,6 +7,8 @@ library(readxl)
 titanic <- read_excel("Titanic3.xlsx", na="NA")
 View(titanic)
 
+
+
 #############################################################
 ## help functions
 help(mean)
@@ -44,15 +46,15 @@ with(titanic, table(sex, survived))
 table(titanic$sex)
 titanic$sex <- factor(titanic$sex)
 levels(titanic$sex)
-as.numeric(titanic$sex)
+as.numeric(titanic$sex)[1:100]
 titanic$sex <- factor(titanic$sex, levels=c("male","female"))
-as.numeric(titanic$sex)
+as.numeric(titanic$sex)[1:100]
 table(titanic$sex)
 
 titanic$sex <- factor(titanic$sex, labels=c("M","F"))
 
 head(titanic)
-titanic$status <- factor(titanic$survived, labels=c("yes","no"))
+titanic$status <- factor(titanic$survived, labels=c("no","yes"))
 titanic$pclass <- factor(titanic$pclass)
 
 #############################################################
