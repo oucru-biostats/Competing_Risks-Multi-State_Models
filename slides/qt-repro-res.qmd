@@ -914,7 +914,9 @@ index.qmd
 ---
 title: "My Presentation"
 author: "Your Name"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 toc: false
 ---
 
@@ -957,7 +959,9 @@ index.qmd
 ---
 title: "My Presentation"
 author: "Your Name"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 toc: false
 ---
 
@@ -986,8 +990,5 @@ summary(cars)
 :::
 :::::::
 
-## Revealjs
-
-- Easy to use and flexible
-- Supports interactive content
+# Now create your own Quarto manuscript and presentation!
 

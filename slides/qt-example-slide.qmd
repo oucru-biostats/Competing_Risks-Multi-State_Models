@@ -1,7 +1,9 @@
 ---
 title: "My Presentation"
 author: "Your Name"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 toc: false
 ---
 
