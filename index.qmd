@@ -85,10 +85,11 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
   - The step-by-step process of creating graphs in R
   - The grammar of graphics—understanding how plots are built
   - How to design clear and impactful visualisations
+- [Handout file](handouts/VisualisationHandouts.pdf)
 - Exercises:
-  - [Handout file](handouts/exercises_Day3.qmd)
+  - [Exercise file](handouts/exercises_Day3.qmd)
   - [Exercise answer key]{style="cursor:not-allowed;user-select:none;"}
-  - [Exercise answer script]{style="cursor:not-allowed;user-select:none;"}
+  - [Exercise answer script](handouts/Exercises_Day3_answer.R)
 
 
 ## Day 4: Advanced R topics
