@@ -34,7 +34,7 @@ number-sections: false
 
 ## Presentation
 
-![](figures/qt/qt-present.png)
+{{< revealjs file="viz.html" height="500px" class="ratio ratio-16x9" full-screen-link="false" >}}
 
 ## Report/Manuscript
 
@@ -132,6 +132,7 @@ title: "My Quarto file"
 author: "Your Name"
 date: "`r Sys.Date()`"
 format: html
+toc: true
 ---
 ```
 :::
@@ -151,6 +152,8 @@ Defines document properties and settings, for examples:
     -   Presentation: `revealjs`
     -   MS Word: `docx`
     -   Report/Manuscript: `pdf`
+-   `toc`: table of contents
+
 :::
 :::::::
 
@@ -198,6 +201,7 @@ You can format your text inline to add emphasis or other styling options.
 - **Bold text**: `**bold**`
 - *Italic text*: `*italic*`
 - Inline `code`: `` `code` ``
+- [Underline]{.underline}: `[underline]{.underline}`
 
 > Blockquotes can be used to highlight important information or quotes by adding `> ` at the beginning of a line.
 
@@ -300,7 +304,7 @@ index.html <iframe class="slide-deck" src="qt-example.html" style="width: 100%; 
 
 -   In this course, we will use `gtsummary`.
 
-## Data
+## Data {.smaller}
 
 First let's load the packages and have a look at the dataset.
 
@@ -312,7 +316,7 @@ df <- readRDS("data/simulated_covid.rds")
 head(df)
 ```
 
-## Descriptive tables
+## Descriptive tables {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -338,7 +342,7 @@ df |>
 :::
 ::::::
 
-## Fix the labels
+## Fix the labels {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -370,7 +374,7 @@ df |>
 :::
 ::::::
 
-## Correct the values
+## Correct the values {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -414,7 +418,7 @@ df |>
 :::
 ::::::
 
-## Decimal places
+## Decimal places {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -463,7 +467,7 @@ df |>
 :::
 ::::::
 
-## Use mean or median
+## Use mean or median {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -518,7 +522,7 @@ df |>
 :::
 ::::::
 
-## Make a plot
+## Make a plot {.smaller}
 
 :::::: columns
 :::: {.column width="50%"}
@@ -557,7 +561,7 @@ df |>
 :::
 ::::::
 
-## Reuse code with new data
+## Reuse code with new data {.smaller}
 
 What if we only care about the 1st outbreak?
 
@@ -598,7 +602,7 @@ df |>
 :::
 ::::::
 
-## Reuse code with new data
+## Reuse code with new data {.smaller}
 
 What if we only care about the 1st outbreak?
 
@@ -644,7 +648,7 @@ df |>
 :::
 ::::::
 
-## Reuse code with new data
+## Reuse code with new data {.smaller}
 
 :::::: columns
 :::: {.column width="60%"}
@@ -891,3 +895,99 @@ knitr::kable(head(mtcars)[,1:4])
 <embed src="figures/paper.pdf" height="590px" width="500px" />
 :::
 ::::::
+
+# Let's make a presentation
+
+## Revealjs
+
+- Quarto + Revealjs = **Interactive Presentations**
+- Uses Markdown for content
+- Simple, flexible, and powerful!
+
+## Slide structure
+
+::::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .quarto}
+index.qmd
+```` markdown
+---
+title: "My Presentation"
+author: "Your Name"
+format: revealjs
+toc: false
+---
+
+## Slide Title
+
+- Bullet point 1
+- Bullet point 2
+
+## Code Blocks & Highlighting
+
+You can add code blocks like this:
+
+```{{r}}
+# R code block
+summary(cars)
+```
+````
+
+:::
+::::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+
+-   Set `format: revealjs`
+-   Use `##` for **slide titles** and Markdown for content
+
+:::
+:::::::
+
+## Slide structure
+
+::::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .quarto}
+index.qmd
+```` markdown
+---
+title: "My Presentation"
+author: "Your Name"
+format: revealjs
+toc: false
+---
+
+## Slide Title
+
+- Bullet point 1
+- Bullet point 2
+
+## Code Blocks & Highlighting
+
+You can add code blocks like this:
+
+```{{r}}
+# R code block
+summary(cars)
+```
+````
+
+:::
+::::
+
+::: {.column width="50%"}
+
+{{< revealjs file="qt-example-slide.html" height="500px" class="ratio ratio-16x9" full-screen-link="false" >}}
+
+:::
+:::::::
+
+## Revealjs
+
+- Easy to use and flexible
+- Supports interactive content
+

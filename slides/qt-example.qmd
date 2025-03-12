@@ -34,6 +34,7 @@ You can format your text inline to add emphasis or other styling options.
 - **Bold text**: `**bold**`
 - *Italic text*: `*italic*`
 - Inline `code`: `` `code` ``
+- [Underline]{.underline}: `[underline]{.underline}`
 
 > Blockquotes can be used to highlight important information or quotes by adding `> ` at the beginning of a line.
 
