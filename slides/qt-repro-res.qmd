@@ -5,6 +5,7 @@ format:
   revealjs:
     slide-number: true
     logo: "figures/OUCRU.jpg"
+    code-copy: true
 revealjs-plugins:
   - codewindow
 toc: false
@@ -31,33 +32,39 @@ number-sections: false
 
 ![](figures/qt/qt-website.png)
 
+## Presentation
+
+![](figures/qt/qt-present.png)
+
 ## Report/Manuscript
 
-
+![](figures/qt/qt-report.png)
 
 ## Dashboard
 
+::::: columns
+::: {.column width="35%"}
 ![](figures/qt/qt-dashboard.png)
+:::
+
+::: {.column width="65%"}
+![](figures/qt/qt-dashboard-2.png)
+:::
+:::::
 
 ## More examples
 
-:::: columns
-
+::::: columns
 ::: {.column width="70%"}
-
 ![](figures/qt/qt-gallery.png)
-
 :::
 
 ::: {.column width="30%"}
-
-{{<qrcode https://quarto.org/docs/gallery/ width=200 height=200 >}}
+{{< qrcode https://quarto.org/docs/gallery/ width=200 height=200 >}}
 
 Or click [here](https://quarto.org/docs/gallery/)
-
 :::
-
-::::
+:::::
 
 ## Creating a Quarto file
 
@@ -112,7 +119,7 @@ Main components of a Quarto file:
 :::
 :::::::
 
-## Header
+## Header {.smaller}
 
 ::::::: columns
 :::: {.column width="45%"}
@@ -139,7 +146,11 @@ Defines document properties and settings, for examples:
 -   `title`: Document title
 -   `author`: Authorship
 -   `date`: Date this document was published
--   `format`: `html`, `docx`, or `pdf`
+-   `format`:
+    -   Webpage: `html`
+    -   Presentation: `revealjs`
+    -   MS Word: `docx`
+    -   Report/Manuscript: `pdf`
 :::
 :::::::
 
@@ -150,7 +161,7 @@ Defines document properties and settings, for examples:
 ::: {.codewindow .quarto}
 index.qmd
 
-````{.markdown code-line-numbers="false"}
+```` {.markdown code-line-numbers="false"}
 ---
 title: "Hello, Quarto"
 date: 2025-01-06
@@ -229,7 +240,7 @@ To create an ordered list, use numbers before each item:
 
 Quarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:
 
-```{r}
+```{{r}}
 #| fig-width: 4
 #| fig-height: 3
 #| out-width: "100%"
@@ -270,13 +281,28 @@ index.html <iframe class="slide-deck" src="qt-example.html" style="width: 100%; 
 
 ## Exploring Quarto
 
-![](figures/qt/qt-search-2.png)
+[![][1]][2]{target="_blank"}
+
+[1]:  figures/qt/qt-search-2.png
+[2]:  https://quarto.org/ "Let's try it out"
 
 # Let's write a manuscript
 
 ## Create tables
 
-`gtsummary` is a package to make beautiful tables.
+-   There are many packages to create beautiful tables in R:
+
+-   [`flextable`](https://davidgohel.github.io/flextable/)
+
+-   [`huxtable`](https://hughjonesd.github.io/huxtable/)
+
+-   [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/)
+
+-   In this course, we will use `gtsummary`.
+
+## Data
+
+First let's load the packages and have a look at the dataset.
 
 ```{r}
 library(tidyverse)
@@ -288,10 +314,8 @@ head(df)
 
 ## Descriptive tables
 
-:::: columns
-
-::: {.column width="60%"}
-
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 ```{r}
 #| eval: false
@@ -301,11 +325,9 @@ df |>
   )
 ```
 :::
-
-:::
+::::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 df |> 
@@ -313,17 +335,13 @@ df |>
     include = c(sex, age, outcome, outbreak)
   )
 ```
-
 :::
-
-::::
+::::::
 
 ## Fix the labels
 
-:::: columns
-
-::: {.column width="60%"}
-
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 ```{r}
 #| eval: false
@@ -338,11 +356,9 @@ df |>
   )
 ```
 :::
-
-:::
+::::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 df |>
@@ -351,17 +367,13 @@ df |>
     label = list(sex ~ "Sex", age ~ "Age (years)", outcome ~ "Outcome", outbreak ~ "Outbreak")
   )
 ```
-
 :::
-
-::::
+::::::
 
 ## Correct the values
 
-:::: columns
-
-::: {.column width="60%"}
-
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 ```{r}
 #| eval: false
@@ -382,11 +394,9 @@ df |>
   )
 ```
 :::
-
-:::
+::::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 df |>
@@ -401,17 +411,13 @@ df |>
     label = list(sex ~ "Sex", age ~ "Age (years)", outcome ~ "Outcome", outbreak ~ "Outbreak")
   )
 ```
-
 :::
-
-::::
+::::::
 
 ## Decimal places
 
-:::: columns
-
-::: {.column width="60%"}
-
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 ```{r}
 #| eval: false
@@ -436,11 +442,9 @@ df |>
   )
 ```
 :::
-
-:::
+::::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 df |>
@@ -456,17 +460,13 @@ df |>
     digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1)
   )
 ```
-
 :::
-
-::::
+::::::
 
 ## Use mean or median
 
-:::: columns
-
-::: {.column width="60%"}
-
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 ```{r}
 #| eval: false
@@ -494,11 +494,9 @@ df |>
   )
 ```
 :::
-
-:::
+::::
 
 ::: {.column width="40%"}
-
 ```{r}
 #| echo: false
 df |>
@@ -517,15 +515,379 @@ df |>
     )
   )
 ```
-
 :::
-
-::::
+::::::
 
 ## Make a plot
 
+:::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .r}
+```{r}
+#| eval: false
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::
 
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: "100%"
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::::
+
+## Reuse code with new data
+
+What if we only care about the 1st outbreak?
+
+:::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .r}
+```{r}
+#| eval: false
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: "100%"
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::::
+
+## Reuse code with new data
+
+What if we only care about the 1st outbreak?
+
+:::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .r}
+```{r}
+#| eval: false
+#| code-line-numbers: "1-2"
+df <- df |> 
+  filter(outbreak == "1st outbreak")
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: "100%"
+df <- df |> 
+  filter(outbreak == "1st outbreak")
+df |>
+  count(date_onset) |>
+  ggplot(aes(x = date_onset, y = n)) +
+  geom_bar(stat = "identity",
+           width = 1,
+           fill = "cornflowerblue") +
+  labs(x = "Date of onset", 
+       y = "Case count") +
+  theme_minimal()
+```
+:::
+::::::
+
+## Reuse code with new data
+
+:::::: columns
+:::: {.column width="60%"}
+::: {.codewindow .r}
+```{r}
+#| eval: false
+df |>
+  mutate(sex = factor(
+    sex,
+    levels = c("f", "m"),
+    labels = c("Female", "Male")
+  ),
+  outcome = str_to_sentence(outcome)) |>
+  tbl_summary(
+    include = c(sex, age, outcome, outbreak),
+    label = list(
+      sex ~ "Sex", age ~ "Age (years)", 
+      outcome ~ "Outcome", outbreak ~ "Outbreak"
+    ),
+    digits = c(
+      all_categorical() ~ c(0, 1), 
+      all_continuous() ~ 1
+    ),
+    statistic = list(
+      all_continuous() ~ "{mean} \u00b1 {sd}"
+    )
+  )
+```
+:::
+::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+df |>
+  mutate(sex = factor(
+    sex,
+    levels = c("f", "m"),
+    labels = c("Female", "Male")
+  ),
+  outcome = str_to_sentence(outcome)) |>
+  tbl_summary(
+    include = c(sex, age, outcome, outbreak),
+    label = list(sex ~ "Sex", age ~ "Age (years)", outcome ~ "Outcome", outbreak ~ "Outbreak"),
+    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),
+    statistic = list(
+      all_continuous() ~ "{mean} \u00b1 {sd}"
+    )
+  )
+```
+:::
+::::::
 
 ## Add citation
 
+-   You can add citations to the text using Quarto
 
+-   The easiest way to do this is via the `Visual` view
+
+![](figures/qt/cite.png)
+
+## Add citation
+
+![](figures/qt/cite-insert.png)
+
+## Template
+
+-   Templates help make your document look professional without extra effort
+
+-   You can use pre-built templates or create your own for a custom style
+
+-   Some templates are designed for academic journals, presentations, or reports
+
+-   [Click here](https://github.com/quarto-journals/) to see a list of available journal templates in Quarto
+
+## What is a Quarto template? {.smaller}
+
+> A Quarto template is a **pre-designed document** layout that controls the **appearance** of your output (PDF, Word, HTML, or presentation).
+
+Let's try a template for journals published by Elsevier.
+
+![](figures/qt/elsevier-template.png)
+
+## Template {.smaller}
+
+Paste this code in the **terminal** (not the console or your coding panel).
+
+::: codewindow
+``` markdown
+quarto use template quarto-journals/elsevier
+```
+:::
+
+Say "Yes" to everything it gonna ask.
+
+::::: columns
+::: {.column width="50%"}
+![](figures/qt/template-1.png)
+
+![](figures/qt/template-2.png)
+:::
+
+::: {.column width="50%"}
+![](figures/qt/template-3.png)
+:::
+:::::
+
+## Template {.smaller}
+
+:::::: columns
+:::: {.column width="50%"}
+::: {.codewindow .quarto}
+paper.qmd
+```` {.markdown code-line-numbers="false"}
+---
+title: Short Paper
+subtitle: A Short Subtitle
+author:
+  - name: Alice Anonymous
+    email: alice@example.com
+    affiliations: 
+        - id: some-tech
+          name: Some Institute of Technology
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    attributes:
+        corresponding: true
+    note: This is the first author footnote.
+  - name: Bob Security
+    email: bob@example.com
+    affiliations:
+        - id: another-u
+          name: Another University
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    note: |
+      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.
+  - name: Cat Memes
+    email: cat@example.com
+    affiliations:
+        - ref: another-u
+    note: Yet another author footnote.
+  - name: Derek Zoolander
+    email: derek@example.com
+    affilations:
+        - ref: some-tech
+abstract: |
+  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+keywords: 
+  - keyword1
+  - keyword2
+date: last-modified
+bibliography: bibliography.bib
+format:
+  elsevier-pdf:
+    keep-tex: true
+    journal:
+      name: Journal Name
+      formatting: preprint
+      # model: 3p # Don't set a model with preprint
+      cite-style: authoryear
+---
+
+Please make sure that your manuscript follows the guidelines in the 
+Guide for Authors of the relevant journal. It is not necessary to 
+typeset your manuscript in exactly the same way as an article, 
+unless you are submitting to a camera-ready copy (CRC) journal.
+
+For detailed instructions regarding the elsevier article class, see   <https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions>
+
+# Bibliography styles
+
+Here are two sample references:  @Feynman1963118 @Dirac1953888.
+
+With this template using elsevier class, natbib will be used. Three bibliographic style ﬁles (*.bst) are provided and their use controled by `cite-style` option: 
+
+- `citestyle: number` (default)  will use `elsarticle-num.bst` - can be used for the numbered scheme
+- `citestyle: numbername` will use `elsarticle-num-names.bst` - can be used for numbered with new options of natbib.sty
+- `citestyle: authoryear` will use `elsarticle-harv.bst` — can be used for author year scheme
+
+This `citestyle` will insert the right `.bst` and set the correct `classoption` for `elsarticle` document class.
+
+Using `natbiboptions` variable in YAML header, you can set more options for `natbib` itself . Example 
+
+```yaml
+natbiboptions: longnamesfirst,angle,semicolon
+```
+
+## Using CSL 
+
+If `cite-method` is set to `citeproc` in `elsevier_article()`, then pandoc is used for citations instead of `natbib`. In this case, the `csl` option is used to format the references. By default, this template will provide an appropriate style, but alternative `csl` files are available from <https://www.zotero.org/styles?q=elsevier>. These can be downloaded
+and stored locally, or the url can be used as in the example header.
+
+# Equations
+
+Here is an equation:
+$$ 
+  f_{X}(x) = \left(\frac{\alpha}{\beta}\right)
+  \left(\frac{x}{\beta}\right)^{\alpha-1}
+  e^{-\left(\frac{x}{\beta}\right)^{\alpha}}; 
+  \alpha,\beta,x > 0 .
+$$
+
+Inline equations work as well: $\sum_{i = 2}^\infty\{\alpha_i^\beta\}$
+
+# Figures and tables
+
+@fig-meaningless is generated using an R chunk.
+
+```{{r}}
+#| label: fig-meaningless
+#| fig-cap: A meaningless scatterplot
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+#| out-width: 50%
+#| echo: false
+plot(runif(25), runif(25))
+```
+
+# Tables coming from R
+
+Tables can also be generated using R chunks, as shown in @tbl-simple example.
+
+```{{r}}
+#| label: tbl-simple
+#| tbl-cap: Caption centered above table
+#| echo: true
+knitr::kable(head(mtcars)[,1:4])
+```
+
+# References {-}
+````
+:::
+::::
+
+::: {.column width="50%"}
+<embed src="figures/paper.pdf" height="590px" width="500px" />
+:::
+::::::
