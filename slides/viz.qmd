@@ -1689,11 +1689,76 @@ In short:
 
 ## Splitting up with `facet_wrap()`
 
+::: {.incremental}
 - What if you want to split the plot into different panels for each group?
+- Have a look at your data, find a "grouping" variable to split the data
+:::
 
+## Splitting up with `facet_wrap()` {.scrollable}
+
+- For example: Split our `simulated_covid` by `outbreak`
+
+::: {.fragment}
 ```{r}
-simulated_covid
+ggplot(data = simulated_covid, aes(x = date_onset)) +                   
+  geom_bar(fill = "cornflowerblue") + 
+  facet_wrap(~outbreak)
 ```
+:::
+
+## Splitting up with `facet_wrap()` {.scrollable}
+
+- Use `facet_wrap()` and add in the variable (with a `~` in the front)
+
+::: {.fragment}
+```{r}
+#| code-line-number: 3
+ggplot(data = simulated_covid, aes(x = date_onset)) +                   
+  geom_bar(fill = "cornflowerblue") + 
+  facet_wrap(~outbreak)
+```
+:::
+
+## Splitting up with `facet_wrap()` {.scrollable}
+
+- You can "free" the scales from their original limits
+
+::: {.fragment}
+```{r}
+#| code-line-number: 3
+ggplot(data = simulated_covid, aes(x = date_onset)) +                   
+  geom_bar(fill = "cornflowerblue") + 
+  facet_wrap(~outbreak, scales = "free_x")
+```
+:::
+
+
+## Splitting up with `facet_wrap()` {.scrollable}
+
+- You can "free" the scales from their original limits
+
+::: {.fragment}
+```{r}
+#| code-line-number: 3
+ggplot(data = simulated_covid, aes(x = date_onset)) +                   
+  geom_bar(fill = "cornflowerblue") + 
+  facet_wrap(~outbreak, scales = "free_y")
+```
+:::
+
+## Splitting up with `facet_wrap()` {.scrollable}
+
+- You can "free" the scales from their original limits
+
+::: {.fragment}
+```{r}
+#| code-line-number: 3
+ggplot(data = simulated_covid, aes(x = date_onset)) +                   
+  geom_bar(fill = "cornflowerblue") + 
+  facet_wrap(~outbreak, scales = "free")
+```
+:::
+
 
 ## Extending `ggplot2`
 
