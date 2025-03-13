@@ -66,6 +66,17 @@ Or click [here](https://quarto.org/docs/gallery/)
 :::
 :::::
 
+## Exploring Quarto
+
+![](figures/qt/qt-search.png)
+
+## Exploring Quarto
+
+[![][1]][2]{target="_blank"}
+
+[1]:  figures/qt/qt-search-2.png
+[2]:  https://quarto.org/ "Let's try it out"
+
 ## Creating a Quarto file
 
 :::::: columns
@@ -279,17 +290,6 @@ index.html <iframe class="slide-deck" src="qt-example.html" style="width: 100%; 
 
 ![](figures/qt/render.png)
 
-## Exploring Quarto
-
-![](figures/qt/qt-search.png)
-
-## Exploring Quarto
-
-[![][1]][2]{target="_blank"}
-
-[1]:  figures/qt/qt-search-2.png
-[2]:  https://quarto.org/ "Let's try it out"
-
 # Let's write a manuscript
 
 ## Create tables
@@ -306,7 +306,7 @@ index.html <iframe class="slide-deck" src="qt-example.html" style="width: 100%; 
 
 ## Data {.smaller}
 
-First let's load the packages and have a look at the dataset.
+First let's load the packages and have a look at the dataset [simulated_covid.rds](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/simulated_covid.rds).
 
 ```{r}
 library(tidyverse)
