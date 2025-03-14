@@ -27,8 +27,10 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
 - Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Hai Ho Bich, Emerging Infections group, OUCRU HCM
-- Dr. Marc Choisy, Mathematical Modeling group, OUCRU HCM
 - Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
+- Mr. Manh Nguyen Duc, Mathematical Modeling group, OUCRU HCM
+- Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
+- Dr. Marc Choisy, Mathematical Modeling group, OUCRU HCM
 - Dr. Dung Vu Tien Viet, Biostatistician, OUCRU Hanoi
 - Dr. Trinh Dong Huu Khanh, formerly: Biostatistics group, OUCRU HCM
 
