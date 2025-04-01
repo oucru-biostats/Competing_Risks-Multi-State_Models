@@ -101,8 +101,6 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
   - Joining dataframes
   - Pivotting dataframes into long and wide formats
   - Vectorisation in R with `map()`
-- [Exercises]{style="cursor:not-allowed;user-select:none;"}
-- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"}
 
 ## Day 5: Using Quarto for reproducible research
 
