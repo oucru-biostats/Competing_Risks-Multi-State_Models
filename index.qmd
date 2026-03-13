@@ -13,7 +13,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 
 ## Course structure {.unnumbered}
 ![](site_imgs/R_course_schedule.png)
-
+- [Time table](handouts/Agenda_StatCourse_23-27March2026.docx)
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
 - Lunch will be provided for in-person attendees
