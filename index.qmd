@@ -9,7 +9,6 @@ toc-depth: 2
 date: last-modified
 date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
-
 # Welcome to the OUCRU R training course - 2025 {.unnumbered}
 
 ## Course structure {.unnumbered}
