@@ -38,7 +38,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Morning: Descriptive data analysis
 
-- [Lecture slides](slides/IntroductionRDay1.qmd)
+- [Lecture slides](slides/1.SlidesDescriptives.pdf)
 - Contents:
   - Open and inspect datasets, understand their structure
   - Make selections and extract relevant data
