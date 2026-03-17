@@ -26,7 +26,8 @@ website:
     right:
       - icon: envelope
         aria-label: email
-        href: "mailto:hungtt@oucru.org"   
+        href: "mailto:hungtt@oucru.org"
+        target: _blank
 
       
 
