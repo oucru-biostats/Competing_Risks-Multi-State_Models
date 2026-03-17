@@ -54,7 +54,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Afternoon: Exploratory data analysis
 
-- [Lecture slides](slides/IntroductionRDay2.qmd)
+- [Lecture slides](slides/day_2/2.SlidesEDA.pdf)
 - Contents:
   - Write simple functions to automate tasks
   - Create visualisations using Base R graphics
