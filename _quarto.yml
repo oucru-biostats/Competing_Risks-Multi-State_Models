@@ -18,10 +18,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      
-    right:
       - href: https://oucru-modelling.github.io/R-training-2025/
-        text: R training 
+        text: R training  2025     
+      - href: handouts/medical_statistics_2024.qmd 
+        text: R training  
+
+    right:
       - icon: envelope
         aria-label: email
         href: "hungtt@oucru.org"   

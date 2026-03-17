@@ -1,0 +1,20 @@
+---
+title: "OUCRU introduction to Medical Statistics 2024"
+toc: false
+number-sections: false
+format: 
+  html:
+    link-external-newwindow: true
+    link-external-icon: true
+navbar: false
+date: last-modified
+date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
+---
+
+Day 1: https://youtu.be/f4bBIMs5w08
+Day 2: https://youtu.be/DXEC9z0FQpM
+Day 3 (1/2): https://youtu.be/ThvKyzUIeZY
+Day 3 (2/2): https://youtu.be/cWA-BrcN0kM
+Day 4 (1/2): https://youtu.be/8zJkYpFUqRI
+Day 4 (2/2): https://youtu.be/O8rZbQaIBi8
+Day 5: https://youtu.be/5ajIkOWAI9Q
