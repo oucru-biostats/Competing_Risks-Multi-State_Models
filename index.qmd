@@ -47,7 +47,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 - Exercises:
   - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script](handouts/day_1/ExerciseCode.R){target="_blank"}
+  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
 - Answers: 
   - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}
   - [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
