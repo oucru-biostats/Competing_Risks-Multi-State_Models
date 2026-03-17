@@ -49,7 +49,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
   - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
   - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
 - Answers: 
-  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
+  - [R studio](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
 
 ### Afternoon: Exploratory data analysis
 
@@ -61,10 +61,10 @@ If you would like to do the exercises using RStudio, please follow [this handout
   - 4. Graphs: 2 numeric variables
 
 - Exercises:
-  - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
+  - [Webr version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
+  - [R studio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode-2.R){target="_blank"}
 - Answers: 
-  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
+  - [webr](handouts/day_1/ExerciseWebrAnswers-2.html){target="_blank"}; [R studio](handouts/day_1/ExerciseAnswers-2.html){target="_blank"}
 
 
 ## Day 3: Principles of data visualisation
