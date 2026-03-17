@@ -38,7 +38,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Morning: Descriptive data analysis
 
-- [Lecture slides](slides/day_1/1.SlidesDescriptives.pdf)
+- [Lecture slides](slides/day_1/Descriptive.pdf)
 - Contents:
   - 1. Data characteristics
   - 2. Variable types
@@ -49,19 +49,22 @@ If you would like to do the exercises using RStudio, please follow [this handout
   - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
   - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
 - Answers: 
-  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}
-  - [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
+  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
 
 ### Afternoon: Exploratory data analysis
 
 - [Lecture slides](slides/day_2/2.SlidesEDA.pdf)
 - Contents:
-  - Write simple functions to automate tasks
-  - Create visualisations using Base R graphics
-  - Understand the R working environment, including file paths and workspace management
-  - Find and use R documentation and resources to solve problems on your own
-- No exercises given
-- [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"}
+  - 1. (Baseline) tables
+  - 2. Graphs: ≥ 2 categorical variables
+  - 3. Graphs: numeric variables by group
+  - 4. Graphs: 2 numeric variables
+
+- Exercises:
+  - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
+  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
+- Answers: 
+  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
 
 
 ## Day 3: Principles of data visualisation
