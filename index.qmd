@@ -36,7 +36,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### 🧑‍🏫️ Lead instructors: Ronald and Duc
 
-### Descriptive data analysis
+### Morning: Descriptive data analysis
 
 - [Lecture slides](slides/IntroductionRDay1.qmd)
 - Contents:
@@ -50,7 +50,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
   - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
 - [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
 
-### Exploratory data analysis
+### Afternoon: Exploratory data analysis
 
 - [Lecture slides](slides/IntroductionRDay2.qmd)
 - Contents:
