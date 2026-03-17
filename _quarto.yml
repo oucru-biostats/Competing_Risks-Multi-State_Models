@@ -21,7 +21,7 @@ website:
       - href: https://oucru-modelling.github.io/R-training-2025/
         text: R training  2025     
       - href: handouts/medical_statistics_2024.qmd 
-        text: R training  
+        text: Old medical statistics courses  
 
     right:
       - icon: envelope
