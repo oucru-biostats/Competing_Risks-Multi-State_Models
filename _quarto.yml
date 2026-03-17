@@ -18,16 +18,23 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: slides/IntroductionRDay1.qmd
-        text: Intro to R (day 1)
-      - href: slides/IntroductionRDay2.qmd
-        text: Intro to R (day 2)
-      - href: slides/viz.qmd
-        text: Principles of data visualisation
-      - href: slides/advance_r.qmd
-        text: Advance R topics
-      - href: slides/qt-repro-res.qmd
-        text: Using Quarto for reproducible research
+    right:
+      - icon: envelope
+        aria-label: email
+        href: "hungtt@ourcru.org"   
+
+# Don't touch unless you know what you are doing :) ------------
+  search: 
+    location: navbar
+    type: textbox
+  page-footer: 
+    left: |
+      <span class="faux-block">&#169; 2026 Tran Thai Hung and the Biostatistics group </span>
+      <span class="faux-block">All content licensed under<br>[Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)</span>
+    center: |
+     
+    right: |
+      <span class="faux-block"><a href="https://https://github.com/TranHung93/Introduction-to-Medical-Statistics">View source on GitHub</a></span>
 
 toc: true
 number-sections: true

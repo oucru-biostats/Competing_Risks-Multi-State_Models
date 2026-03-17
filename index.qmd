@@ -12,7 +12,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 # Welcome to the OUCRU introduction to Medical Statistics 2026 {.unnumbered}
 
 - [Time table](handouts/Agenda_StatCourse_23-27March2026.pdf)
-- The training will be **09:00 – 17:00 (UTC +7)** for everyday
+- The training will be **09:15 – 16:45 (UTC +7)** for everyday
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
 - Lunch will be provided for in-person attendees
 
