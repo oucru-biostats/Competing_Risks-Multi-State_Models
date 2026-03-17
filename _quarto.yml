@@ -20,11 +20,12 @@ website:
         text: Home
       
     right:
+      - href: https://oucru-modelling.github.io/R-training-2025/
+        text: R training 
       - icon: envelope
         aria-label: email
         href: "hungtt@oucru.org"   
-      - href: https://oucru-modelling.github.io/R-training-2025/
-        text: R training 
+
       
 
 # Don't touch unless you know what you are doing :) ------------
