@@ -38,7 +38,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Morning: Descriptive data analysis
 
-- [Lecture slides](slides/day_1/1.SlidesDescriptives.pdf.qmd)
+- [Lecture slides](slides/day_1/1.SlidesDescriptives.pdf)
 - Contents:
   - 1. Data characteristics
   - 2. Variable types
