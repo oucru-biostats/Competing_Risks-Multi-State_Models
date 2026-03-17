@@ -27,15 +27,16 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 
 # Pre-course setups and requirements
 
-Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} before joining the course.
+You can do the exercises directly using the web-R versions without any additional setup.
+If you would like to do the exercises using RStudio, please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} before joining the course.
 
 # Course topics
 
-## Introduction to R
+## Day 1: Descriptive and exploratory data analysis 
 
 ### 🧑‍🏫️ Lead instructors: Ronald and Duc
 
-### Day 1: Descriptive and exploratory data analysis 
+### Descriptive data analysis
 
 - [Lecture slides](slides/IntroductionRDay1.qmd)
 - Contents:
@@ -49,7 +50,7 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
   - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
 - [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
 
-### Day 2
+### Exploratory data analysis
 
 - [Lecture slides](slides/IntroductionRDay2.qmd)
 - Contents:
