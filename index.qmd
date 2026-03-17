@@ -53,7 +53,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Afternoon: Exploratory data analysis
 
-- [Lecture slides](slides/day_2/2.SlidesEDA.pdf)
+- [Lecture slides](slides/day_1/2.SlidesEDA.pdf)
 - Contents:
   - 1. (Baseline) tables
   - 2. Graphs: ≥ 2 categorical variables
