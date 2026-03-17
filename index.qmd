@@ -38,7 +38,7 @@ If you would like to do the exercises using RStudio, please follow [this handout
 
 ### Morning: Descriptive data analysis
 
-- [Lecture slides](slides/IntroductionRDay1.qmd)
+- [Lecture slides](slides/day_1/IntroductionRDay1.qmd)
 - Contents:
   - 1. Data characteristics
   - 2. Variable types
@@ -46,11 +46,11 @@ If you would like to do the exercises using RStudio, please follow [this handout
   - 4. Introduction to R and RStudio
 
 - Exercises:
-  - [Handout file](handouts/Exercise1_Webr.html){target="_blank"}
-  - [Exercise answer key](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
+  - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
+  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script](handouts/day_1/exercises_Day1_answer.R){target="_blank"}
 - Answers: 
-  - [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
+  - [html](handouts/day_1/ExerciseAnswers.html){target="_blank"}
+  - [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
 
 ### Afternoon: Exploratory data analysis
 
