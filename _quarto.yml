@@ -72,6 +72,6 @@ execute:
 format:
   html:
     theme: cosmo
-
+    include-after-body: comment-header.html
   revealjs:
     css: ../styles.css
