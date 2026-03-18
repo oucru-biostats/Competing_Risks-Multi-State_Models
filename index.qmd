@@ -11,15 +11,8 @@ date-format: "MMMM D, YYYY"
 ---
 
 # Welcome {.unnumbered}
-
-::: columns
 ::: {.column width="70%"}
 Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
-:::
-
-::: {.column width="30%"}
-![](site_imgs/OUCRU.jpg){width="150px" fig-align="right"}
-:::
 :::
 
 ::: {.callout-note appearance="simple"}
@@ -77,15 +70,12 @@ You have two ways to follow the course exercises:
     -   [{{< fa desktop >}} Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
     -   [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode.R))
 -   **Answers:**
-
-::: {=html}
-```         
 <div id="morning-answers">
   <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
 </div>
-```
+
 :::
-:::
+
 
 ## 🌤️ Afternoon: Exploratory Analysis
 
@@ -104,18 +94,13 @@ You have two ways to follow the course exercises:
     -   [{{< fa desktop >}} Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
     -   [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
 -   **Answers:**
-
-::: {=html}
-```         
 <div id="afternoon-answers">
   <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
 </div>
-```
-:::
+
 :::
 
 
-```{=html}
 <script>
 function unlockMorning() {
   var password = prompt("Please enter the session code provided in class:");
