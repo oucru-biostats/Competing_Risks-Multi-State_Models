@@ -9,60 +9,76 @@ toc-depth: 2
 date: last-modified
 date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
-# Welcome to the OUCRU introduction to Medical Statistics 2026 {.unnumbered}
 
-- [Time table](handouts/Agenda_StatCourse_23-27March2026.pdf)
-- The training will be **09:15 – 16:45 (UTC +7)** for everyday
-- There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
-- Lunch will be provided for in-person attendees
+# Welcome to the OUCRU Introduction to Medical Statistics 2026 {.unnumbered}
+
+::: {.callout-note appearance="simple"}
+## 📅 Logistics & Schedule
+* **Time:** 09:15 – 16:45 (UTC +7) daily
+* **Lunch Break:** 12:30 – 13:30 (UTC +7)
+* **Full Schedule:** [Download Timetable (PDF)](handouts/Agenda_StatCourse_23-27March2026.pdf)
+* *Note: Lunch is provided for in-person attendees.*
+:::
 
 ## Contributors {.unnumbered}
 
-- Prof. Ronald Geskus, Biostatistics group, OUCRU HCM
-- Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
-- Dr. Hoang Van Thuan, Biostatistics group, OUCRU HCM
-- Dr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM
-- Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
+::: {layout-ncol=2}
+* **Prof. Ronald Geskus** (Biostatistics, OUCRU HCM)
+* **Dr. Duc Du Hong** (Biostatistics, OUCRU HCM)
+* **Dr. Hoang Van Thuan** (Biostatistics, OUCRU HCM)
+* **Dr. Nguyen Lam Vuong** (Biostatistics, OUCRU HCM)
+* **Dr. Tran Thai Hung** (Biostatistics, OUCRU HCM)
+:::
 
+---
 
-# Pre-course setups and requirements
+# Pre-course Setup
 
-You can do the exercises directly using the web-R versions without any additional setup.
-If you would like to do the exercises using RStudio, please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} before joining the course.
+::: {.callout-tip}
+## 🛠️ Choose Your Environment
+You have two ways to follow the course exercises:
 
-# Course topics
+1.  **Zero Setup:** Use the **Web-R** versions directly in your browser.
+2.  **Local Setup:** If you prefer using **RStudio**, please follow the [Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before the course begins.
+:::
 
-## Day 1: Descriptive and exploratory data analysis 
+# Course Topics
 
-### 🧑‍🏫️ Lead instructors: Ronald and Duc
+## Day 1: Descriptive and Exploratory Data Analysis 
 
-### Morning: Descriptive data analysis
+### 🧑‍🏫 Lead instructors: Ronald and Duc
 
-- [Lecture slides](slides/day_1/1.SlidesDescriptives.pdf)
-- Contents:
-  - 1. Data characteristics
-  - 2. Variable types
-  - 3. Variable summaries: numerical and graphical
-  - 4. Introduction to R and RStudio
+::: {layout-ncol=2}
 
-- Exercises:
-  - [Webr version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-  - [R studio version](handouts/day_1/ExerciseRStudio.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode.R){target="_blank"}
-- Answers: 
-  - [R studio](handouts/day_1/ExerciseAnswers.html){target="_blank"}; [pdf](handouts/day_1/ExerciseAnswers.pdf){target="_blank"}
+### ☀️ Morning: Descriptive Analysis
+**Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/1.SlidesDescriptives.pdf)
 
-### Afternoon: Exploratory data analysis
+**Contents:**
+1. Data characteristics & Variable types
+2. Numerical & Graphical summaries
+3. Intro to R and RStudio
 
-- [Lecture slides](slides/day_1/2.SlidesEDA.pdf)
-- Contents:
-  - 1. (Baseline) tables
-  - 2. Graphs: ≥ 2 categorical variables
-  - 3. Graphs: numeric variables by group
-  - 4. Graphs: 2 numeric variables
+**Exercises:**
+- [Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
+- [RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Download Script](handouts/day_1/ExerciseCode.R))
 
-- Exercises:
-  - [Webr version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
-  - [R studio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"}; [Exercise script (download)](handouts/day_1/ExerciseCode-2.R){target="_blank"}
-- Answers: 
-  - [webr](handouts/day_1/ExerciseWebrAnswers-2.html){target="_blank"}; [R studio](handouts/day_1/ExerciseAnswers-2.html){target="_blank"}
+**Answers:** [RStudio](handouts/day_1/ExerciseAnswers.html) | [PDF](handouts/day_1/ExerciseAnswers.pdf)
 
+### 🌤️ Afternoon: Exploratory Analysis
+**Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/2.SlidesEDA.pdf)
+
+**Contents:**
+1. (Baseline) tables
+2. Graphs for categorical variables
+3. Numeric variables by group
+4. 2-variable numeric plots
+
+**Exercises:**
+- [Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
+- [RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Download Script](handouts/day_1/ExerciseCode-2.R))
+
+**Answers:** [Web-R](handouts/day_1/ExerciseWebrAnswers-2.html) | [RStudio](handouts/day_1/ExerciseAnswers-2.html)
+
+:::
+
+---
