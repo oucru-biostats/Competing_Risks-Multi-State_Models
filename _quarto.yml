@@ -30,11 +30,15 @@ website:
         target: _blank
   comments:
     giscus:
-      repo: your-username/your-repo-name
+      repo: TranHung93/Introduction-to-Medical-Statistics
+      repo-id: R_kgDON7HjOQ # This is the specific ID for your repo
       category: General
+      category-id: DIC_kwDON7HjOc4CnTfL # The ID for the 'General' discussion category
       mapping: pathname
       reactions-enabled: true
       loading: lazy
+      input-position: top
+      theme: light # You can also use 'dark' or 'auto'
       
 
 # Don't touch unless you know what you are doing :) ------------
