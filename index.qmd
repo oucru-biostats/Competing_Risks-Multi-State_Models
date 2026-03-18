@@ -74,6 +74,18 @@ You have two ways to follow the course exercises:
   <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
 </div>
 
+<script>
+function unlockMorning() {
+  var password = prompt("Please enter the session code provided in class:");
+  if (password === "OUCRU2026") {
+    document.getElementById("morning-answers").innerHTML = 
+      '<a href="handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
+      '<a href="handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
+  } else if (password !== null) {
+    alert("Incorrect code.");
+  }
+}
+</script>
 :::
 
 
@@ -98,21 +110,7 @@ You have two ways to follow the course exercises:
   <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
 </div>
 
-:::
-
-
 <script>
-function unlockMorning() {
-  var password = prompt("Please enter the session code provided in class:");
-  if (password === "OUCRU2026") {
-    document.getElementById("morning-answers").innerHTML = 
-      '<a href="handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
-      '<a href="handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
-  } else if (password !== null) {
-    alert("Incorrect code.");
-  }
-}
-
 function unlockAfternoon() {
   var password = prompt("Please enter the session code provided in class:");
   if (password === "OUCRU2026") {
@@ -124,6 +122,6 @@ function unlockAfternoon() {
   }
 }
 </script>
-
+:::
 
 ------------------------------------------------------------------------
