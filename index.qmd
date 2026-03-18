@@ -105,7 +105,55 @@ You have two ways to follow the course exercises:
 
 ------------------------------------------------------------------------
 
+## Day 3: Comparing continuous variables and Simple linear regression
 
+### 🧑‍🏫 Lead instructors: Vuong
+
+
+### ☀️ Morning: Comparing continuous variables
+
+::: {layout-ncol="2"}
+#### Contents
+
+1.  Student’s t-test vs. Wilcoxon rank-sum test
+2.  Paired t-test vs. Wilcoxon signed-rank test
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_3/5_Group comparison_Slides.pdf)
+-   **Exercises:**
+    -   [Web-R version](handouts/day_3/Exercise5_Webr.html){target="_blank"}
+-   **Answers:**
+<div id="morning-answers">
+  <button onclick="unlockMorning3()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
+</div>
+
+
+:::
+
+
+### 🌤️ Afternoon:Simple linear regression
+
+::: {layout-ncol="2"}
+#### Contents
+
+1.  Visualizing Relationships
+2.  The Linear Regression Model
+3.  Interpreting Results
+4.  Regression Diagnostics
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_3/6.simpleLinearRegression_Slides.pdf)
+-   **Exercises:**
+    -   [Web-R version](handouts/day_3/Exercise6_Webr.html){target="_blank"}
+-   **Answers:**
+<div id="afternoon-answers">
+  <button onclick="unlockAfternoon1()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
+</div>
+
+
+:::
 
 
 
@@ -153,7 +201,7 @@ function unlockMorning1() {
   var password = prompt("Please enter the session code provided in class:");
   if (password === "TooEasy?") {
     document.getElementById("morning-answers").innerHTML = 
-      '<a href="./handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
+      '<a href="./handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ' +
       '<a href="./handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
   } else if (password !== null) {
     alert("Incorrect code.");
@@ -170,5 +218,28 @@ function unlockAfternoon1() {
     alert("Incorrect code.");
   }
 }
+
+
+function unlockMorning3() {
+  var password = prompt("Please enter the session code provided in class:");
+  if (password === "TooEasy?") {
+    document.getElementById("morning-answers").innerHTML = 
+      '<a href="./handouts/day_3/Exercise5_Answers.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ';
+  } else if (password !== null) {
+    alert("Incorrect code.");
+  }
+}
+
+function unlockAfternoon3() {
+  var password = prompt("Please enter the session code provided in class:");
+  if (password === "RealFun!") {
+    document.getElementById("afternoon-answers").innerHTML = 
+      '<a href="./handouts/day_3/Exercise6_Answers.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ';
+  } else if (password !== null) {
+    alert("Incorrect code.");
+  }
+}
+
+
 </script>
 
