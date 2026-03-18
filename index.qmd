@@ -20,7 +20,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 
 -   **Time:** 09:15 – 16:45 (UTC +7) daily
 -   **Lunch Break:** 12:30 – 13:30 (UTC +7)
--   **Full Schedule:** [{{< fa file-pdf >}} Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
+-   **Full Schedule:** [Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
 -   *Note: Lunch is provided for in-person attendees.*
 :::
 
@@ -44,7 +44,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 You have two ways to follow the course exercises:
 
 1.  **Zero Setup (Recommended):** Use the [**Web-R**]{.badge .bg-primary} versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please complete the [{{< fa gear >}} Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before joining.
+2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before joining.
 :::
 
 # Course Topics
@@ -65,10 +65,10 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/1.SlidesDescriptives.pdf)
+-   **Lecture:** [Slides](slides/day_1/1.SlidesDescriptives.pdf)
 -   **Exercises:**
-    -   [{{< fa desktop >}} Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-    -   [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode.R))
+    -   [Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
+    -   [RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode.R))
 -   **Answers:**
 <div id="morning-answers">
   <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
@@ -89,10 +89,10 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/2.SlidesEDA.pdf)
+-   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf)
 -   **Exercises:**
-    -   [{{< fa desktop >}} Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
-    -   [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
+    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
+    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
 -   **Answers:**
 <div id="afternoon-answers">
   <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
