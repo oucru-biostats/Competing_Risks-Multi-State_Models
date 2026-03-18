@@ -3,7 +3,6 @@ project:
   output-dir: _render
   render:
     - "*.qmd"
-    - "!handouts/exercises_Day3_answer.qmd"
   resources:
     - "handouts/"
     - "slides/"
