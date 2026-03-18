@@ -7,28 +7,40 @@ from: markdown+autolink_bare_uris
 number-depth: 2
 toc-depth: 2
 date: last-modified
-date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
+date-format: "MMMM D, YYYY"
 ---
 
-# Welcome to the OUCRU Introduction to Medical Statistics 2026 {.unnumbered}
+# Welcome {.unnumbered}
+
+::: {.columns}
+::: {.column width="70%"}
+Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
+:::
+::: {.column width="30%"}
+![](site_imgs/OUCRU.jpg){width="150px" fig-align="right"}
+:::
+:::
 
 ::: {.callout-note appearance="simple"}
 ## 📅 Logistics & Schedule
 * **Time:** 09:15 – 16:45 (UTC +7) daily
 * **Lunch Break:** 12:30 – 13:30 (UTC +7)
-* **Full Schedule:** [Download Timetable (PDF)](handouts/Agenda_StatCourse_23-27March2026.pdf)
+* **Full Schedule:** [{{< fa file-pdf >}} Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
 * *Note: Lunch is provided for in-person attendees.*
 :::
 
 ## Contributors {.unnumbered}
 
 ::: {layout-ncol=2}
-* **Prof. Ronald Geskus** (Biostatistics, OUCRU HCM)
-* **Dr. Duc Du Hong** (Biostatistics, OUCRU HCM)
-* **Dr. Hoang Van Thuan** (Biostatistics, OUCRU HCM)
-* **Dr. Nguyen Lam Vuong** (Biostatistics, OUCRU HCM)
-* **Dr. Tran Thai Hung** (Biostatistics, OUCRU HCM)
+* **Prof. Ronald Geskus**
 
+* **Dr. Duc Du Hong**
+
+* **Dr. Hoang Van Thuan**
+
+* **Dr. Nguyen Lam Vuong**
+
+* **Dr. Tran Thai Hung**
 :::
 
 ---
@@ -39,8 +51,8 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ## 🛠️ Choose Your Environment
 You have two ways to follow the course exercises:
 
-1.  **Zero Setup:** Use the **Web-R** versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please follow the [Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before the course begins.
+1.  **Zero Setup (Recommended):** Use the [**Web-R**]{.badge .bg-primary} versions directly in your browser.
+2.  **Local Setup:** If you prefer using **RStudio**, please complete the [{{< fa gear >}} Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before joining.
 :::
 
 # Course Topics
@@ -49,23 +61,48 @@ You have two ways to follow the course exercises:
 
 ### 🧑‍🏫 Lead instructors: Ronald and Duc
 
-### ☀️ Morning: Descriptive Analysis
+::: {.panel-tabset}
+
+## ☀️ Morning: Descriptive Analysis
 
 ::: {layout-ncol=2}
+#### {{< fa list-ul >}} Contents
+1. Data characteristics & Variable types
+2. Numerical & Graphical summaries
+3. Intro to R and RStudio
 
-**Contents:**
-- 1. Data characteristics & Variable types
-- 2. Numerical & Graphical summaries
-- 3. Intro to R and RStudio
+#### {{< fa download >}} Materials
+* **Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/1.SlidesDescriptives.pdf)
+* **Exercises:**
+    * [{{< fa desktop >}} Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
+    * [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode.R))
+* **Answers:**
+    <div id="morning-answers">
+      <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
+    </div>
+:::
 
-**Lecture:** [Slides](slides/day_1/1.SlidesDescriptives.pdf)
-**Exercises:**
-- [Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-- [RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Download Script](handouts/day_1/ExerciseCode.R))
-**Answers:**
-<div id="morning-answers">
-  <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
-</div>
+## 🌤️ Afternoon: Exploratory Analysis
+
+::: {layout-ncol=2}
+#### {{< fa list-ul >}} Contents
+1. (Baseline) tables
+2. Graphs for categorical variables
+3. Numeric variables by group
+4. 2-variable numeric plots
+
+#### {{< fa download >}} Materials
+* **Lecture:** [{{< fa file-pdf >}} Slides](slides/day_1/2.SlidesEDA.pdf)
+* **Exercises:**
+    * [{{< fa desktop >}} Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
+    * [{{< fa code >}} RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
+* **Answers:**
+    <div id="afternoon-answers">
+      <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
+    </div>
+:::
+
+:::
 
 <script>
 function unlockMorning() {
@@ -74,46 +111,21 @@ function unlockMorning() {
     document.getElementById("morning-answers").innerHTML = 
       '<a href="handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
       '<a href="handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
-  } else {
-    alert("Incorrect code. Please ask the instructor for the password.");
+  } else if (password !== null) {
+    alert("Incorrect code.");
   }
 }
-</script>
 
-:::
-
-### 🌤️ Afternoon: Exploratory Analysis
-
-::: {layout-ncol=2}
-
-**Contents:**
-- 1. (Baseline) tables
-- 2. Graphs for categorical variables
-- 3. Numeric variables by group
-- 4. 2-variable numeric plots
-
-**Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf)
-**Exercises:**
-- [Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
-- [RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Download Script](handouts/day_1/ExerciseCode-2.R))
-**Answers:**
-<div id="afternoon-answers">
-  <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
-</div>
-
-<script>
 function unlockAfternoon() {
   var password = prompt("Please enter the session code provided in class:");
   if (password === "OUCRU2026") {
     document.getElementById("afternoon-answers").innerHTML = 
       '<a href="handouts/day_1/ExerciseWebrAnswers-2.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ' +
       '<a href="handouts/day_1/ExerciseAnswers-2.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a>';
-  } else {
+  } else if (password !== null) {
     alert("Incorrect code.");
   }
 }
 </script>
-
-:::
 
 ---
