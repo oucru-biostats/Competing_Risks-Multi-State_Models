@@ -18,7 +18,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 ## 📅 Logistics & Schedule
 -   **Time:** 09:15 – 16:45 (UTC +7) daily
 -   **Lunch Break:** 12:30 – 13:30 (UTC +7)
--   **Full Schedule:** [Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
+-   **Full Schedule:** [Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf){.btn .btn-outline-primary .btn-sm}
 -   *Note: Lunch is provided for in-person attendees.*
 :::
 
@@ -42,7 +42,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 You have two ways to follow the course exercises:
 
 1.  **Zero Setup (Recommended):** Use the [**Web-R**]{.badge .bg-primary} versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](handouts/precourse_setup.qmd){target="_blank"} before joining.
+2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](handouts/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm}{target="_blank"} before joining.
 :::
 
 # Course Topics
@@ -63,10 +63,10 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_1/1.SlidesDescriptives.pdf)
+-   **Lecture:** [Slides](slides/day_1/1.SlidesDescriptives.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_1/Exercise1_Webr.html){target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudio.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode.R))
+    -   [Web-R version](handouts/day_1/Exercise1_Webr.html){.btn .btn-outline-primary .btn-sm}{target="_blank"}
+    -   [RStudio version](handouts/day_1/ExerciseRStudio.html){.btn .btn-outline-primary .btn-sm}{target="_blank"} ([Script](handouts/day_1/ExerciseCode.R)){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="morning-answers">
   <button onclick="unlockMorning1()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
@@ -81,17 +81,17 @@ You have two ways to follow the course exercises:
 ::: {layout-ncol="2"}
 #### Contents
 
-1.  (Baseline) tables
+1.  Baseline tables
 2.  Graphs for categorical variables
 3.  Numeric variables by group
 4.  2-variable numeric plots
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf)
+-   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
+    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){.btn .btn-outline-primary .btn-sm}{target="_blank"}
+    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){.btn .btn-outline-primary .btn-sm}{target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R){.btn .btn-outline-primary .btn-sm})
 -   **Answers:**
 <div id="afternoon-answers">
   <button onclick="unlockAfternoon1()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
@@ -103,7 +103,7 @@ You have two ways to follow the course exercises:
 
 
 
---------------------
+------------------------------------------------------------------------
 
 
 
@@ -171,4 +171,4 @@ function unlockAfternoon1() {
   }
 }
 </script>
-------------------------------------------------------------------------
+
