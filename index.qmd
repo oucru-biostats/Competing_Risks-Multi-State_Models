@@ -143,7 +143,7 @@ You have two ways to follow the course exercises:
 :::
 
 
-### 🌤️ Afternoon:Simple linear regression
+### 🌤️ Afternoon: Simple linear regression
 
 ::: {layout-ncol="2"}
 #### Contents
@@ -171,7 +171,64 @@ You have two ways to follow the course exercises:
 
 
 
+------------------------------------------------------------------------
 
+## Day 4: Multivariable linear and logistic regression
+
+### 🧑‍🏫 Lead instructors: Thuan and Vuong
+
+
+### ☀️ Morning: Multivariable linear regression
+
+::: {layout-ncol="2"}
+#### Contents
+
+1. Model formulation
+2. Estimation
+3. Testing
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_4/7.multipleRegression.pdf)
+-   **Exercises:**
+    -   [Web-R version](handouts/day_4/Exercise7-Webr.html){target="_blank"}
+-   **Answers:**
+<div id="day4-morning">
+  <button class="btn btn-primary" onclick="unlockSession('a', 'day4-morning', 
+    '<a href=\'./handouts/day_4/Exercise7-Answer-Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')">
+    Click to unlock answer
+  </button>
+</div>
+
+
+:::
+
+
+### 🌤️ Afternoon: Logistic regression
+
+::: {layout-ncol="2"}
+#### Contents
+
+1.  Risk/odds, risk ratio (RR)/odds ratio (OR)
+2.  Logistic regression model
+3.  Interpreting Univariable Logistic Regression
+4.  Interpreting Multivariable Logistic Regression
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_4/8.Logistic Regression_Slides.pdf)
+-   **Exercises:**
+    -   [Web-R version](handouts/day_4/Exercise8_Webr.html){target="_blank"}
+-   **Answers:**
+<div id="day4-afternoon">
+  <button class="btn btn-primary" onclick="unlockSession('a', 'day4-afternoon', 
+    '<a href=\'./handouts/day_4/Exercise8_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')">
+    Click to unlock answer
+  </button>
+</div>
+
+
+:::
 
 
 
