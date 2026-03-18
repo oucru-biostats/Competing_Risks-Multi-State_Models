@@ -26,7 +26,7 @@ website:
     right:
       - icon: envelope
         aria-label: email
-        href: "mailto:hungtt@oucru.org"
+        href: "mailto:thaihung.tran306@gmail.com"
         target: _blank
   comments:
     giscus:
