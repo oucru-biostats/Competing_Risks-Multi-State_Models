@@ -13,10 +13,6 @@ website:
   description: "Introduction to Medical Statistics course by OUCRU. Learn biostatistics, R programming, and data analysis for clinical research."
   site-url: "https://tranhung93.github.io/Introduction-to-Medical-Statistics/"
   
-  # Add these for better SEO and Social Sharing
-  metadata:
-    keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research", "TBM", "Vietnam", "Web-R"]
-    author: "Tran Thai Hung"
   cookie-consent:
     type: express
     style: simple
@@ -73,5 +69,8 @@ execute:
 format:
   html:
     theme: cosmo
+  metadata:
+      keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research", "TBM", "Vietnam", "Web-R"]
+      author: "Tran Thai Hung"
   revealjs:
     css: ../styles.css
