@@ -27,6 +27,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 * **Lunch Break:** 12:30 – 13:30 (UTC +7)
 * **Full Schedule:** [{{< fa file-pdf >}} Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
 * *Note: Lunch is provided for in-person attendees.*
+
 :::
 
 ## Contributors {.unnumbered}
@@ -41,6 +42,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 * **Dr. Nguyen Lam Vuong**
 
 * **Dr. Tran Thai Hung**
+
 :::
 
 ---
@@ -80,6 +82,7 @@ You have two ways to follow the course exercises:
     <div id="morning-answers">
       <button onclick="unlockMorning()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
     </div>
+
 :::
 
 ## 🌤️ Afternoon: Exploratory Analysis
@@ -100,6 +103,7 @@ You have two ways to follow the course exercises:
     <div id="afternoon-answers">
       <button onclick="unlockAfternoon()" class="btn btn-outline-secondary btn-sm">Click to unlock answers</button>
     </div>
+
 :::
 
 :::
