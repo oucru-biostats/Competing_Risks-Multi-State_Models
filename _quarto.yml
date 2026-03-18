@@ -24,11 +24,6 @@ website:
       - href: https://oucru-modelling.github.io/R-training-2025/
         text: Previous R training course
         
-    # your social media handles
-    right:
-      - icon: envelope
-        aria-label: email
-        href: mailto:hungtt@oucru.org 
 
   comments:
     giscus:
@@ -50,6 +45,7 @@ website:
   page-footer: 
     left: |
       <span class="faux-block">&#169; 2026 Tran Thai Hung and the Biostatistics group <br></span>
+      <span class="faux-block">Contact: [thaihung.tran306@gmail.com](mailto:thaihung.tran306@gmail.com) <br></span>      
       <span class="faux-block">All content licensed under<br>[Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)</span>
     center: |
      
