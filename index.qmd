@@ -79,8 +79,8 @@ function unlockMorning() {
   var password = prompt("Please enter the session code provided in class:");
   if (password === "OUCRU2026") {
     document.getElementById("morning-answers").innerHTML = 
-      '<a href="handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
-      '<a href="handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
+      '<a href="./handouts/day_1/ExerciseAnswers.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a> ' +
+      '<a href="./handouts/day_1/ExerciseAnswers.pdf" class="btn btn-success btn-sm" target="_blank">PDF</a>';
   } else if (password !== null) {
     alert("Incorrect code.");
   }
@@ -115,8 +115,8 @@ function unlockAfternoon() {
   var password = prompt("Please enter the session code provided in class:");
   if (password === "OUCRU2026") {
     document.getElementById("afternoon-answers").innerHTML = 
-      '<a href="handouts/day_1/ExerciseWebrAnswers-2.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ' +
-      '<a href="handouts/day_1/ExerciseAnswers-2.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a>';
+      '<a href="./handouts/day_1/ExerciseWebrAnswers-2.html" class="btn btn-success btn-sm" target="_blank">Web-R Answers</a> ' +
+      '<a href="./handouts/day_1/ExerciseAnswers-2.html" class="btn btn-success btn-sm" target="_blank">RStudio Answers</a>';
   } else if (password !== null) {
     alert("Incorrect code.");
   }
