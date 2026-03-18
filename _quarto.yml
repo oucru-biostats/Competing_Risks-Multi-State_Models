@@ -8,6 +8,9 @@ project:
     - "handouts/"
     - "slides/"
     - "site_imgs/"
+author: "Tran Thai Hung"
+keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research", "TBM"]
+
 website:
   title: "Medical Statistics"
   description: "Introduction to Medical Statistics course by OUCRU. Learn biostatistics, R programming, and data analysis for clinical research."
@@ -69,8 +72,6 @@ execute:
 format:
   html:
     theme: cosmo
-  metadata:
-      keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research", "TBM", "Vietnam", "Web-R"]
-      author: "Tran Thai Hung"
+
   revealjs:
     css: ../styles.css
