@@ -52,7 +52,7 @@ You have two ways to follow the course exercises:
 ### 🧑‍🏫 Lead instructors: Ronald and Duc
 
 
-## ☀️ Morning: Descriptive Analysis
+### ☀️ Morning: Descriptive Analysis
 
 ::: {layout-ncol="2"}
 #### Contents
@@ -76,7 +76,7 @@ You have two ways to follow the course exercises:
 :::
 
 
-## 🌤️ Afternoon: Exploratory Analysis
+### 🌤️ Afternoon: Exploratory Analysis
 
 ::: {layout-ncol="2"}
 #### Contents
