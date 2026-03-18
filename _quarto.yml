@@ -27,7 +27,7 @@ website:
       - icon: envelope
         aria-label: email
         href: "mailto:thaihung.tran306@gmail.com"
-        target: _blank
+
   comments:
     giscus:
       repo: "TranHung93/Introduction-to-Medical-Statistics"
