@@ -21,7 +21,7 @@ website:
       - href: index.qmd
         text: Home
       - href: handouts/medical_statistics_2024.qmd 
-        text: OUCRU Medical Statistics Course Videos
+        text: Course Videos
       - href: https://oucru-modelling.github.io/R-training-2025/
         text: Previous R training course
         
