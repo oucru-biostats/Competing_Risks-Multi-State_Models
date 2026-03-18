@@ -42,7 +42,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 You have two ways to follow the course exercises:
 
 1.  **Zero Setup (Recommended):** Use the [**Web-R**]{.badge .bg-primary} versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](slide/precourse_setup.qmd){target="_blank"} before joining.
+2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){target="_blank"} before joining.
 :::
 
 # Course Topics
