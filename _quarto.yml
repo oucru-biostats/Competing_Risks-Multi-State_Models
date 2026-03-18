@@ -3,6 +3,7 @@ project:
   output-dir: _render
   render:
     - "*.qmd"
+    - "handouts/*.qmd"
   resources:
     - "handouts/"
     - "slides/"
