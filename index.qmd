@@ -116,7 +116,6 @@ You have two ways to follow the course exercises:
 
 ### 🧑‍🏫 Lead instructors: Ronald and Thuan
 
-
 ### ☀️ Morning: Statistical analysis: main concepts and principles. Binomial distribution.
 
 ::: {layout-ncol="2"}
@@ -130,12 +129,7 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
-
-
-
-
 :::
-
 
 ### 🌤️ Afternoon:The Normal Distribution; Confidence Intervalss
 
@@ -153,7 +147,7 @@ You have two ways to follow the course exercises:
     -   [Web-R version](handouts/day_2/Exercise4Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_2/Exercise4_RStudio.qmd){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Answers:**
-<div id="day1-afternoon">
+<div id="day2-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day1-afternoon', 
     '<a href=\'./handouts/day_2/Exercise4Answer_Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
     '<a href=\'./handouts/day_2/Exercise4Answer_RStudio.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
@@ -192,7 +186,7 @@ You have two ways to follow the course exercises:
 -   **Answers:**
 <div id="day3-morning">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day3-morning', 
-    '<a href=\'./handouts/day_3/Exercise5_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')+
+    '<a href=\'./handouts/day_3/Exercise5_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
     '<a href=\'./handouts/day_3/Exercise5_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
   </button>
@@ -221,7 +215,7 @@ You have two ways to follow the course exercises:
 -   **Answers:**
 <div id="day3-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day3-afternoon', 
-    '<a href=\'./handouts/day_3/Exercise6_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')+
+    '<a href=\'./handouts/day_3/Exercise6_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
     '<a href=\'./handouts/day_3/Exercise6_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
   </button>
