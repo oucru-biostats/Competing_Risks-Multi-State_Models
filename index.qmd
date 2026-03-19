@@ -92,10 +92,10 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf)
+-   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){target="_blank"} ([Script](handouts/day_1/ExerciseCode-2.R))
+    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){.btn .btn-outline-primary .btn-sm}
+    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){.btn .btn-outline-primary .btn-sm} [Script](handouts/day_1/ExerciseCode-2.R){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="day1-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day1-afternoon', 
@@ -128,9 +128,9 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_3/5_Group comparison_Slides.pdf)
+-   **Lecture:** [Slides](slides/day_3/5_Group comparison_Slides.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_3/Exercise5_Webr.html){target="_blank"}
+    -   [Web-R version](handouts/day_3/Exercise5_Webr.html){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="day3-morning">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day3-morning', 
@@ -155,9 +155,9 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_3/6.simpleLinearRegression_Slides.pdf)
+-   **Lecture:** [Slides](slides/day_3/6.simpleLinearRegression_Slides.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_3/Exercise6_Webr.html){target="_blank"}
+    -   [Web-R version](handouts/day_3/Exercise6_Webr.html){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="day3-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day3-afternoon', 
@@ -189,9 +189,9 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_4/7.multipleRegression.pdf)
+-   **Lecture:** [Slides](slides/day_4/7.multipleRegression.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_4/Exercise7-Webr.html){target="_blank"}
+    -   [Web-R version](handouts/day_4/Exercise7-Webr.html){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="day4-morning">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day4-morning', 
@@ -216,9 +216,9 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_4/8.Logistic Regression_Slides.pdf)
+-   **Lecture:** [Slides](slides/day_4/8.Logistic Regression_Slides.pdf){.btn .btn-outline-primary .btn-sm}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_4/Exercise8_Webr.html){target="_blank"}
+    -   [Web-R version](handouts/day_4/Exercise8_Webr.html){.btn .btn-outline-primary .btn-sm}
 -   **Answers:**
 <div id="day4-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day4-afternoon', 
