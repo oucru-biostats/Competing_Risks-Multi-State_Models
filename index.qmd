@@ -18,7 +18,7 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 ## 📅 Logistics & Schedule
 -   **Time:** 09:15 – 16:45 (UTC +7) daily
 -   **Lunch Break:** 12:30 – 13:30 (UTC +7)
--   **Full Schedule:** [Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf)
+-   **Full Schedule:** [Download Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf){.btn .btn-outline-primary .btn-sm}
 -   *Note: Lunch is provided for in-person attendees.*
 :::
 
@@ -41,8 +41,8 @@ Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is
 
 You have two ways to follow the course exercises:
 
-1.  **Zero Setup (Recommended):** Use the [**Web-R**]{.badge .bg-primary} versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){target="_blank"} before joining.
+1.  **Zero Setup (Recommended):** Use the **Web-R** versions directly in your browser.
+2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm} before joining.
 :::
 
 # Course Topics
