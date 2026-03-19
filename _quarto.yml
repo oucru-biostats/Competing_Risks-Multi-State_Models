@@ -9,7 +9,7 @@ project:
     - "handouts/"
     - "slides/"
     - "site_imgs/"
-keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research", "TBM"]
+keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research"]
 
 website:
   title: "Medical Statistics"
