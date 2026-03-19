@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "others/*.qmd"
+    - "!handouts/Exercise4.qmd"
   resources:
     - "handouts/"
     - "slides/"
