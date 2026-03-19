@@ -1,0 +1,894 @@
+---
+title: |
+  | Introduction to Medical Statistics 2026
+  | Exercises Class IV
+  | Normal distribution and the Confidence Intervals
+author: 
+  - Thuan Hoang
+  - "Ronald Geskus"
+date: "Marrch 24, 2026"
+filters:
+  - assign
+  - webr
+webr:
+  channel-type: "shared-array-buffer"
+  cell-options:
+    autorun: false
+    message: true
+    warning: true
+    eval: true
+    echo: false
+engine:
+  knitr
+format-links: 
+  - html
+format: 
+  html:
+    toc: true
+    df_print: paged
+    embed-resources: true
+    metadata:
+      pagetitle: Exercises Class IV - Normal distribution and the Confidence Intervals
+    include-in-header: 
+      - text: |
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
+  pdf:
+    fontsize: 12pt
+execute: 
+    message: true
+    warning: true
+    eval: true
+    echo: false
+---
+
+```{r}
+#| label: setup
+#| echo: false
+library(ggplot2)
+library(gghighlight)
+dens_highlight <- function(dist, range, inverse=FALSE, dist.args = list(), 
+                           lims = NULL) {
+  dots <- rlang::enexpr(range)
+  
+  dfun <- get(paste0('d', dist))
+  if (is.null(lims)){
+    rfun <- get(paste0('r', dist))
+    rargs <- modifyList(dist.args, list(n=1000))
+    xrand <- do.call(rfun, rargs[names(rargs)%in%names(formals(rfun))])
+    lims <- quantile(xrand, c(0.01, 0.99))
+  }
+  x <- seq(lims[1], lims[2], length.out=5000)
+  fx <- do.call(dfun, modifyList(dist.args, list(x=x)))
+ 
+    if (!inverse){
+      ggplot(data.frame(X = x, `f(x)`=fx, check.names = FALSE)) + 
+        geom_area(aes(x=X, y=`f(x)`), fill='darkred') +
+        theme_bw() + 
+        gghighlight({{range}},  unhighlighted_params = list(fill='grey'))
+    } else {
+      ggplot(data.frame(X = x, `f(x)`=fx, check.names = FALSE)) + 
+      geom_area(aes(x=X, y=`f(x)`), fill='grey') +
+        theme_bw() + 
+        gghighlight({{range}}, unhighlighted_params = list(fill='darkred'))
+  }
+}
+```
+
+## I. Calculation of normal probabilities
+
+Below is a bell-shaped curve demonstrating a Standard Normal distribution.
+In R, function `pnorm(x, mean, sd)` is a function to quantify the probability $P(X \leq x)$ from a Normal distribution with mean `mean` and standard deviation `sd`.
+
+```{r fig-pnorm}
+#| label: fig-pnorm
+#| fig-width: 8
+#| fig-asp: 0.7
+#| fig-cap: 'Given X ~ Normal(0,1). The curve represents the probability density function of x. The probability of x < -1 (P(x < -1) is highlighted in red. Do you see that it is symmetrical?'
+#| out-width: 70%
+
+dens_highlight('norm', X < - 1)
+```
+
+Assume that the probability distribution of a laboratory marker in a population has a normal distribution with mean 75 and standard deviation 15. Use the 68-95-99.7-rule to (approximately) calculate the following probabilities by hand. Use the `pnorm` function in R to confirm your approximations.
+
+1.  P(60\<X\<90)
+
+:::{.direction}
+```{webr-r}
+pnorm(..., mean=75, sd=15) - pnorm(..., mean=75, sd=15)
+```
+:::
+
+:::{.sol}
+**Answer:** Standardized value: (90-75)/15=1 sd from the mean. About 68% of the values is within 1 sd from the mean, hence P(60\<x\<90)=0.68
+
+```{r}
+#| echo: true
+#| output: asis
+pnorm(60, mean=75, sd=15) - pnorm(75, mean=75, sd=15)
+```
+:::
+
+:::{.rubric}
+**Answer:** Standardized value: (90-75)/15=1 sd from the mean. About 68% of the values is within 1 sd from the mean, hence P(60\<x\<90)=0.68
+
+```{webr-r}
+pnorm(60, mean=75, sd=15) - pnorm(75, mean=75, sd=15)
+```
+:::
+
+2.  P(X\<60)
+
+:::{.direction}
+```{webr-r}
+pnorm(..., mean=75, sd=15)
+```
+:::
+
+:::{.sol}
+**Answer:** 32% percent of the values is more than 1sd from the mean, 16% on each side. Hence P(x\<60)=0.16
+
+```{r}
+#| echo: true
+#| output: asis
+
+1-pnorm(60, mean=75, sd=15)
+```
+:::
+
+:::{.rubric}
+**Answer:** 32% percent of the values is more than 1sd from the mean, 16% on each side. Hence P(x\<60)=0.16
+
+```{webr-r}
+1-pnorm(60, mean=75, sd=15)
+```
+:::
+
+3.  P(X\>90)
+
+:::{.direction}
+```{webr-r}
+pnorm(..., mean=75, sd=15)
+```
+:::
+
+:::{.sol}
+**Answer:** Same as above as Normal Distribution is symmetrical. Hence P(X\>90) = P(X\<60) = 1-P(X\<90) = 0.16
+
+```{r}
+#| echo: true
+#| output: asis
+1-pnorm(60, mean=75, sd=15)
+# or pnorm(90, mean=75, sd=15, lower.tail=FALSE)
+```
+:::
+
+:::{.rubric}
+**Answer:** Same as above as Normal Distribution is symmetrical. Hence P(X\>90) = P(X\<60) = 1-P(X\<90) = 0.16
+
+```{webr-r}
+1-pnorm(60, mean=75, sd=15)
+# or pnorm(90, mean=75, sd=15, lower.tail=FALSE)
+```
+:::
+
+4.  P(X\<60 or X\>105)
+
+:::{.direction}
+```{webr-r}
+pnorm(...) + pnorm(...)
+```
+:::
+
+:::{.sol}
+*Answer: (105-75)/15=2 About 95% is within 2sd from the mean, and about 2.5% is larger than 105. Hence P(X\<60 or X\>105)=0.16+0.025=0.185*
+
+```{r}
+#| echo: true
+#| output: asis
+pnorm(60,75,15) +
+  (1-pnorm(105,75,15))  # P(X<60) + (1-P(X<105))
+```
+:::
+
+
+:::{.rubric}
+*Answer: (105-75)/15=2 About 95% is within 2sd from the mean, and about 2.5% is larger than 105. Hence P(X\<60 or X\>105)=0.16+0.025=0.185*
+
+```{webr-r}
+pnorm(60,75,15) + (1-pnorm(105,75,15))  # P(X<60) + (1-P(X<105))
+```
+:::
+
+## II. Distribution of the sample mean
+
+Assume that the probability distribution of a laboratory marker in a population has a normal distribution with mean 75 and standard deviation 15 and that we measure this marker in 144 individuals. We compute the mean of those 144 values.
+
+1.  What is the distribution of this sample mean? Give the mean as well as the standard deviation.
+
+:::{.sol}
+As the sample size is large (N=144), the sample mean approximately follows:
+
+$$
+M \sim \mathcal N(\hat{\text{M}}, \frac{\text{SD}}{\sqrt{\text N}})
+$$ where M is the sample mean, $\hat M$ is the estimate of M, and SD is the sample standard deviation. Hence the answer is
+
+$$
+M \sim \mathcal N(75, \frac{15}{\sqrt{144}}) = \mathcal N(75, 1.25)
+$$
+:::
+
+2.  Assuming that the population true mean is $\mu$ = 75. We no do collect a sample of size 144. The mean of this sample is M. What is the probability that this sample mean M differs by **more than 2 units** from the population mean $\mu$ = 75?
+
+:::{.direction}
+```{webr-r}
+# HINT: use the code is exercise I.
+```
+:::
+
+:::{.sol}
+**Answer** We want to calculate the probability that M \< 75-2 or M \> 75+2, i.e, P(M\<73 or M\>77). We use code given in Exercise I.
+
+```{r}
+#| echo: true
+#| output: asis
+pnorm(75-2,mean=75,sd=1.25) + 
+  pnorm(75+2,mean=75,sd=1.25,lower.tail=F) 
+```
+
+We visualised what we just calculated.
+
+```{r}
+#| label: fig-pnorm2
+#| fig-width: 8
+#| fig-asp: 0.7
+#| out-width: 60%
+dens_highlight('norm', (73 < X & X <77) , inverse=TRUE, dist.args = list(mean=75, sd=1.25))
+```
+:::
+
+:::{.rubric}
+**Answer** We want to calculate the probability that M \< 75-2 or M \> 75+2, i.e, P(M\<73 or M\>77). We use code given in Exercise I.
+
+```{webr-r}
+pnorm(75-2,mean=75,sd=1.25) + 
+  pnorm(75+2,mean=75,sd=1.25,lower.tail=F) 
+```
+
+We visualised what we just calculated.
+
+```{webr-r}
+#| fig-width: 8
+#| fig-asp: 0.7
+#| fit-cap: 'Given x ~ Normal(0,1). The curve represents the probability density function of x. The probability of x < -1 (P(x < -1) is highlighted in red. Do you see that is it symmetrical?'
+#| out-width: 60%
+dens_highlight('norm', (73 < x & x <77) , inverse=TRUE, dist.args = list(mean=75, sd=1.25))
+```
+:::
+
+3.  We are running into a problem. We failed to collect the planned sample size of N = 144. In fact, we only managed to collect a very small handful of samples. That mean we could not approximate a Normal distribution anymore. We have to use a *t* distribution. Given the function to calculate a cumulative probabily of a *t* distribution is `R` is `pstudent_t(x, df, mu, sigma)` (instead of `pnorm(x, mean, sd)` as we have seen before). Recalculate the probability in question 2 the scenarios below. Compare that with what you observe from the Normal observation, what can you conclude?
+
+-   N = 4
+-   N = 9
+-   N = 25
+-   N = 144 (but don't use the Normal approximation.)
+
+:::{.direction}
+```{webr-r}
+# The pstudent_t function does not exist in base R. We have to load a package first
+library(ggdist)
+```
+
+```{webr-r}
+# N = 4
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 9
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 25
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 144
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+```
+:::
+
+:::{.sol}
+**Answer** The number of degrees of freedom for *t* distribution is the sample size minus 1 (N-1). The calculations are hence done as below:
+
+```{r}
+#| echo: true
+# The pstudent_t function does not exist in base R. We have to load a package first
+library(ggdist)
+```
+
+```{r}
+#| echo: true
+#| output: asis
+# N = 5
+pstudent_t(75-2, df=3, mu=75,sigma=1.25) +
+  pstudent_t(75+2, df=3, mu=75,sigma=1.25,lower.tail=F) 
+# N = 9
+pstudent_t(75-2, df=8, mu=75,sigma=1.25) + 
+  pstudent_t(75+2, df=8, mu=75,sigma=1.25,lower.tail=F) 
+# N = 25
+pstudent_t(75-2, df=24, mu=75,sigma=1.25) + 
+  pstudent_t(75+2, df=24, mu=75,sigma=1.25,lower.tail=F) 
+# N = 144
+pstudent_t(75-2, df=142, mu=75,sigma=1.25) + 
+  pstudent_t(75+2, df=143, mu=75,sigma=1.25,lower.tail=F) 
+```
+
+We notice that the more samples we collected, the lighter the tails and the nearer to a Normal distribution a $t_{N-1}$ is. However even with a sample size as large as 144, there is still a tiny difference (0.112 vs 0.110).
+:::
+
+:::{.rubric}
+**Answer** The number of degrees of freedom for *t* distribution is the sample size minus 1 (N-1). The calculations are hence done as below:
+
+```{webr-r}
+# The pstudent_t function does not exist in base R. We have to load a package first
+library(ggdist)
+```
+
+```{webr-r}
+# N = 5
+pstudent_t(75-2, df=3, mu=75,sigma=1.25) + pstudent_t(75+2, df=3, mu=75,sigma=1.25,lower.tail=F) 
+# N = 9
+pstudent_t(75-2, df=8, mu=75,sigma=1.25) + pstudent_t(75+2, df=8, mu=75,sigma=1.25,lower.tail=F) 
+# N = 25
+pstudent_t(75-2, df=24, mu=75,sigma=1.25) + pstudent_t(75+2, df=24, mu=75,sigma=1.25,lower.tail=F) 
+# N = 144
+pstudent_t(75-2, df=142, mu=75,sigma=1.25) + pstudent_t(75+2, df=143, mu=75,sigma=1.25,lower.tail=F) 
+```
+
+We notice that the more samples we collected, the lighter the tails and the nearer to a Normal distribution a $t_{N-1}$ are. However even with a sample size as large as 144, there is still a tiny difference (0.112 vs 0.110).
+:::
+
+## III. Confidence interval for a proportion
+
+We continue with the exercise from this morning, in which we considered a new chemotherapy. In a trial of 50 patients, 16 had a tumor response. This morning we tested the null hypothesis that the new therapy does not increase the tumor response probability to a value higher than the 20% of the currently available chemotherapies. Now we focus on the 95% confidence interval.
+
+Calculate a two-sided 95% confidence interval for the true tumor response probability. In $\textsf{R}$, this is done via function `prop.test`. Use the fact that the confidence interval is equal to the estimate $\pm 2 \times$ SE, with SE the standard error of the sample proportion.
+
+:::{.direction}
+```{webr-r}
+#| output: asis
+prop.test(x = ..., # number of positive response/success
+          n = ..., # total number of patients involved,
+          conf.level = 0.95, # confidence level = 1-alpha, 
+          correct=FALSE
+          )$conf.int 
+```
+:::
+
+:::{.sol}
+**Answer** The calculation is as below:
+
+:::{.callout-tip}
+Contrary to the default in $\textsf{R}$, the Yates' correction for continuity might be too conservative. It is safe to not use that.
+:::
+
+```{r}
+#| echo: true
+prop.test(x = 16, # number of positive response/success
+          n = 50, # total number of patients involved,
+          conf.level = 0.95, # confidence level = 1-alpha, 
+          correct=FALSE 
+          )$conf.int
+```
+
+Note that in $\textsf R$, there are many methods to approximate the confidence interval and p-value, as you might have known. To name a few:
+
+-   Wilson method (via `prop.test`)
+-   Exact method (via `binom.test`)
+-   And Wald's asymptotic method
+
+When in doubt, use `prop.test` but one may want to be cautious if p-value $\approx 0.05$. It is advisable to investigate all three methods with `Hmisc::binconf`.
+
+```{r}
+#| echo: true
+library(Hmisc)
+binconf(16, 50, method="all") 
+```
+
+Oopsie! Only the Wilson method gives a confidence interval that doesn't cover 0.2, and hence would reject $H_0$. Note: If you look at the p-value of binom.test, you see that it is smaller than 0.05, which would lead to a rejection of $H_0$. When you read the Details section in the help file of the function, you notice that there is more than one way to compute the confidence interval. So apparently the procedure used can give a confidence interval that is not in correspondence with the p-value. It again shows that a decision based on p\<0.05 can depend on subtle variations in the procedures followed
+:::
+
+:::{.rubric}
+**Answer** The calculation is as below:
+
+:::{.callout-tip}
+Contrary to the default in $\textsf{R}$, the Yates' correction for continuity might be too conservative. It is safe to not use that.
+:::
+
+```{webr-r}
+#| echo: true
+prop.test(x = 16, # number of positive response/success
+          n = 50, # total number of patients involved,
+          conf.level = 0.95, # confidence level = 1-alpha, 
+          correct=FALSE 
+          )$conf.int
+```
+
+Note that in $\textsf R$, there are many methods to approximate the confidence interval and p-value, as you might have known. To name a few:
+
+-   Wilson method (via `prop.test`)
+-   Exact method (via `binom.test`)
+-   And Wald's asymptotic method
+
+When in doubt, use `prop.test` but one may want to be cautious if p-value $\approx 0.05$. It is advisable to investigate all three methods with `Hmisc::binconf`.
+
+```{webr-r}
+#| echo: true
+library(Hmisc)
+binconf(16, 50, method="all") 
+```
+
+Oopsie! Only the Wilson method gives a confidence interval that doesn't cover 0.2, and hence would reject $H_0$. Note: If you look at the p-value of binom.test, you see that it is smaller than 0.05, which would lead to a rejection of $H_0$. When you read the Details section in the help file of the function, you notice that there is more than one way to compute the confidence interval. So apparently the procedure used can give a confidence interval that is not in correspondence with the p-value. It again shows that a decision based on p\<0.05 can depend on subtle variations in the procedures followed
+:::
+
+## IV. Inference on the change in white cell count
+
+The dataset [bmData.csv](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData.csv) contains selected variables from 300 patients with confirmed bacterial meningitis. They were randomized to either adjunctive dexamethasone therapy or placebo. In this exercise we study the change in CSF total white cell count between baseline and follow-up in the dexamethasone arm.
+
+1.  Have a look at [the description of the dataset](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData_description.txt) and import the dataset [bmData.csv](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData.csv) into R with variable name *bmData* and use `tbl_summary` to summarise the dataset (except patId) by treatment group (variable `group`).
+
+:::{.direction}
+
+```{webr-r}
+# Load the packages first
+library(gtsummary)
+```
+
+```{webr-r}
+#| output: asis
+bmData <- ...('https://raw.githubusercontent.com/oucru-biostats/IntroductionToBiostatistics2024/main/data/bmData.csv') # HINT: change the function name to read a csv file (Exercise I)
+tbl_summary(bmData[,-1], # remove the first column, which is the patient ids
+            by = ...)    # do the summary by which variable?
+```
+:::
+
+:::{.sol}
+```{r}
+#| echo: true
+library(gtsummary)
+bmData <- read.csv('https://raw.githubusercontent.com/oucru-biostats/IntroductionToBiostatistics2024/main/data/bmData.csv') # HINT: change the function name to read a csv file (Exercise I)
+tbl_summary(bmData[,-1],  # remove the first column, which is the patient ids
+            by = group,   # do the summary by group
+            missing_text = '(missing)') 
+```
+:::
+
+:::{.rubric}
+```{webr-r}
+library(gtsummary)
+bmData <- read.csv('https://raw.githubusercontent.com/oucru-biostats/IntroductionToBiostatistics2024/main/data/bmData.csv') # HINT: change the function name to read a csv file (Exercise I)
+tbl_summary(bmData[,-1],  # remove the first column, which is the patient ids
+            by = group,   # do the summary by group
+            missing_text = '(missing)') 
+```
+:::
+
+2. Create a dataset that restricts observations to the dexamethasone group 
+(e.g. using the _subset_ function; 
+look at the examples in the help file for filter if you need to learn how to use it). 
+
+  - Make a numerical summary of CSF total white cell count at each of the time points: _wc.csf_ at baseline and _wc.csf.fup_ at follow-up. What do you find regarding the distributions and value ranges?
+
+:::{.direction}
+```{webr-r}
+bmData.dex <- subset(bmData, 
+                     group==...) # what group you want to see?
+summary(bmData.dex$wc.csf)
+summary(bmData.dex$wc.csf.fup)
+```
+
+:::
+
+:::{.sol}
+
+**Answer** Both have skewed distributions with only values larger than zero
+```{r}
+#| echo: true
+bmData.dex <- subset(bmData, 
+                     group=="dexamethasone") # what group you want to see?
+summary(bmData.dex$wc.csf)
+summary(bmData.dex$wc.csf.fup)
+```
+:::
+
+:::{.rubric}
+
+**Answer** Both have skewed distributions with only values larger than zero
+```{webr-r}
+#| echo: true
+bmData.dex <- subset(bmData, 
+                     group=="dexamethasone") # what group you want to see?
+summary(bmData.dex$wc.csf)
+summary(bmData.dex$wc.csf.fup)
+```
+:::
+
+  - Now make a histogram to describe the variation visually. Does CSF total white cell count at each of the time points approximately have a Normal distribution? 
+
+  - If not: consider a suitable transformation of the variable and make the histograms again.
+
+:::{.direction}
+```{webr-r}
+# Load the packages first
+library(ggplot2)
+library(patchwork) # This is a nice package to align plots together
+```
+
+```{webr-r}
+
+plt.baseline <- ggplot(bmData.dex, aes(wc.csf)) + geom_histogram(boundary=0) +
+  ggtitle("Baseline")
+plt.fup      <- ggplot(bmData.dex, aes(...)) + geom_histogram(boundary=0) +
+  ggtitle("Follow-up")
+
+## to show the two figures next to each other we simply use the "+" as defined in patchwork
+plt.baseline + plt.fup 
+
+# Are they Normal? If not, edit the code above with suitable transformation. HINT: change in the aes(wc.csf) to aes(do_something(wc.csf)) 
+```
+
+:::
+
+
+:::{.sol}
+```{r}
+#| echo: true
+# Load the packages first
+library(ggplot2)
+library(patchwork) # This is a nice package to align plots together
+```
+
+```{r}
+#| echo: true
+#| fig-width: 8
+#| fig-asp: 0.5
+#| out-width: 100%
+plt.baseline <- ggplot(bmData.dex, aes(wc.csf)) +
+  geom_histogram(boundary=0) +
+  ggtitle("Baseline")
+plt.fup      <- ggplot(bmData.dex, aes(wc.csf.fup)) +
+  geom_histogram(boundary=0) +
+  ggtitle("Follow-up")
+
+## to show the two figures next to each other we simply use the "+" as defined in patchwork
+plt.baseline + plt.fup 
+```
+
+The plots clearly indicate a skewd distribution. For strictly positive variables with right skewness (i.e., having a wiggling tail on the right), a very effective transformation is the logarithm. We  use the **log 10** transformation. We adjust the number of bin in the histogram to make it clearer.
+
+Distribution on log-scale doesn't look perfectly normal, but it's better than the original scale.
+
+```{r}
+#| echo: true
+#| fig-width: 8
+#| out-width: 100%
+#| fig-asp: 1
+plt.baseline.log <- ggplot(bmData.dex, aes(log10(wc.csf))) +
+  geom_histogram(bins=15) +
+  ggtitle("Baseline (log scale)")
+plt.fup.log      <- ggplot(bmData.dex, aes(log10(wc.csf.fup))) +
+  geom_histogram(bins=15) +
+  ggtitle("Follow-up (log scale)")
+
+## the "/" is defined in patchwork as a new line
+(plt.baseline + plt.fup) / (plt.baseline.log + plt.fup.log) 
+```
+:::
+
+:::{.rubric}
+```{webr-r}
+# Load the packages first
+library(ggplot2)
+library(patchwork) # This is a nice package to align plots together
+```
+
+```{webr-r}
+#| fig-width: 8
+#| fig-asp: 0.5
+#| out-width: 100%
+plt.baseline <- ggplot(bmData.dex, aes(wc.csf)) + 
+  geom_histogram(boundary=0) +
+  ggtitle("Baseline")
+plt.fup      <- ggplot(bmData.dex, aes(wc.csf.fup)) +
+  geom_histogram(boundary=0) +
+  ggtitle("Follow-up")
+
+## to show the two figures next to each other we simply use the "+" as defined in patchwork
+plt.baseline + plt.fup 
+```
+
+The plots clearly indicate a skewd distribution. For strictly positive variables with right skewness (i.e., having a wiggling tail on the right), a very effective transformation is the logarithm. We  use the **log 10** transformation. We adjust the number of bin in the histogram to make it clearer.
+
+Distribution on log-scale doesn't look perfectly normal, but it's better than the original scale.
+
+```{webr-r}
+#| fig-width: 8
+#| out-width: 100%
+plt.baseline.log <- ggplot(bmData.dex, aes(log10(wc.csf))) +
+  geom_histogram(bins=15) +
+  ggtitle("Baseline (log scale)")
+plt.fup.log      <- ggplot(bmData.dex, aes(log10(wc.csf.fup))) +
+  geom_histogram(bins=15) +
+  ggtitle("Follow-up (log scale)")
+
+## the "/" is defined in patchwork as a new line
+(plt.baseline + plt.fup) / (plt.baseline.log + plt.fup.log) 
+```
+:::
+
+3. We shall create a variable that contains the change in CSF total white cell count between baseline and follow-up.
+  Do the same for the change in the transformed values. 
+  Have a look at the distribution of the difference (`diff.wc` and `diff.log.wc`), both for the original variable as well as for the transformed variable.
+
+
+:::{.direction}
+```{webr-r}
+# Original scale
+bmData.dex$diff.wc <- bmData.dex$wc.csf.fup-bmData.dex$wc.csf
+
+# Transformed scale
+transform_fn <- ... # ? what transform shall we take
+bmData.dex$diff.log.wc <- transform_fn(bmData.dex$wc.csf.fup) - transform_fn(bmData.dex$wc.csf)
+
+plt.diffwc <- ggplot(bmData.dex, aes(diff.wc)) + 
+  geom_histogram(bins=15) +
+  ggtitle("Differences")
+plt.difflogwc <- ggplot(bmData.dex, aes(diff.log.wc)) +
+  geom_histogram(bins=15)  +
+  ggtitle("Differences (log scale)")
+
+plt.diffwc + plt.difflogwc
+
+```
+
+:::
+
+
+:::{.sol}
+
+
+**Answer**:
+
+  - _If we plot baseline and follow-up values separately, their distributions are quite skewed_
+  - _If we plot the absolute difference of the original variable, the distribution is more symmetric (because of the substraction extreme values can occur in both directions) but there are many outliers._ 
+  - _The distribution of the difference in log-values is closer to normal._
+  
+```{r}
+#| echo: true
+#| fig-width: 8
+#| fig-asp: 0.5
+#| out-width: 100%
+# Original scale
+bmData.dex$diff.wc <- bmData.dex$wc.csf.fup-bmData.dex$wc.csf
+
+# Transformed scale
+transform_fn <- log10 # ? what transform shall we take
+bmData.dex$diff.log.wc <- transform_fn(bmData.dex$wc.csf.fup) - transform_fn(bmData.dex$wc.csf)
+
+plt.diffwc <- ggplot(bmData.dex, aes(diff.wc)) +
+  geom_histogram(bins=15) +
+  ggtitle("Differences")
+plt.difflogwc <- ggplot(bmData.dex, aes(diff.log.wc)) +
+  geom_histogram(bins=15)  +
+  ggtitle("Differences (log scale)")
+
+plt.diffwc + plt.difflogwc
+
+```
+
+:::
+
+
+:::{.rubric}
+
+
+**Answer**:
+
+  - _If we plot baseline and follow-up values separately, their distributions are quite skewed_
+  - _If we plot the absolute difference of the original variable, the distribution is more symmetric (because of the substraction extreme values can occur in both directions) but there are many outliers._ 
+  - _The distribution of the difference in log-values is closer to normal._
+  
+```{webr-r}
+#| fig-width: 8
+#| fig-asp: 0.5
+#| out-width: 100%
+# Original scale
+bmData.dex$diff.wc <- bmData.dex$wc.csf.fup-bmData.dex$wc.csf
+
+# Transformed scale
+transform_fn <- log10 # ? what transform shall we take
+bmData.dex$diff.log.wc <- transform_fn(bmData.dex$wc.csf.fup) - transform_fn(bmData.dex$wc.csf)
+
+plt.diffwc <- ggplot(bmData.dex, aes(diff.wc)) + 
+  geom_histogram(bins=15) +
+  ggtitle("Differences")
+plt.difflogwc <- ggplot(bmData.dex, aes(diff.log.wc)) +
+  geom_histogram(bins=15)  +
+  ggtitle("Differences (log scale)")
+
+plt.diffwc + plt.difflogwc
+
+```
+
+:::
+
+4. Compute the 95% confidence interval for the change in transformed value of CSF total white cell count, based on the quantiles of the Student's t distribution.
+  In $\textsf{R}$, the `t.test` function can be used. 
+  Is there a change in CSF total white cell count between baseline and follow-up?
+  Compare the results with those if the change in the original values is studied.
+
+:::{.direction}
+```{webr-r}
+
+# t-test for the difference in original scale
+t.test(bmData.dex$diff.wc)
+
+# t-test for the difference in log10 scale
+t.test(...)
+```
+:::
+
+:::{.sol}
+
+**Answer**
+:::
+
+:::{.sol}
+```{r}
+#| echo: true
+
+# t-test for the difference on original scale
+t.test(bmData.dex$diff.wc)
+
+# t-test for the difference on log10 scale
+t.test(bmData.dex$diff.log.wc)
+```
+:::
+
+:::{.rubric}
+The p-value is suggestive of a change.
+
+Note that the p-values are quite different. The test based on the transformed values is more reliable, because the distribution of the difference is closer to normal with fewer outliers. We cannot directly compare the confidence intervals, because they are on a different scale.
+
+:::
+
+
+:::{.rubric}
+
+**Answer**
+:::
+
+:::{.rubric}
+```{webr-r}
+#| echo: true
+
+# t-test for the difference on original scale
+t.test(bmData.dex$diff.wc)
+
+# t-test for the difference on log10 scale
+t.test(bmData.dex$diff.log.wc)
+```
+:::
+
+:::{.rubric}
+The p-value is suggestive of a change.
+
+Note that the p-values are quite different. The test based on the transformed values is more reliable, because the distribution of the difference is closer to normal with fewer outliers. We cannot directly compare the confidence intervals, because they are on a different scale.
+
+:::
+
+  -  You might also want to plot the comparison for insight. This is done via function `plotttest` in package `nhstplot`
+
+:::{.direction}
+```{webr-r}
+# Load the package first
+library(nhstplot)
+```
+
+
+```{webr-r}
+#| out-width: 100%
+#| fig-asp: 0.5
+# t-test on the original scale
+orig.ttest.plot <- plotttest(t.test(bmData.dex$diff.wc))
+
+# t-test on the log scale
+log.ttest.plot <- plotttest(t.test(...))
+
+orig.ttest.plot + log.ttest.plot
+```
+:::
+
+:::{.sol}
+
+```{r}
+#| echo: true
+# Load the package first
+library(nhstplot)
+```
+
+
+```{r}
+#| echo: true
+#| out-width: 100%
+#| fig-asp: 0.5
+#| fig-width: 8
+# t-test on the original scale
+orig.ttest.plot <- plotttest(t.test(bmData.dex$diff.wc))
+
+# t-test on the log scale
+log.ttest.plot <- plotttest(t.test(bmData.dex$diff.log.wc))
+
+orig.ttest.plot + log.ttest.plot
+```
+
+:::
+
+:::{.rubric}
+
+```{webr-r}
+# Load the package first
+library(nhstplot)
+```
+
+
+```{webr-r}
+#| out-width: 100%
+#| fig-asp: 0.5
+# t-test on the original scale
+orig.ttest.plot <- plotttest(t.test(bmData.dex$diff.wc))
+
+# t-test on the log scale
+log.ttest.plot <- plotttest(t.test(bmData.dex$diff.log.wc))
+
+orig.ttest.plot + log.ttest.plot
+```
+
+:::
+
+5. Do the calculations to obtain the 95% confidence interval yourself and compare results with those from the `t.test` function. 
+Use the function introduced in Exercise II. 
+There are missing values, which we need to remove before we can apply the functions
+
+:::{.direction}
+```{webr-r}
+mean.diff <- mean(bmData.dex$diff.log.wc, na.rm=TRUE)
+se.diff   <- sqrt(var(bmData.dex$diff.log.wc, na.rm=TRUE))/sqrt(143-9) # There are 9 missing values.
+qstudent_t(p = c(0.025,0.975), # Why did I do this?
+           df=...,             # The degrees of freedom
+           mu = mean.diff,
+           sigma = se.diff)   
+```
+:::
+
+:::{.sol}
+```{r}
+#| echo: true
+mean.diff <- mean(bmData.dex$diff.log.wc, na.rm=TRUE)
+se.diff   <- 
+  sqrt(var(bmData.dex$diff.log.wc, na.rm=TRUE))/
+  sqrt(143-9) # There are 9 missing values.
+qstudent_t(p = c(0.025,0.975), # quantile to calculate
+           df= 133,            # The number of degrees of freedom is N-1=133
+           mu = mean.diff,
+           sigma = se.diff)    
+```
+
+:::
+
+
+:::{.rubric}
+```{webr-r}
+mean.diff <- mean(bmData.dex$diff.log.wc, na.rm=TRUE)
+se.diff   <- sqrt(var(bmData.dex$diff.log.wc, na.rm=TRUE))/sqrt(143-9) # There are 9 missing values.
+qstudent_t(p = c(0.025,0.975), # quantile to calculate
+           df= 133,            # The number of degrees of freedom is N-1=133
+           mu = mean.diff,
+           sigma = se.diff)    
+```
+
+:::

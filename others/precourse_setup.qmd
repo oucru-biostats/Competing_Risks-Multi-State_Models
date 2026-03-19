@@ -45,6 +45,7 @@ Here we explain how to install R and RStudio on your own computer. This is **req
 Once R and RStudio are installed, you need to install the specific libraries we will use for data visualization and analysis. 
 
 **Instructions:**
+
 1. Open RStudio.
 2. Copy the code below and paste it into the **Console** (the bottom-left pane).
 3. Press **Enter**.
