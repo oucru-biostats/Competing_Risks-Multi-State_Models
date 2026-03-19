@@ -1,0 +1,102 @@
+How do we deal with missing values in a variable that we want to analyse
+1. We fill in a reasonable value
+2. We can ignore them in the analysis, but need to report them
+3. We make them a separate level of the variable 
+4. None of the three
+
+Glasgow coma score is used to objectively describe the extent of impaired
+consciousness. The possible values are 15, 14, 13,..., 4 and 3. This variable is of type
+1. Discrete
+2. Continuous
+3. Nominal
+4. Ordinal
+
+How can we obtain more information on the skewness of the values of a variable
+1. Compute the mean and the standard deviation
+2. Compute the median and the quartiles
+3. Plot a histogram
+4. Each of the three options can be used
+
+Which visualization is the most appropriate for the distribution of a continuous variable?
+1. Bar chart
+2. Histogram
+3. Pie chart
+4. Line plot
+
+In a boxplot, we can immediately read off
+1. The peak of the distribution (mode)
+2. The 25 and 75 percentile and the median
+3. The 2.5 and 97.5 percentile
+4. The mean and the standard deviation
+
+We make a scatterplot to visualize the relation between two numeric variables. Both
+have a skewed distribution. We want to quantify the strength of the association. What
+is the best way to do this? 
+1. Compute the Pearson correlation
+2. Compute the Spearman correlation
+3. Both Spearman and Pearson correlation can be used
+4. Neither Spearman nor Pearson correlation can be used. We use the Wilcoxon signed-rank test
+
+We use linear regression to study the relation between a numeric outcome variable and a numeric independent variable. Both have a skewed distribution. Do we need to transform both?
+1. Yes, variables with a skewed distribution always need to be transformed
+2. The outcome variable needs to be transformed in order to make the residuals normal. There is no need to transform the independent variable. It only makes it harder to interpret
+3. The outcome variable needs to be transformed in order to make the residuals normal. It is useful to transform the independent variable if it makes the relation with the outcome more linear
+4. There is no need to transform. Transforming is only used to make mean and median more similar
+
+We want to test whether the white blood cell count (wcc) in the cerebrospinal fluid differs
+between patients with tuberculous meningitis (TBM) and cryptococcal meningitis (CM). How do we
+formulate the null hypothesis 
+1. There is no significant difference in mean wcc between TBM and CM patients
+2. The mean wcc differs between TBM and CM patients
+3. The 95% confidence interval for the difference in mean wcc between TBM and CM
+patients does not cover the value 0
+4. There is no difference in mean wcc between TBM and CM patients
+
+In a large randomized controlled trial we study whether dexamethasone reduces mortality in patients with tuberculous meningitis. The estimate of the odds ratio of the risk of dying within one year was 0.86, with 95% confidence interval 0.52-1.41 and a p-value of 0.55. What do we conclude with respect to the null hypothesis OR=1?
+1. The null hypothesis is correct
+2. The probability that the null hypothesis is correct is 55%
+3. If the null hypothesis is correct, then the probability to obtain an estimate of OR<0.86 or OR>1/0.86=1.16 is 55%
+4. The probability to reject the null hypothesis, when in fact it is correct, is 45%
+
+What does it mean that the 95% confidence interval (CI) for the odds ratio is 0.52-1.41?
+1. With 95% probability the true OR is between 0.52 and 1.41
+2. If we repeat the experiment many times under exactly the same conditions, then the OR estimate will be between 0.52 and 1.41 in 95% of these experiments
+3. If we repeat the experiment many times under exactly the same conditions, then in 95% of these experiments the 95% CI will cover the true value
+4. None of the three is correct
+
+Difference between SD and SE
+
+Reference value for outcome, what changes if we reverse the groups. Same for an independent variable
+
+The relation between t-test and t-distribution is
+
+A qq-plot is for
+
+Binomial variable or categorical? Distribution versus data type
+
+
+Interaction term is a separate group? NO, for that we need to combine A and B
+
+
+
+Which of the following best describes a z-score?
+ A measure of central tendency
+ The number of standard deviations a value is from the mean
+ The square of the correlation coefficient
+ A type of probability distribution
+
+
+A z-score of +2.5 means:
+ The value is below the mean
+ The value is 2.5 SD above the mean
+ The value is an outlier
+ The standard deviation is 2.5
+
+In a linear regression, what does R² represent?
+ Slope of the regression line
+ Variance explained by the model
+ Covariance between variables
+ Degree of overfitting
+
+
+

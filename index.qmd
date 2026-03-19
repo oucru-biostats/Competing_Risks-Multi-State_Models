@@ -235,38 +235,6 @@ You have two ways to follow the course exercises:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
 
 function unlockSession(correctPassword, elementId, linksHtml) {
@@ -280,4 +248,36 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 }
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
