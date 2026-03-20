@@ -348,19 +348,66 @@ You have two ways to follow the course exercises:
 
 
 
+<style>
+  #pw-overlay {
+    display: none; position: fixed; z-index: 9999; 
+    left: 0; top: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(2px);
+  }
+  .pw-card {
+    background: white; width: 300px; margin: 15% auto; 
+    padding: 20px; border-radius: 12px; text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  #pw-input {
+    width: 100%; padding: 8px; margin: 15px 0;
+    border: 1px solid #ccc; border-radius: 4px;
+    text-align: center; font-size: 1.2rem;
+  }
+</style>
 
+<div id="pw-overlay">
+  <div class="pw-card">
+    <h5 style="margin-top:0;">Unlock Content</h5>
+    <p style="font-size: 0.9rem; color: #666;">Please enter the session code:</p>
+    <input type="password" id="pw-input" placeholder="••••••">
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <button class="btn btn-light btn-sm" onclick="closePwModal()">Cancel</button>
+      <button class="btn btn-primary btn-sm" id="pw-submit">Unlock</button>
+    </div>
+  </div>
+</div>
 
 <script>
+let currentSession = { pw: '', id: '', html: '' };
 
+// This replaces your old function but uses the same name
 function unlockSession(correctPassword, elementId, linksHtml) {
-  var password = prompt("Please enter the session code provided in class:");
+  currentSession = { pw: correctPassword, id: elementId, html: linksHtml };
   
-  if (password === correctPassword) {
-    document.getElementById(elementId).innerHTML = linksHtml;
-  } else if (password !== null && password !== "") {
-    alert("Incorrect code.");
-  }
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-overlay').style.display = 'block';
+  document.getElementById('pw-input').focus();
 }
 
-</script>
+function closePwModal() {
+  document.getElementById('pw-overlay').style.display = 'none';
+}
 
+// Handle the "Unlock" button click
+document.getElementById('pw-submit').onclick = function() {
+  const entered = document.getElementById('pw-input').value;
+  if (entered === currentSession.pw) {
+    document.getElementById(currentSession.id).innerHTML = currentSession.html;
+    closePwModal();
+  } else {
+    alert("Incorrect code. Please try again.");
+    document.getElementById('pw-input').value = '';
+  }
+};
+
+// Allow pressing "Enter" key to submit
+document.getElementById('pw-input').addEventListener("keypress", function(e) {
+  if (e.key === "Enter") document.getElementById('pw-submit').click();
+});
+</script>
