@@ -347,121 +347,20 @@ You have two ways to follow the course exercises:
 
 
 
-<style>
-  #pw-overlay {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 9999; 
-    left: 0; top: 0; 
-    width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.7); /* Dim the background */
-    /* Flexbox properties to center the card */
-    align-items: center; 
-    justify-content: center;
-  }
-  
-  .pw-card {
-    background: white; 
-    width: 320px; 
-    padding: 30px; 
-    border-radius: 15px; 
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    animation: fadeIn 0.3s ease;
-  }
 
-  #pw-input {
-    width: 100%; 
-    padding: 12px; 
-    margin: 20px 0;
-    border: 2px solid #eee; 
-    border-radius: 8px;
-    font-size: 1.2rem;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.3s;
-  }
 
-  #pw-input:focus {
-    border-color: #007bff;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
-<div id="pw-overlay">
-  <div class="pw-card">
-    <h4 style="color: #2c3e50; margin-bottom: 5px;">Unlock Content</h4>
-    <p style="color: #7f8c8d; font-size: 0.85rem;">Please enter the session code provided by your instructor.</p>
-    
-    <input type="password" id="pw-input" placeholder="••••••••" autocomplete="off">
-    
-    <div style="display: flex; gap: 10px; justify-content: center;">
-      <button class="btn btn-light btn-sm" onclick="closePwModal()">Cancel</button>
-      <button class="btn btn-primary btn-sm" id="pw-submit-btn" style="padding: 5px 20px;">Unlock</button>
-    </div>
-  </div>
-</div>
 
 <script>
-// Stores target information when a button is clicked
-var sessionState = { 
-  pw: '', 
-  id: '', 
-  html: '' 
-};
 
-/**
- * Triggered by the buttons in your course document.
- */
 function unlockSession(correctPassword, elementId, linksHtml) {
-  sessionState.pw = correctPassword;
-  sessionState.id = elementId;
-  sessionState.html = linksHtml;
+  var password = prompt("Please enter the session code provided in class:");
   
-  // Clear field and show the overlay
-  var inputField = document.getElementById('pw-input');
-  inputField.value = '';
-  document.getElementById('pw-overlay').style.display = 'flex'; // Use flex to center
-  
-  // Auto-focus the input
-  setTimeout(function() {
-    inputField.focus();
-  }, 100);
+  if (password === correctPassword) {
+    document.getElementById(elementId).innerHTML = linksHtml;
+  } else if (password !== null && password !== "") {
+    alert("Incorrect code.");
+  }
 }
 
-/**
- * Closes the pop-up without unlocking.
- */
-function closePwModal() {
-  document.getElementById('pw-overlay').style.display = 'none';
-}
-
-/**
- * Validates the password and replaces the button with content.
- */
-document.getElementById('pw-submit-btn').onclick = function() {
-  var userInput = document.getElementById('pw-input').value;
-  
-  if (userInput === sessionState.pw) {
-    document.getElementById(sessionState.id).innerHTML = sessionState.html;
-    closePwModal();
-  } else {
-    alert("Incorrect code. Please try again.");
-    document.getElementById('pw-input').value = '';
-    document.getElementById('pw-input').focus();
-  }
-};
-
-/**
- * Submits the password if the user presses the 'Enter' key.
- */
-document.getElementById('pw-input').addEventListener("keyup", function(event) {
-  if (event.key === "Enter") {
-    document.getElementById('pw-submit-btn').click();
-  }
-});
 </script>
+
