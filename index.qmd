@@ -375,11 +375,10 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 
 
-<div id="material-1" style="padding: 20px; border: 1px dashed #ccc; border-radius: 8px; margin: 20px 0;">
-  <strong>Locked Content:</strong> Study Guide PDF
-  <br><br>
-  <button onclick="unlockQR('1234', 'material-1', '<a href=\'https://example.com/guide.pdf\' target=\'_blank\' style=\'color:green; font-weight:bold;\'>Click here to download the PDF!</a>')">
-    Unlock with Code
+<div id="QR1_test">
+  <button class="btn btn-primary" onclick="unlockQR('qr99', 'QR1_test', 
+    '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\'>QR code</a>')">
+    Click to unlock QR code test
   </button>
 </div>
 
@@ -389,10 +388,6 @@ function unlockSession(correctPassword, elementId, linksHtml) {
   <h5 style="margin-top:0; color: #0d6efd;">Unlock Session</h5>
   <p>Please enter the code for this specific material:</p>
   <input type="password" id="pw-input" class="form-control" style="margin-bottom: 15px; text-align: center; width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" onkeydown="if(event.key==='Enter') checkPW()">
-  <div style="display: flex; gap: 10px; justify-content: center;">
-    <button onclick="checkPW()" style="background: #0d6efd; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Unlock</button>
-    <button onclick="closePW()" style="background: #6c757d; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Cancel</button>
-  </div>
 </div>
 
 <script>
