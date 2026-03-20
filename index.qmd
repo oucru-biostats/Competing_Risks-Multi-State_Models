@@ -375,10 +375,11 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 
 
-<div id="QR1_test">
-  <button class="btn btn-primary" onclick="unlockQR('qr99', 'QR1_test', 
-    '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\'>QR code</a>')">
-    Click to unlock QR code test
+<div id="material-1" style="padding: 20px; border: 1px dashed #ccc; border-radius: 8px; margin: 20px 0;">
+  <strong>Locked Content:</strong> Study Guide PDF
+  <br><br>
+  <button onclick="unlockQR('1234', 'material-1', '<a href=\'https://example.com/guide.pdf\' target=\'_blank\' style=\'color:green; font-weight:bold;\'>Click here to download the PDF!</a>')">
+    Unlock with Code
   </button>
 </div>
 
