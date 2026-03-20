@@ -145,6 +145,18 @@ You have two ways to follow the course exercises:
 </div>
 
 #### Materials
+-   **Lecture:** [Slides](slides/day_2/3.SlidesStatisticsPrinciples.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Exercises:**
+    -   [Web-R version](handouts/day_2/ExerciseWebr-3.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_2/ExerciseRStudio-3.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_2/ExerciseCode-3.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Answers:**
+<div id="day2-morning">
+  <button class="btn btn-primary" onclick="unlockSession('a', 'day2-morning', 
+    '<a href=\'./handouts/day_2/ExerciseWebrAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
+    '<a href=\'./handouts/day_2/ExerciseRStudioAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>PDF</a>')">
+    Click to unlock answer
+  </button>
+</div>
 
 :::
 
@@ -351,36 +363,4 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
