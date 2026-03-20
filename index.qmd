@@ -382,23 +382,32 @@ function unlockSession(correctPassword, elementId, linksHtml) {
   </button>
 </div>
 
+<div id="pw-backdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 9998;" onclick="closePW()"></div>
+
 <div id="pw-overlay" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 2px solid #0d6efd; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; border-radius: 12px; text-align: center; min-width: 300px; font-family: sans-serif;">
   <h5 style="margin-top:0; color: #0d6efd;">Unlock Session</h5>
   <p>Please enter the code for this specific material:</p>
-  <input type="password" id="pw-input" class="form-control" style="margin-bottom: 15px; text-align: center; width: 100%;" onkeydown="if(event.key==='Enter') checkPW()">
+  <input type="password" id="pw-input" class="form-control" style="margin-bottom: 15px; text-align: center; width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" onkeydown="if(event.key==='Enter') checkPW()">
+  <div style="display: flex; gap: 10px; justify-content: center;">
+    <button onclick="checkPW()" style="background: #0d6efd; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Unlock</button>
+    <button onclick="closePW()" style="background: #6c757d; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Cancel</button>
+  </div>
 </div>
 
 <script>
 let currentTargetId = "";
 let currentLinks = "";
-let currentCorrectPW = ""; // This stores the password for the button just clicked
+let currentCorrectPW = ""; 
 
 function unlockQR(specificPW, elementId, linksHtml) {
-  currentCorrectPW = specificPW; // Get the password from the button
+  currentCorrectPW = specificPW;
   currentTargetId = elementId;
   currentLinks = linksHtml;
   
+  // Show both the backdrop and the popup
+  document.getElementById('pw-backdrop').style.display = 'block';
   document.getElementById('pw-overlay').style.display = 'block';
+  
   document.getElementById('pw-input').value = ''; 
   document.getElementById('pw-input').focus();
 }
@@ -411,10 +420,20 @@ function checkPW() {
   } else {
     alert("Incorrect code. Please check with your instructor.");
     document.getElementById('pw-input').value = '';
+    document.getElementById('pw-input').focus();
   }
 }
 
 function closePW() {
+  // Hide both elements
+  document.getElementById('pw-backdrop').style.display = 'none';
   document.getElementById('pw-overlay').style.display = 'none';
 }
+
+// Optional: Close when pressing the "Escape" key
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+    closePW();
+  }
+});
 </script>
