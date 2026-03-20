@@ -79,7 +79,7 @@ You have two ways to follow the course exercises:
 <div id="day1-morning">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day1-morning', 
     '<a href=\'./handouts/day_1/ExerciseWebrAnswers-1.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
-    '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-1.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>PDF</a>')">
+    '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-1.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
   </button>
 </div>
@@ -153,7 +153,7 @@ You have two ways to follow the course exercises:
 <div id="day2-morning">
   <button class="btn btn-primary" onclick="unlockSession('a', 'day2-morning', 
     '<a href=\'./handouts/day_2/ExerciseWebrAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
-    '<a href=\'./handouts/day_2/ExerciseRStudioAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>PDF</a>')">
+    '<a href=\'./handouts/day_2/ExerciseRStudioAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
   </button>
 </div>
