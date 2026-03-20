@@ -426,7 +426,6 @@ function unlockQR(code, id, html) {
     globalCorrectCode = code;
     globalTargetId = id;
     globalContentHtml = html;
-    
     document.getElementById('pw-overlay').style.display = 'block';
     document.getElementById('pw-input').value = '';
     document.getElementById('pw-input').focus();
