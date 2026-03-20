@@ -350,23 +350,26 @@ You have two ways to follow the course exercises:
 
 
 
-<div id="pw-overlay" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 2px solid #0d6efd; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; border-radius: 12px; text-align: center; min-width: 300px; font-family: sans-serif;">
+<div id="pw-overlay" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 2px solid #0d6efd; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; border-radius: 12px; text-align: center; min-width: 320px; font-family: sans-serif;">
+  
   <h5 style="margin-top:0; color: #0d6efd;">Unlock Session</h5>
-  <p>Please enter the code for this specific material:</p>
-  <input type="password" id="pw-input" class="form-control" style="margin-bottom: 15px; text-align: center; width: 100%;" onkeydown="if(event.key==='Enter') checkPW()">
+  <p style="color: #333; margin-bottom: 15px;">Please enter the code for this material:</p>
+  
+  <input type="password" id="pw-input" class="form-control" style="margin-bottom: 20px; text-align: center; width: 100%; border: 1px solid #ccc; padding: 8px; border-radius: 4px;" onkeydown="if(event.key==='Enter') checkPW()">
+  
   <div style="display: flex; justify-content: center; gap: 10px;">
-    <button class="btn btn-primary btn-sm" onclick="checkPW()">Unlock</button>
-    <button class="btn btn-outline-secondary btn-sm" onclick="closePW()">Cancel</button>
+    <button type="button" class="btn btn-primary btn-sm" onclick="checkPW()">Unlock</button>
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="closePW()">Cancel</button>
   </div>
 </div>
 
 <script>
 let currentTargetId = "";
 let currentLinks = "";
-let currentCorrectPW = ""; // This stores the password for the button just clicked
+let currentCorrectPW = "";
 
 function unlockSession(specificPW, elementId, linksHtml) {
-  currentCorrectPW = specificPW; // Get the password from the button
+  currentCorrectPW = specificPW;
   currentTargetId = elementId;
   currentLinks = linksHtml;
   
@@ -381,7 +384,7 @@ function checkPW() {
     document.getElementById(currentTargetId).innerHTML = currentLinks;
     closePW();
   } else {
-    alert("Incorrect code. Please check with your instructor.");
+    alert("Incorrect code.");
     document.getElementById('pw-input').value = '';
   }
 }
