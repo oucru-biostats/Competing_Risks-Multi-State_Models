@@ -373,8 +373,8 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 
 
-<div id="test">
-  <button class="btn btn-primary" onclick="unlockQR('secret123', 'test', '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success\'>QR code</a>')">
+<div id="qr-session-1">
+  <button class="btn btn-primary" onclick="unlockQR('secret123', 'qr-session-1', '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
     Click to unlock QR code
   </button>
 </div>
@@ -382,6 +382,7 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 
 <style>
+/* 1. Modal Styling - Ensures it sits on top of everything */
 #pw-overlay {
     display: none; 
     position: fixed; 
@@ -394,12 +395,13 @@ function unlockSession(correctPassword, elementId, linksHtml) {
     z-index: 10000; 
     border-radius: 15px; 
     text-align: center;
+    min-width: 320px;
 }
 #pw-input {
     display: block;
     margin: 15px auto;
     padding: 10px;
-    width: 80%;
+    width: 90%;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -407,23 +409,23 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 <div id="pw-overlay">
     <h4 style="color:#0d6efd; margin-top:0;">Secure Unlock</h4>
-    <p>Please enter the code for this material:</p>
+    <p style="color: #333;">Please enter the code for this material:</p>
     <input type="password" id="pw-input" onkeydown="if(event.key==='Enter') checkPW()">
     <div style="display: flex; justify-content: center; gap: 10px;">
-        <button class="btn btn-primary" onclick="checkPW()">Unlock</button>
-        <button class="btn btn-secondary" onclick="closePW()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="checkPW()">Unlock</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="closePW()">Cancel</button>
     </div>
 </div>
 
 <script>
-let targetId = "";
-let contentHtml = "";
-let correctCode = "";
+let globalTargetId = "";
+let globalContentHtml = "";
+let globalCorrectCode = "";
 
 function unlockQR(code, id, html) {
-    correctCode = code;
-    targetId = id;
-    contentHtml = html;
+    globalCorrectCode = code;
+    globalTargetId = id;
+    globalContentHtml = html;
     
     document.getElementById('pw-overlay').style.display = 'block';
     document.getElementById('pw-input').value = '';
@@ -432,8 +434,8 @@ function unlockQR(code, id, html) {
 
 function checkPW() {
     const entered = document.getElementById('pw-input').value;
-    if (entered === correctCode) {
-        document.getElementById(targetId).innerHTML = contentHtml;
+    if (entered === globalCorrectCode) {
+        document.getElementById(globalTargetId).innerHTML = globalContentHtml;
         closePW();
     } else {
         alert("Incorrect code.");
@@ -445,14 +447,3 @@ function closePW() {
     document.getElementById('pw-overlay').style.display = 'none';
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
