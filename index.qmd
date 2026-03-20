@@ -350,37 +350,20 @@ You have two ways to follow the course exercises:
 
 
 
-<script>
+<!-- <script> -->
 
-function unlockSession(correctPassword, elementId, linksHtml) {
-  var password = prompt("Please enter the session code provided in class:");
-  
-  if (password === correctPassword) {
-    document.getElementById(elementId).innerHTML = linksHtml;
-  } else if (password !== null && password !== "") {
-    alert("Incorrect code.");
-  }
-}
+<!-- function unlockSession(correctPassword, elementId, linksHtml) { -->
+<!--   var password = prompt("Please enter the session code provided in class:"); -->
 
-</script>
+<!--   if (password === correctPassword) { -->
+<!--     document.getElementById(elementId).innerHTML = linksHtml; -->
+<!--   } else if (password !== null && password !== "") { -->
+<!--     alert("Incorrect code."); -->
+<!--   } -->
+<!-- } -->
 
+<!-- </script> -->
 
-
------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-<div id="QR1_test">
-  <button class="btn btn-primary" onclick="unlockQR('qr99', 'QR1_test', 
-    '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\'>QR code</a>')">
-    Click to unlock QR code test
-  </button>
-</div>
 
 <div id="pw-backdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 9998;" onclick="closePW()"></div>
 
@@ -395,7 +378,7 @@ let currentTargetId = "";
 let currentLinks = "";
 let currentCorrectPW = ""; 
 
-function unlockQR(specificPW, elementId, linksHtml) {
+function unlockSession(specificPW, elementId, linksHtml) {
   currentCorrectPW = specificPW;
   currentTargetId = elementId;
   currentLinks = linksHtml;
