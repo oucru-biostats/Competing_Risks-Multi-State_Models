@@ -374,7 +374,9 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 
 <div id="qr-session-1">
-<button class="btn btn-primary" onclick="unlockQR('secret123', 'qr-session-1', '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">Click to unlock QR code</button>
+  <button class="btn btn-primary" onclick="unlockQR('secret123', 'qr-session-1', '<a href=\'./handouts/QR_code/01.png\'>QR code</a>')">
+    Click to unlock QR code
+  </button>
 </div>
 
 
@@ -393,7 +395,6 @@ function unlockSession(correctPassword, elementId, linksHtml) {
     border-radius: 15px; 
     text-align: center;
     min-width: 320px;
-    font-family: sans-serif;
 }
 #pw-input {
     display: block;
@@ -407,7 +408,7 @@ function unlockSession(correctPassword, elementId, linksHtml) {
 
 <div id="pw-overlay">
     <h4 style="color:#0d6efd; margin-top:0;">Secure Unlock</h4>
-    <p style="color: #333;">Please enter the code for this material:</p>
+    <p>Please enter the code for this material:</p>
     <input type="password" id="pw-input" onkeydown="if(event.key==='Enter') checkPW()">
     <div style="display: flex; justify-content: center; gap: 10px;">
         <button type="button" class="btn btn-primary btn-sm" onclick="checkPW()">Unlock</button>
