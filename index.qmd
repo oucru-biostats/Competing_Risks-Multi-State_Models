@@ -49,6 +49,8 @@ You have two ways to follow the course exercises:
 
 **Course handout:** [pdf](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
+::: {.panel-tabset}
+
 ## Day 1: Descriptive and Exploratory Data Analysis
 
 ### 🧑‍🏫 Lead instructors: Ronald
@@ -346,7 +348,7 @@ You have two ways to follow the course exercises:
 :::
 
 
-
+:::
 
 
 
