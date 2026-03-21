@@ -49,8 +49,10 @@ You have two ways to follow the course exercises:
 
 **Course handout:** [pdf](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
+## Day 1: Descriptive and Exploratory Data Analysis
+
 <details>
-<summary>## Day 1: Descriptive and Exploratory Data Analysis</summary>
+<summary>Click to expand</summary>
 
 
 ### 🧑‍🏫 Lead instructors: Ronald
@@ -130,6 +132,9 @@ You have two ways to follow the course exercises:
 
 ## Day 2: Statistical analysis principles, Distributions, Confidence Intervals
 
+<details>
+<summary>Click to expand</summary>
+
 ### 🧑‍🏫 Lead instructors: Ronald and Thuan
 
 ### ☀️ Morning: Statistical analysis: main concepts and principles. Binomial distribution.
@@ -198,12 +203,14 @@ You have two ways to follow the course exercises:
 :::
 
 
-
-
-
 ------------------------------------------------------------------------
 
+</details>
+
 ## Day 3: Comparing continuous variables and Simple linear regression
+
+<details>
+<summary>Click to expand</summary>
 
 ### 🧑‍🏫 Lead instructors: Vuong
 
@@ -275,11 +282,14 @@ You have two ways to follow the course exercises:
 
 :::
 
-
-
 ------------------------------------------------------------------------
 
+</details>
+
 ## Day 4: Multivariable linear and logistic regression
+
+<details>
+<summary>Click to expand</summary>
 
 ### 🧑‍🏫 Lead instructors: Thuan and Vuong
 
@@ -349,7 +359,9 @@ You have two ways to follow the course exercises:
 
 :::
 
+-----------------------------------------------------------------------
 
+</details>
 
 
 
