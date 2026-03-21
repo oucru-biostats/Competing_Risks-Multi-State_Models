@@ -52,7 +52,7 @@ You have two ways to follow the course exercises:
 ## Day 1: Descriptive and Exploratory Data Analysis
 
 <details>
-<summary>[Click to expand]{style="color:blue"}</summary>
+<summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
@@ -133,7 +133,7 @@ You have two ways to follow the course exercises:
 ## Day 2: Statistical analysis principles, Distributions, Confidence Intervals
 
 <details>
-<summary>[Click to expand]{style="color:blue"}</summary>
+<summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
@@ -209,7 +209,7 @@ You have two ways to follow the course exercises:
 ## Day 3: Comparing continuous variables and Simple linear regression
 
 <details>
-<summary>[Click to expand]{style="color:blue"}</summary>
+<summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
@@ -288,7 +288,7 @@ You have two ways to follow the course exercises:
 ## Day 4: Multivariable linear and logistic regression
 
 <details>
-<summary>[Click to expand]{style="color:blue"}</summary>
+<summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
