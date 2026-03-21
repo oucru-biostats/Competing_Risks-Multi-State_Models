@@ -72,9 +72,13 @@ execute:
 format:
   html:
     theme: cosmo
-    css: styles.css          # Links your CSS file to every page
+    css: custom_styles.css       # Links your CSS globally
     toc: true
-    toc-location: left       # Forces TOC to the left on all pages
-    toc-title: "On this page"
+    toc-location: left          # Global TOC on the left
+    toc-depth: 2
+    number-depth: 2
+    link-external-icon: true
+    link-external-newwindow: true
+    date-format: "MMMM D, YYYY"
     include-after-body: 
-      - password-logic.html  # Injects the password HTML/JS into every page
+      - password_logic.html     # Injects the password popup globally
