@@ -49,7 +49,8 @@ You have two ways to follow the course exercises:
 
 **Course handout:** [pdf](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
-::: {.panel-tabset}
+<details open>
+<summary style="display:none;"></summary>
 
 ## Day 1: Descriptive and Exploratory Data Analysis
 
@@ -124,7 +125,11 @@ You have two ways to follow the course exercises:
 
 :::
 
+
 ------------------------------------------------------------------------
+
+</details>
+
 
 ## Day 2: Statistical analysis principles, Distributions, Confidence Intervals
 
@@ -348,7 +353,7 @@ You have two ways to follow the course exercises:
 :::
 
 
-:::
+
 
 
 
