@@ -379,36 +379,3 @@ You have two ways to follow the course exercises:
 <!-- </script> -->
 
 
-<!-- <style> -->
-<!-- /* 1. Container styling */ -->
-<!-- .nav-tabs { -->
-<!--   border-bottom: 2px solid #dee2e6; -->
-<!--   margin-bottom: 1rem; -->
-<!-- } -->
-
-<!-- /* 2. Styling the Inactive Tabs */ -->
-<!-- .nav-link { -->
-<!--   color: #6c757d !important; /* Muted gray */ -->
-<!--   background-color: #f8f9fa !important; -->
-<!--   border: 1px solid #dee2e6 !important; -->
-<!--   margin-right: 4px; -->
-<!--   transition: all 0.2s ease; -->
-<!--   border-radius: 6px 6px 0 0 !important; -->
-<!-- } -->
-
-<!-- /* 3. Styling the Active (Chosen) Tab */ -->
-<!-- .nav-link.active { -->
-<!--   color: #0d6efd !important; /* Bold blue text */ -->
-<!--   background-color: #ffffff !important;  -->
-<!--   border-bottom: 2px solid white !important; /* Blends into content */ -->
-<!--   border-top: 4px solid #0d6efd !important; /* Clear top accent line */ -->
-<!--   font-weight: 700 !important; -->
-<!--   box-shadow: 0 -2px 10px rgba(0,0,0,0.05); -->
-<!-- } -->
-
-<!-- /* 4. Hover effect for inactive tabs */ -->
-<!-- .nav-link:hover:not(.active) { -->
-<!--   background-color: #e9ecef !important; -->
-<!--   color: #0d6efd !important; -->
-<!-- } -->
-<!-- </style> -->
