@@ -355,10 +355,12 @@ You have two ways to follow the course exercises:
 -   **Lecture:** [Slides](slides/day_4/8.Logistic Regression_Slides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_4/Exercise8_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_4/Exercise8_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_4/Exercise8Code.R){.btn .btn-outline-primary .btn-sm target="_blank"} 
 -   **Answers:**
 <div id="day4-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('LogOdds', 'day4-afternoon', 
-    '<a href=\'./handouts/day_4/Exercise8_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')">
+    '<a href=\'./handouts/day_4/Exercise8_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
+    '<a href=\'./handouts/day_4/Exercise8_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
   </button>
 </div>
