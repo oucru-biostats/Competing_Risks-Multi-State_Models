@@ -199,9 +199,9 @@ You have two ways to follow the course exercises:
 -   **Exercises:**
     -   [Web-R version](handouts/day_2/Exercise4Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_2/Exercise4_RStudio.qmd){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:**
+-   **Answers:** password Useless?
 <div id="day2-afternoon">
-  <button class="btn btn-primary" onclick="unlockSession('Important', 'day2-afternoon', 
+  <button class="btn btn-primary" onclick="unlockSession('Useless?', 'day2-afternoon', 
     '<a href=\'./handouts/day_2/Exercise4Answer_Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' +
     '<a href=\'./handouts/day_2/Exercise4Answer_RStudio.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')">
     Click to unlock answer
