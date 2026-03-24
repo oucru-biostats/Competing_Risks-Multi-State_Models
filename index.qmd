@@ -56,7 +56,7 @@ You have two ways to follow the course exercises:
 
 # Course Topics
 
-**Course handout:** [pdf](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+**Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}; [Dictionary](handouts/Dictionary_for_statistical_terms_in_Vietnamese.xlsx){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 ## Day 1: Descriptive and Exploratory Data Analysis
 
