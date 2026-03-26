@@ -429,8 +429,7 @@ You have two ways to follow the course exercises:
 ::: {layout-ncol="2"}
 #### Contents
 
-1.  
-2.  
+1.  Quantitative research
 <div id="QR10">
   <button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
     '<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
