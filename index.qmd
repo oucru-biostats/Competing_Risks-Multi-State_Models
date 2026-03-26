@@ -337,7 +337,7 @@ You have two ways to follow the course exercises:
     Click to unlock answer
   </button>
 </div>
-
+    <!-- -   [Web-R version](handouts/day_4/Exercise7-Answer-Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
 :::
 
@@ -372,7 +372,8 @@ You have two ways to follow the course exercises:
     Click to unlock answer
   </button>
 </div>
-
+    <!-- -   [Web-R version](handouts/day_4/Exercise8_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+    <!-- -   [RStudio version](handouts/day_4/Exercise8_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
 :::
 
