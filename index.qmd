@@ -331,13 +331,13 @@ You have two ways to follow the course exercises:
     -   [Web-R version](handouts/day_4/Exercise7_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_4/Exercise7_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_4/Exercise7Code.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
 -   **Answers:**
-<div id="day4-morning">
-  <button class="btn btn-primary" onclick="unlockSession('MoreLinear', 'day4-morning', 
-    '<a href=\'./handouts/day_4/Exercise7-Answer-Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')">
-    Click to unlock answer
-  </button>
-</div>
-    <!-- -   [Web-R version](handouts/day_4/Exercise7-Answer-Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!-- <div id="day4-morning"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('MoreLinear', 'day4-morning',  -->
+<!--     '<a href=\'./handouts/day_4/Exercise7-Answer-Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')"> -->
+<!--     Click to unlock answer -->
+<!--   </button> -->
+<!-- </div> -->
+    -   [Web-R version](handouts/day_4/Exercise7-Answer-Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
 
