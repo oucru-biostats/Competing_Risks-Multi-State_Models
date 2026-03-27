@@ -418,7 +418,7 @@ You have two ways to follow the course exercises:
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [Web-R version](handouts/day_5/ExerciseWebrAnswers-9.htmll){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Web-R version](handouts/day_5/ExerciseWebrAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_5/ExerciseRStudioAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
