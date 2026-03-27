@@ -439,7 +439,7 @@ You have two ways to follow the course exercises:
 
 #### Materials
 
--   **Lecture:** [Slides]
+-   **Lecture:** [Slides](slides/day_5/10.CourseSlides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 
 :::
