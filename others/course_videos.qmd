@@ -13,7 +13,7 @@ date-format: "MMMM D, YYYY"
 ---
 
 ::: {.callout-important appearance="simple"}
-These recordings are from the **previous iterations** of the course. Links for the **future iteration** will be uploaded here shortly after the course concludes.
+These recordings are from the **previous iterations** of the courses. Links for the **future iteration** will be uploaded here shortly after the course concludes.
 :::
 
 ## 📺 2026 Medical Statistics Lecture Recordings
