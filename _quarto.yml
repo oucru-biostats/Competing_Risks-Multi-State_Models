@@ -9,12 +9,12 @@ project:
     - "handouts/"
     - "slides/"
     - "site_imgs/"
-keywords: ["Medical Statistics", "OUCRU", "Biostatistics", "R Programming", "Clinical Research"]
+keywords: ["Medical Statistics"]
 
 website:
   title: "Medical Statistics"
-  description: "Introduction to Medical Statistics course by OUCRU. Learn biostatistics, R programming, and data analysis for clinical research."
-  site-url: "https://tranhung93.github.io/Introduction-to-Medical-Statistics/"
+  description: ""
+  site-url: "https://oucru-biostats.github.io/Competing_Risks-Multi-State_Models/"
   
   cookie-consent:
     type: express
@@ -38,7 +38,7 @@ website:
 
   comments:
     giscus:
-      repo: "oucru-biostats/Introduction-to-Medical-Statistics"
+      repo: "https://github.com/oucru-biostats/Competing_Risks-Multi-State_Models"
       repo-id: "R_kgDORlzZ2Q"
       category: General
       category-id: "DIC_kwDORlzZ2c4C4qDV"
