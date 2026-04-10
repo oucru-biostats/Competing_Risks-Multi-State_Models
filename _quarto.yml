@@ -36,7 +36,7 @@ website:
 
   comments:
     giscus:
-      repo: "https://github.com/oucru-biostats/Competing_Risks-Multi-State_Models"
+      repo: "oucru-biostats/Competing_Risks-Multi-State_Models"
       repo-id: "R_kgDOR-wuNg"
       category: General
       category-id: "DIC_kwDOR-wuNs4C6g_W"
