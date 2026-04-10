@@ -19,7 +19,7 @@ date-format: "MMMM D, YYYY"
 * **Skills:** Perform and interpret basic statistical analyses.
 :::
 
-Welcome to the **OUCRU Introduction to Medical Statistics 2026**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
+Welcome to the **Course Competing Risks and Multi-State Models**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
 
 [Welcome note](handouts/0_welcome.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
