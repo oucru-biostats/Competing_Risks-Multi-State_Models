@@ -30,8 +30,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: others/course_videos.qmd 
-        text: Course Videos
       - href: others/other_resources.qmd
         text: Additional R Resources
         
@@ -39,9 +37,9 @@ website:
   comments:
     giscus:
       repo: "https://github.com/oucru-biostats/Competing_Risks-Multi-State_Models"
-      repo-id: "R_kgDORlzZ2Q"
+      repo-id: "R_kgDOR-wuNg"
       category: General
-      category-id: "DIC_kwDORlzZ2c4C4qDV"
+      category-id: "DIC_kwDOR-wuNs4C6g_W"
       mapping: pathname
       reactions-enabled: true
       loading: lazy
