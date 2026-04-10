@@ -1,0 +1,19 @@
+/* Your existing custom styles */
+div.footnote p { font-size: medium; }
+.reveal .slide-logo { height: 52px !important; width: 58px !important; }
+.medium-text-size { font-size: 30px !important; }
+
+/* Tabset Styling */
+.nav-tabs { border-bottom: 2px solid #dee2e6; margin-bottom: 1rem; }
+.nav-link {
+  color: #6c757d !important;
+  background-color: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+.nav-link.active {
+  color: #0d6efd !important;
+  background-color: #ffffff !important; 
+  border-top: 4px solid #0d6efd !important;
+  font-weight: 700 !important;
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "others/precourse_setup.html",
+    "href": "others/precourse_setup.html",
+    "title": "Pre-course setups and requirements",
+    "section": "",
+    "text": "Here we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course."
+  },
+  {
+    "objectID": "others/precourse_setup.html#r",
+    "href": "others/precourse_setup.html#r",
+    "title": "Pre-course setups and requirements",
+    "section": "R",
+    "text": "R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options"
+  },
+  {
+    "objectID": "others/precourse_setup.html#rstudio-desktop",
+    "href": "others/precourse_setup.html#rstudio-desktop",
+    "title": "Pre-course setups and requirements",
+    "section": "RStudio Desktop",
+    "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
+  },
+  {
+    "objectID": "others/precourse_setup.html#r-packages",
+    "href": "others/precourse_setup.html#r-packages",
+    "title": "Pre-course setups and requirements",
+    "section": "R Packages",
+    "text": "R Packages\nOnce R and RStudio are installed, you need to install the specific libraries we will use for data visualization and analysis.\nInstructions:\n\nOpen RStudio.\nCopy the code below and paste it into the Console (the bottom-left pane).\nPress Enter.\n\n# List of required packages\npkgs &lt;- c(\"ggplot2\", \"gtsummary\", \"ggrain\", \"GGally\", \"patchwork\", \n          \"ggExtra\", \"ggResidpanel\", \"performance\", \"see\", \"ggeffects\")\n\n# Install packages\ninstall.packages(pkgs)"
+  },
+  {
+    "objectID": "others/course_videos.html",
+    "href": "others/course_videos.html",
+    "title": "Course Video Archive",
+    "section": "",
+    "text": "These recordings are from the previous iterations of the courses. Links for the future iteration will be uploaded here shortly after the course concludes."
+  },
+  {
+    "objectID": "others/course_videos.html#medical-statistics-lecture-recordings",
+    "href": "others/course_videos.html#medical-statistics-lecture-recordings",
+    "title": "Course Video Archive",
+    "section": "📺 2026 Medical Statistics Lecture Recordings",
+    "text": "📺 2026 Medical Statistics Lecture Recordings\n\nFull series:\nWatch Session"
+  },
+  {
+    "objectID": "others/course_videos.html#r-training-lecture-recordings",
+    "href": "others/course_videos.html#r-training-lecture-recordings",
+    "title": "Course Video Archive",
+    "section": "📺 2025 R training Lecture Recordings",
+    "text": "📺 2025 R training Lecture Recordings\n\nFull series:\nWatch Session"
+  },
+  {
+    "objectID": "others/course_videos.html#medical-statistics-lecture-recordings-1",
+    "href": "others/course_videos.html#medical-statistics-lecture-recordings-1",
+    "title": "Course Video Archive",
+    "section": "📺 2024 Medical Statistics Lecture Recordings",
+    "text": "📺 2024 Medical Statistics Lecture Recordings\n\n\n\nDay 1: Descriptives & EDA\nWatch Session\n\n\nDay 2: Statistical Principles & Distributions\nWatch Session\n\n\n\n\nDay 3: Group Comparisons & Simple Modeling\nPart 1 Part 2\n\n\nDay 4: Multivariable & Logistic Regression\nPart 1 Part 2\n\n\n\n\nDay 5: Study Design & Research Methodology\nWatch Session"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the course!",
+    "section": "",
+    "text": "Concepts: Hypothesis tests, p-values, & confidence intervals.\nMethods: t-tests, chi-square, linear & logistic regression.\nSkills: Perform and interpret basic statistical analyses.\n\nWelcome to the OUCRU Introduction to Medical Statistics 2026. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.\nWelcome note\n\n\n\n\n\n\nNote📅 Logistics & Schedule\n\n\n\n\nTime: 09:15 – 16:45 (UTC +7) daily\nLunch Break: 12:30 – 13:30 (UTC +7)\nFull Schedule: Timetable\nNote: Lunch is provided for in-person attendees.\n\n\n\n\n\n\n\n\n\nProf. Ronald Geskus\nDr. Duc Du Hong\nDr. Hoang Van Thuan\nDr. Nguyen Lam Vuong\nDr. Tran Thai Hung"
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Welcome to the course!",
+    "section": "",
+    "text": "Prof. Ronald Geskus\nDr. Duc Du Hong\nDr. Hoang Van Thuan\nDr. Nguyen Lam Vuong\nDr. Tran Thai Hung"
+  },
+  {
+    "objectID": "index.html#day-1-descriptive-and-exploratory-data-analysis",
+    "href": "index.html#day-1-descriptive-and-exploratory-data-analysis",
+    "title": "Welcome to the course!",
+    "section": "Day 1: Descriptive and Exploratory Data Analysis",
+    "text": "Day 1: Descriptive and Exploratory Data Analysis\n\n\nClick to view the materials\n\n\n☀️ Morning: Descriptive Analysis🌤️ Afternoon: Exploratory Analysis\n\n\n\n\n\nContents\n\nData characteristics & Variable types\nNumerical & Graphical summaries\nIntro to R and RStudio\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nBaseline tables\nGraphs for categorical variables\nNumeric variables by group\n2-variable numeric plots\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+  },
+  {
+    "objectID": "index.html#day-2-statistical-analysis-principles-distributions-confidence-intervals",
+    "href": "index.html#day-2-statistical-analysis-principles-distributions-confidence-intervals",
+    "title": "Welcome to the course!",
+    "section": "Day 2: Statistical analysis principles, Distributions, Confidence Intervals",
+    "text": "Day 2: Statistical analysis principles, Distributions, Confidence Intervals\n\n\nClick to view the materials\n\n\n☀️ Morning: Main principles & Binomial🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nTypes of study questions\nSampling variation\nBinomial distribution\nTesting hypotheses\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+  },
+  {
+    "objectID": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
+    "href": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
+    "title": "Welcome to the course!",
+    "section": "Day 3: Comparing continuous variables and Simple linear regression",
+    "text": "Day 3: Comparing continuous variables and Simple linear regression\n\n\nClick to view the materials\n\n\n☀️ Morning: Comparing continuous variables🌤️ Afternoon: Simple linear regression\n\n\n\n\n\nContents\n\nStudent’s t-test vs. Wilcoxon rank-sum test\nPaired t-test vs. Wilcoxon signed-rank test\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nVisualizing Relationships\nThe Linear Regression Model\nInterpreting Results\nRegression Diagnostics\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+  },
+  {
+    "objectID": "index.html#day-4-multivariable-linear-and-logistic-regression",
+    "href": "index.html#day-4-multivariable-linear-and-logistic-regression",
+    "title": "Welcome to the course!",
+    "section": "Day 4: Multivariable linear and logistic regression",
+    "text": "Day 4: Multivariable linear and logistic regression\n\n\nClick to view the materials\n\n\n☀️ Morning: Multivariable linear regression🌤️ Afternoon: Logistic regression\n\n\n\n\n\nContents\n\nModel formulation\nEstimation\nTesting\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:      \n\nWeb-R version\n\n\n\n\n\n\n\n\n\n\nContents\n\nRisk/odds, risk ratio (RR)/odds ratio (OR)\nLogistic regression model\nInterpreting Univariable Logistic Regression\nInterpreting Multivariable Logistic Regression\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+  },
+  {
+    "objectID": "index.html#day-5-study-design-sample-size-calculation-steps-in-quantitative-research",
+    "href": "index.html#day-5-study-design-sample-size-calculation-steps-in-quantitative-research",
+    "title": "Welcome to the course!",
+    "section": "Day 5: Study design, sample size calculation & Steps in quantitative research",
+    "text": "Day 5: Study design, sample size calculation & Steps in quantitative research\n\n\nClick to view the materials\n\n\n☀️ Morning: Study design, Sample size🌤️ Afternoon: Quantitative research\n\n\n\n\n\nContents\n\nStudy design\nSample size calculation\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nQuantitative research\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides"
+  },
+  {
+    "objectID": "others/other_resources.html",
+    "href": "others/other_resources.html",
+    "title": "Additional R Resources",
+    "section": "",
+    "text": "Welcome! Beyond this medical statistics course, we highly recommend exploring these dedicated R programming resources developed by the OUCRU Math Modelling and Biostatistics groups."
+  },
+  {
+    "objectID": "others/other_resources.html#training-community",
+    "href": "others/other_resources.html#training-community",
+    "title": "Additional R Resources",
+    "section": "📚 Training & Community",
+    "text": "📚 Training & Community\n\n\nR Training 2025\n\n\n\n\n\n\nFoundational R Skills A comprehensive course covering the essentials of R, from data manipulation with dplyr to professional visualization with ggplot2. Perfect for those who want a solid programming foundation before diving deeper into statistics. Go to Course →\n\n\n\n\n\nR Cafe Materials\n\n\n\n\n\n\nContinuous Learning The “R Cafe” is our community-driven space for sharing tips, advanced tricks, and solving specific coding challenges. These materials include slide decks and scripts from our regular meetups. Browse Materials →\n\n\n\n\n\n\n\nHow to use these resources\n\nNew to R? Start with the R Training 2025 link to get comfortable with the syntax.\nNeed specific solutions? Search the R Cafe Materials for localized examples and community-tested code.\n\nIf you have questions about any of these materials, feel free to leave a comment below or reach out to the Biostatistics group."
+  }
+]

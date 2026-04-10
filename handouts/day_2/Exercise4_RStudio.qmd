@@ -1,0 +1,297 @@
+---
+title: |
+  | Introduction to Medical Statistics 2026
+  | Exercises Class IV
+  | Normal distribution and the Confidence Intervals
+author: 
+  - Thuan Hoang
+  - "Ronald Geskus"
+date: "Marrch 24, 2026"
+filters:
+  - assign
+  - webr
+webr:
+  channel-type: "shared-array-buffer"
+  cell-options:
+    autorun: false
+    message: true
+    warning: true
+    eval: true
+    echo: false
+engine:
+  knitr
+format-links: 
+  - html
+format: 
+  html:
+    toc: true
+    df_print: paged
+    embed-resources: true
+    metadata:
+      pagetitle: Exercises Class IV - Normal distribution and the Confidence Intervals
+    include-in-header: 
+      - text: |
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
+  pdf:
+    fontsize: 12pt
+execute: 
+    message: true
+    warning: true
+    eval: true
+    echo: false
+---
+
+```{r}
+#| label: setup
+#| echo: false
+library(ggplot2)
+library(gghighlight)
+dens_highlight <- function(dist, range, inverse=FALSE, dist.args = list(), 
+                           lims = NULL) {
+  dots <- rlang::enexpr(range)
+  
+  dfun <- get(paste0('d', dist))
+  if (is.null(lims)){
+    rfun <- get(paste0('r', dist))
+    rargs <- modifyList(dist.args, list(n=1000))
+    xrand <- do.call(rfun, rargs[names(rargs)%in%names(formals(rfun))])
+    lims <- quantile(xrand, c(0.01, 0.99))
+  }
+  x <- seq(lims[1], lims[2], length.out=5000)
+  fx <- do.call(dfun, modifyList(dist.args, list(x=x)))
+ 
+    if (!inverse){
+      ggplot(data.frame(X = x, `f(x)`=fx, check.names = FALSE)) + 
+        geom_area(aes(x=X, y=`f(x)`), fill='darkred') +
+        theme_bw() + 
+        gghighlight({{range}},  unhighlighted_params = list(fill='grey'))
+    } else {
+      ggplot(data.frame(X = x, `f(x)`=fx, check.names = FALSE)) + 
+      geom_area(aes(x=X, y=`f(x)`), fill='grey') +
+        theme_bw() + 
+        gghighlight({{range}}, unhighlighted_params = list(fill='darkred'))
+  }
+}
+```
+
+## I. Calculation of normal probabilities
+
+Below is a bell-shaped curve demonstrating a Standard Normal distribution.
+In R, function `pnorm(x, mean, sd)` is a function to quantify the probability $P(X \leq x)$ from a Normal distribution with mean `mean` and standard deviation `sd`.
+
+```{r fig-pnorm}
+#| label: fig-pnorm
+#| fig-width: 8
+#| fig-asp: 0.7
+#| fig-cap: 'Given X ~ Normal(0,1). The curve represents the probability density function of x. The probability of x < -1 (P(x < -1) is highlighted in red. Do you see that it is symmetrical?'
+#| out-width: 70%
+
+dens_highlight('norm', X < - 1)
+```
+
+Assume that the probability distribution of a laboratory marker in a population has a normal distribution with mean 75 and standard deviation 15. Use the 68-95-99.7-rule to (approximately) calculate the following probabilities by hand. Use the `pnorm` function in R to confirm your approximations.
+
+1.  P(60\<X\<90)
+
+
+```{r}
+pnorm(..., mean=75, sd=15) - pnorm(..., mean=75, sd=15)
+```
+
+2.  P(X\<60)
+
+
+```{r}
+pnorm(..., mean=75, sd=15)
+```
+
+3.  P(X\>90)
+
+
+```{r}
+pnorm(..., mean=75, sd=15)
+```
+
+
+4.  P(X\<60 or X\>105)
+
+```{r}
+pnorm(...) + pnorm(...)
+```
+
+
+## II. Distribution of the sample mean
+
+Assume that the probability distribution of a laboratory marker in a population has a normal distribution with mean 75 and standard deviation 15 and that we measure this marker in 144 individuals. We compute the mean of those 144 values.
+
+1.  What is the distribution of this sample mean? Give the mean as well as the standard deviation.
+
+2.  Assuming that the population true mean is $\mu$ = 75. We no do collect a sample of size 144. The mean of this sample is M. What is the probability that this sample mean M differs by **more than 2 units** from the population mean $\mu$ = 75?
+
+```{r}
+# HINT: use the code is exercise I.
+```
+
+3.  We are running into a problem. We failed to collect the planned sample size of N = 144. In fact, we only managed to collect a very small handful of samples. That mean we could not approximate a Normal distribution anymore. We have to use a *t* distribution. Given the function to calculate a cumulative probabily of a *t* distribution is `R` is `pstudent_t(x, df, mu, sigma)` (instead of `pnorm(x, mean, sd)` as we have seen before). Recalculate the probability in question 2 the scenarios below. Compare that with what you observe from the Normal observation, what can you conclude?
+
+-   N = 4
+-   N = 9
+-   N = 25
+-   N = 144 (but don't use the Normal approximation.)
+
+```{webr-r}
+# N = 4
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 9
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 25
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+# N = 144
+pstudent_t(75-2, df=..., mu=75,sigma=1.25) + pstudent_t(75+2, df=..., mu=75,sigma=1.25,lower.tail=F) 
+```
+
+## III. Confidence interval for a proportion
+
+We continue with the exercise from this morning, in which we considered a new chemotherapy. In a trial of 50 patients, 16 had a tumor response. This morning we tested the null hypothesis that the new therapy does not increase the tumor response probability to a value higher than the 20% of the currently available chemotherapies. Now we focus on the 95% confidence interval.
+
+Calculate a two-sided 95% confidence interval for the true tumor response probability. In $\textsf{R}$, this is done via function `prop.test`. Use the fact that the confidence interval is equal to the estimate $\pm 2 \times$ SE, with SE the standard error of the sample proportion.
+
+```{r}
+#| output: asis
+prop.test(x = ..., # number of positive response/success
+          n = ..., # total number of patients involved,
+          conf.level = 0.95, # confidence level = 1-alpha, 
+          correct=FALSE
+          )$conf.int 
+```
+
+## IV. Inference on the change in white cell count
+
+The dataset [bmData.csv](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData.csv) contains selected variables from 300 patients with confirmed bacterial meningitis. They were randomized to either adjunctive dexamethasone therapy or placebo. In this exercise we study the change in CSF total white cell count between baseline and follow-up in the dexamethasone arm.
+
+1.  Have a look at [the description of the dataset](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData_description.txt) and import the dataset [bmData.csv](https://github.com/oucru-biostats/IntroductionToBiostatistics2024/blob/main/data/bmData.csv) into R with variable name *bmData* and use `tbl_summary` to summarise the dataset (except patId) by treatment group (variable `group`).
+
+
+```{r}
+# Load the packages first
+library(gtsummary)
+```
+
+```{r}
+#| output: asis
+bmData <- ...('https://raw.githubusercontent.com/oucru-biostats/IntroductionToBiostatistics2024/main/data/bmData.csv') # HINT: change the function name to read a csv file (Exercise I)
+tbl_summary(bmData[,-1], # remove the first column, which is the patient ids
+            by = ...)    # do the summary by which variable?
+```
+
+2. Create a dataset that restricts observations to the dexamethasone group 
+(e.g. using the _subset_ function; 
+look at the examples in the help file for filter if you need to learn how to use it). 
+
+  - Make a numerical summary of CSF total white cell count at each of the time points: _wc.csf_ at baseline and _wc.csf.fup_ at follow-up. What do you find regarding the distributions and value ranges?
+
+
+```{r}
+bmData.dex <- subset(bmData, 
+                     group==...) # what group you want to see?
+summary(bmData.dex$wc.csf)
+summary(bmData.dex$wc.csf.fup)
+```
+
+  - Now make a histogram to describe the variation visually. Does CSF total white cell count at each of the time points approximately have a Normal distribution? 
+
+  - If not: consider a suitable transformation of the variable and make the histograms again.
+
+
+```{r}
+# Load the packages first
+library(ggplot2)
+library(patchwork) # This is a nice package to align plots together
+```
+
+```{r}
+
+plt.baseline <- ggplot(bmData.dex, aes(wc.csf)) + geom_histogram(boundary=0) +
+  ggtitle("Baseline")
+plt.fup      <- ggplot(bmData.dex, aes(...)) + geom_histogram(boundary=0) +
+  ggtitle("Follow-up")
+
+## to show the two figures next to each other we simply use the "+" as defined in patchwork
+plt.baseline + plt.fup 
+
+# Are they Normal? If not, edit the code above with suitable transformation. HINT: change in the aes(wc.csf) to aes(do_something(wc.csf)) 
+```
+
+3. We shall create a variable that contains the change in CSF total white cell count between baseline and follow-up.
+  Do the same for the change in the transformed values. 
+  Have a look at the distribution of the difference (`diff.wc` and `diff.log.wc`), both for the original variable as well as for the transformed variable.
+
+```{r}
+# Original scale
+bmData.dex$diff.wc <- bmData.dex$wc.csf.fup-bmData.dex$wc.csf
+
+# Transformed scale
+transform_fn <- ... # ? what transform shall we take
+bmData.dex$diff.log.wc <- transform_fn(bmData.dex$wc.csf.fup) - transform_fn(bmData.dex$wc.csf)
+
+plt.diffwc <- ggplot(bmData.dex, aes(diff.wc)) + 
+  geom_histogram(bins=15) +
+  ggtitle("Differences")
+plt.difflogwc <- ggplot(bmData.dex, aes(diff.log.wc)) +
+  geom_histogram(bins=15)  +
+  ggtitle("Differences (log scale)")
+
+plt.diffwc + plt.difflogwc
+
+```
+
+4. Compute the 95% confidence interval for the change in transformed value of CSF total white cell count, based on the quantiles of the Student's t distribution.
+  In $\textsf{R}$, the `t.test` function can be used. 
+  Is there a change in CSF total white cell count between baseline and follow-up?
+  Compare the results with those if the change in the original values is studied.
+
+```{r}
+
+# t-test for the difference in original scale
+t.test(bmData.dex$diff.wc)
+
+# t-test for the difference in log10 scale
+t.test(...)
+```
+
+  -  You might also want to plot the comparison for insight. This is done via function `plotttest` in package `nhstplot`
+
+
+```{r}
+# Load the package first
+library(nhstplot)
+```
+
+
+```{r}
+#| out-width: 100%
+#| fig-asp: 0.5
+# t-test on the original scale
+orig.ttest.plot <- plotttest(t.test(bmData.dex$diff.wc))
+
+# t-test on the log scale
+log.ttest.plot <- plotttest(t.test(...))
+
+orig.ttest.plot + log.ttest.plot
+```
+
+
+5. Do the calculations to obtain the 95% confidence interval yourself and compare results with those from the `t.test` function. 
+Use the function introduced in Exercise II. 
+There are missing values, which we need to remove before we can apply the functions
+
+
+```{r}
+mean.diff <- mean(bmData.dex$diff.log.wc, na.rm=TRUE)
+se.diff   <- sqrt(var(bmData.dex$diff.log.wc, na.rm=TRUE))/sqrt(143-9) # There are 9 missing values.
+qstudent_t(p = c(0.025,0.975), # Why did I do this?
+           df=...,             # The degrees of freedom
+           mu = mean.diff,
+           sigma = se.diff)   
+```
+
