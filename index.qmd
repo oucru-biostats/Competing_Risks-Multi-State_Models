@@ -13,15 +13,20 @@ date-format: "MMMM D, YYYY"
 # Welcome to the course! {.unnumbered}
 
 ::: {.column-margin}
-### Course Objectives
-* **Concepts:** Hypothesis tests, p-values, & confidence intervals.
-* **Methods:** t-tests, chi-square, linear & logistic regression.
-* **Skills:** Perform and interpret basic statistical analyses.
+### Learning Objectives
+1. Decide which quantity is best suited to answer a specific research question in a setting with competing risks
+2. Understand the concepts of cause-specific hazard, subdistribution hazard and cause-specific cumulative incidence
+3. Be able to choose between a Cox model and a Fine and Gray model
+4. Understand the concepts in multi-state models like transition hazards/intensities, transition probabilities, state occupation probabilities, the Markov assumption
+5. Understand the relation between transition intensities and transition probabilities, and be acquainted with the Aalen-Johansen estimator
+6. Understand how (transition-specific) covariables can be included in proportional hazard models for the transition hazards
+7. Know how to perform the analysis using R
+8. Be able to correctly interpret the results that are obtained.
 :::
 
 Welcome to the **Course Competing Risks and Multi-State Models**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
 
-[Welcome note](handouts/0_welcome.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+<!-- [Welcome note](handouts/0_welcome.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
 ::: {.callout-note appearance="simple"}
 ## 📅 Logistics & Schedule
@@ -31,14 +36,11 @@ Welcome to the **Course Competing Risks and Multi-State Models**. This course is
 -   *Note: Lunch is provided for in-person attendees.*
 :::
 
-## Contributors {.unnumbered}
+## Lecturers {.unnumbered}
 
 ::: {layout-ncol="2"}
 -   **Prof. Ronald Geskus**
--   **Dr. Duc Du Hong**
--   **Dr. Hoang Van Thuan**
--   **Dr. Nguyen Lam Vuong**
--   **Dr. Tran Thai Hung**
+-   **Prof. Hein Putter**
 :::
 
 ------------------------------------------------------------------------
@@ -46,43 +48,44 @@ Welcome to the **Course Competing Risks and Multi-State Models**. This course is
 # Pre-course Setup
 
 ::: callout-tip
-## 🛠️ Choose Your Environment
+## 🛠️ Your Environment for the Practicals
 
-You have two ways to follow the course exercises:
-
-1.  **Zero Setup:** Use the **Web-R** versions directly in your browser.
-2.  **Local Setup:** If you prefer using **RStudio**, please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
+We will make the practicals using **RStudio**. Please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
 :::
 
 # Course Topics
 
 **Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}; [Dictionary](handouts/Dictionary_for_statistical_terms_in_Vietnamese.xlsx){.btn .btn-outline-primary .btn-sm target="_blank"}
 
-## Day 1: Descriptive and Exploratory Data Analysis
+## Day 1: Competing Risks
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
-### ☀️ Morning: Descriptive Analysis
+### ☀️ Morning: Main Concepts and Quantities
 
 ::: {layout-ncol="2"}
 #### Contents
 
-1.  Data characteristics & Variable types
-2.  Numerical & Graphical summaries
-3.  Intro to R and RStudio
-<div id="QR1">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR1', 
-    '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+1. Examples
+2. Intervention versus biological competing event
+3. Main time-to-event quantities
+4. Multi-state and subdistribution approach 
+5. Marginal or cause-specific distribution
+6. Data structure
+ 
+<!-- <div id="QR1"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR1',  -->
+<!--     '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+<!--     Click to unlock QR code -->
+<!--   </button> -->
+<!-- </div> -->
 
 #### Materials 
 
--   **Lecture:** [Slides](slides/day_1/1.SlidesDescriptives.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_1/ExerciseWebr-1.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_1/ExerciseRStudio-1.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/ExerciseCode-1.R){.btn .btn-outline-primary .btn-sm target="_blank"}
@@ -100,25 +103,20 @@ You have two ways to follow the course exercises:
 :::
 
 
-### 🌤️ Afternoon: Exploratory Analysis
+### 🌤️ Afternoon: Estimation: Multi-State Approach
 
 ::: {layout-ncol="2"}
 #### Contents
 
-1.  Baseline tables
-2.  Graphs for categorical variables
-3.  Numeric variables by group
-4.  2-variable numeric plots
-<div id="QR2">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR2', 
-    '<a href=\'./handouts/QR_code/02.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+1. Cause-specific hazard
+2. Aalen-Johansen estimator
+3. Display formats 
+4. Independent censoring? 
+5. Cause-specific hazard: a standard Cox model
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_1/2.SlidesEDA.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_1/2.CourseSlidesMultiStateApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/ExerciseCode-2.R){.btn .btn-outline-primary .btn-sm target="_blank"}
@@ -141,31 +139,25 @@ You have two ways to follow the course exercises:
 
 
 
-## Day 2: Statistical analysis principles, Distributions, Confidence Intervals
+## Day 2: Competing Risks
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
-### ☀️ Morning: Main principles & Binomial
+### ☀️ Morning: Estimation: Subdistribution Approach
 
 ::: {layout-ncol="2"}
 #### Contents
 
-1. Types of study questions
-2. Sampling variation
-3. Binomial distribution
-4. Testing hypotheses
-<div id="QR3">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR3', 
-    '<a href=\'./handouts/QR_code/03.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+1. Subdistribution hazard
+2. Product-limit estimator
+3. Log-rank tests
+4. From hazard regression to cumulative incidence
 
 #### Materials
--   **Lecture:** [Slides](slides/day_2/3.SlidesStatisticsPrinciples.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_2/3.CourseSlidesSubdistributionApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_2/ExerciseWebr-3.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_2/ExerciseRStudio-3.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_2/ExerciseCode-3.R){.btn .btn-outline-primary .btn-sm target="_blank"}
@@ -220,6 +212,72 @@ You have two ways to follow the course exercises:
 :::
 
 </details>
+
+## Competing Risks: Exercises and Practicals
+
+<details>
+<summary>[Click to view the materials]{style="color:blue"}</summary>
+
+::: {.panel-tabset}
+
+### ☀️ Morning: Study design, Sample size
+
+::: {layout-ncol="2"}
+#### Contents
+
+1. Study design
+2. Sample size calculation
+<div id="QR9">
+  <button class="btn btn-primary" onclick="unlockSession('306', 'QR9', 
+    '<a href=\'./handouts/QR_code/09.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
+    Click to unlock QR code
+  </button>
+</div>
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_5/9.SampleSize.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Exercises:**
+    -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_5/ExerciseRStudio-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_5/ExerciseCode-9.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
+-   **Answers:**
+<!-- <div id="day5-morning"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('ContactBiostat', 'day5-morning',  -->
+<!--     '<a href=\'./handouts/day_5/ExerciseWebrAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
+<!--     '<a href=\'./handouts/day_5/ExerciseRStudioAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
+<!--     Click to unlock answer -->
+<!--   </button> -->
+<!-- </div> -->
+    -   [Web-R version](handouts/day_5/ExerciseWebrAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_5/ExerciseRStudioAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+:::
+
+
+### 🌤️ Afternoon: Quantitative research
+
+::: {layout-ncol="2"}
+#### Contents
+
+1.  Quantitative research
+<div id="QR10">
+  <button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
+    '<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
+    Click to unlock QR code
+  </button>
+</div>
+
+#### Materials
+
+-   **Lecture:** [Slides](slides/day_5/10.CourseSlides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+
+:::
+
+:::
+
+</details>
+
 
 ## Day 3: Comparing continuous variables and Simple linear regression
 
@@ -383,70 +441,6 @@ You have two ways to follow the course exercises:
 
 
 
-## Day 5: Study design, sample size calculation & Steps in quantitative research
-
-<details>
-<summary>[Click to view the materials]{style="color:blue"}</summary>
-
-::: {.panel-tabset}
-
-### ☀️ Morning: Study design, Sample size
-
-::: {layout-ncol="2"}
-#### Contents
-
-1. Study design
-2. Sample size calculation
-<div id="QR9">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR9', 
-    '<a href=\'./handouts/QR_code/09.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
-
-#### Materials
-
--   **Lecture:** [Slides](slides/day_5/9.SampleSize.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_5/ExerciseRStudio-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_5/ExerciseCode-9.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
--   **Answers:**
-<!-- <div id="day5-morning"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('ContactBiostat', 'day5-morning',  -->
-<!--     '<a href=\'./handouts/day_5/ExerciseWebrAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_5/ExerciseRStudioAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_5/ExerciseWebrAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_5/ExerciseRStudioAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-
-:::
-
-
-### 🌤️ Afternoon: Quantitative research
-
-::: {layout-ncol="2"}
-#### Contents
-
-1.  Quantitative research
-<div id="QR10">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
-    '<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
-
-#### Materials
-
--   **Lecture:** [Slides](slides/day_5/10.CourseSlides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
-
-
-:::
-
-:::
-
-</details>
 
 
 <!-- <script> -->
