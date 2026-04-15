@@ -84,11 +84,11 @@
     "text": "Day 2: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Estimation: Subdistribution Approach🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nSubdistribution hazard\nProduct-limit estimator\nLog-rank tests\nFrom hazard regression to cumulative incidence\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
   {
-    "objectID": "index.html#competing-risks-exercises-and-practicals",
-    "href": "index.html#competing-risks-exercises-and-practicals",
+    "objectID": "index.html#exercises-and-practicals-competing-risks",
+    "href": "index.html#exercises-and-practicals-competing-risks",
     "title": "Welcome to the course!",
-    "section": "Competing Risks: Exercises and Practicals",
-    "text": "Competing Risks: Exercises and Practicals\n\n\nClick to view the materials\n\n\n☀️ Morning: Study design, Sample size🌤️ Afternoon: Quantitative research\n\n\n\n\n\nContents\n\nStudy design\nSample size calculation\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nQuantitative research\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides"
+    "section": "Exercises and Practicals Competing Risks",
+    "text": "Exercises and Practicals Competing Risks\n\n🛠️ Materials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script"
   },
   {
     "objectID": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
