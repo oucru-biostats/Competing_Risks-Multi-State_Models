@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-10">
+<meta name="dcterms.date" content="2026-04-15">
 <meta name="keywords" content="Medical Statistics">
 
 <title>Medical Statistics</title>
@@ -151,16 +151,16 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#welcome-to-the-course" id="toc-welcome-to-the-course" class="nav-link active" data-scroll-target="#welcome-to-the-course">Welcome to the course!</a>
   <ul class="collapse">
-  <li><a href="#contributors" id="toc-contributors" class="nav-link" data-scroll-target="#contributors">Contributors</a></li>
+  <li><a href="#lecturers" id="toc-lecturers" class="nav-link" data-scroll-target="#lecturers">Lecturers</a></li>
   </ul></li>
   <li><a href="#pre-course-setup" id="toc-pre-course-setup" class="nav-link" data-scroll-target="#pre-course-setup"><span class="header-section-number">1</span> Pre-course Setup</a></li>
   <li><a href="#course-topics" id="toc-course-topics" class="nav-link" data-scroll-target="#course-topics"><span class="header-section-number">2</span> Course Topics</a>
   <ul class="collapse">
-  <li><a href="#day-1-descriptive-and-exploratory-data-analysis" id="toc-day-1-descriptive-and-exploratory-data-analysis" class="nav-link" data-scroll-target="#day-1-descriptive-and-exploratory-data-analysis">Day 1: Descriptive and Exploratory Data Analysis</a></li>
-  <li><a href="#day-2-statistical-analysis-principles-distributions-confidence-intervals" id="toc-day-2-statistical-analysis-principles-distributions-confidence-intervals" class="nav-link" data-scroll-target="#day-2-statistical-analysis-principles-distributions-confidence-intervals">Day 2: Statistical analysis principles, Distributions, Confidence Intervals</a></li>
+  <li><a href="#day-1-competing-risks" id="toc-day-1-competing-risks" class="nav-link" data-scroll-target="#day-1-competing-risks">Day 1: Competing Risks</a></li>
+  <li><a href="#day-2-competing-risks" id="toc-day-2-competing-risks" class="nav-link" data-scroll-target="#day-2-competing-risks">Day 2: Competing Risks</a></li>
+  <li><a href="#competing-risks-exercises-and-practicals" id="toc-competing-risks-exercises-and-practicals" class="nav-link" data-scroll-target="#competing-risks-exercises-and-practicals">Competing Risks: Exercises and Practicals</a></li>
   <li><a href="#day-3-comparing-continuous-variables-and-simple-linear-regression" id="toc-day-3-comparing-continuous-variables-and-simple-linear-regression" class="nav-link" data-scroll-target="#day-3-comparing-continuous-variables-and-simple-linear-regression">Day 3: Comparing continuous variables and Simple linear regression</a></li>
   <li><a href="#day-4-multivariable-linear-and-logistic-regression" id="toc-day-4-multivariable-linear-and-logistic-regression" class="nav-link" data-scroll-target="#day-4-multivariable-linear-and-logistic-regression">Day 4: Multivariable linear and logistic regression</a></li>
-  <li><a href="#day-5-study-design-sample-size-calculation-steps-in-quantitative-research" id="toc-day-5-study-design-sample-size-calculation-steps-in-quantitative-research" class="nav-link" data-scroll-target="#day-5-study-design-sample-size-calculation-steps-in-quantitative-research">Day 5: Study design, sample size calculation &amp; Steps in quantitative research</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -184,7 +184,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 10, 2026</p>
+      <p class="date">April 15, 2026</p>
     </div>
   </div>
   
@@ -205,15 +205,20 @@ cookieconsent.run({
 <section id="welcome-to-the-course" class="level1 unnumbered page-columns page-full">
 <h1 class="unnumbered">Welcome to the course!</h1>
 
-<div class="no-row-height column-margin column-container"><section id="course-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="course-objectives">Course Objectives</h3>
-<ul>
-<li><strong>Concepts:</strong> Hypothesis tests, p-values, &amp; confidence intervals.</li>
-<li><strong>Methods:</strong> t-tests, chi-square, linear &amp; logistic regression.</li>
-<li><strong>Skills:</strong> Perform and interpret basic statistical analyses.</li>
-</ul>
+<div class="no-row-height column-margin column-container"><section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<ol type="1">
+<li>Decide which quantity is best suited to answer a specific research question in a setting with competing risks</li>
+<li>Understand the concepts of cause-specific hazard, subdistribution hazard and cause-specific cumulative incidence</li>
+<li>Be able to choose between a Cox model and a Fine and Gray model</li>
+<li>Understand the concepts in multi-state models like transition hazards/intensities, transition probabilities, state occupation probabilities, the Markov assumption</li>
+<li>Understand the relation between transition intensities and transition probabilities, and be acquainted with the Aalen-Johansen estimator</li>
+<li>Understand how (transition-specific) covariables can be included in proportional hazard models for the transition hazards</li>
+<li>Know how to perform the analysis using R</li>
+<li>Be able to correctly interpret the results that are obtained.</li>
+</ol>
 </section></div><p>Welcome to the <strong>Course Competing Risks and Multi-State Models</strong>. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.</p>
-<p><a href="handouts/0_welcome.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Welcome note</a></p>
+<!-- [Welcome note](handouts/0_welcome.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -232,17 +237,14 @@ cookieconsent.run({
 </ul>
 </div>
 </div>
-<section id="contributors" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="contributors">Contributors</h2>
+<section id="lecturers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lecturers">Lecturers</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
 <li><strong>Prof.&nbsp;Ronald Geskus</strong></li>
-<li><strong>Dr.&nbsp;Duc Du Hong</strong></li>
-<li><strong>Dr.&nbsp;Hoang Van Thuan</strong></li>
-<li><strong>Dr.&nbsp;Nguyen Lam Vuong</strong></li>
-<li><strong>Dr.&nbsp;Tran Thai Hung</strong></li>
+<li><strong>Prof.&nbsp;Hein Putter</strong></li>
 </ul>
 </div>
 </div>
@@ -258,29 +260,25 @@ cookieconsent.run({
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>🛠️ Choose Your Environment
+<span class="screen-reader-only">Tip</span>🛠️ Your Environment for the Practicals
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You have two ways to follow the course exercises:</p>
-<ol type="1">
-<li><strong>Zero Setup:</strong> Use the <strong>Web-R</strong> versions directly in your browser.</li>
-<li><strong>Local Setup:</strong> If you prefer using <strong>RStudio</strong>, please complete the <a href="./others/precourse_setup.html" class="btn btn-outline-primary btn-sm" target="_blank">Pre-course Setup Handout</a> before joining.</li>
-</ol>
+<p>We will make the practicals using <strong>RStudio</strong>. Please complete the <a href="./others/precourse_setup.html" class="btn btn-outline-primary btn-sm" target="_blank">Pre-course Setup Handout</a> before joining.</p>
 </div>
 </div>
 </section>
 <section id="course-topics" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Course Topics</h1>
 <p><strong>Course handout:</strong> <a href="handouts/CourseHandouts.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Course handout</a>; <a href="handouts/Dictionary_for_statistical_terms_in_Vietnamese.xlsx" class="btn btn-outline-primary btn-sm" target="_blank">Dictionary</a></p>
-<section id="day-1-descriptive-and-exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="day-1-descriptive-and-exploratory-data-analysis">Day 1: Descriptive and Exploratory Data Analysis</h2>
+<section id="day-1-competing-risks" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-competing-risks">Day 1: Competing Risks</h2>
 <details>
 <summary>
 <span style="color:blue">Click to view the materials</span>
 </summary>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">☀️ Morning: Descriptive Analysis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">🌤️ Afternoon: Exploratory Analysis</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">☀️ Morning: Main Concepts and Quantities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">🌤️ Afternoon: Estimation: Multi-State Approach</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
@@ -288,19 +286,42 @@ cookieconsent.run({
 <section id="contents" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="contents">Contents</h4>
 <ol type="1">
-<li>Data characteristics &amp; Variable types</li>
-<li>Numerical &amp; Graphical summaries</li>
-<li>Intro to R and RStudio
-<div id="QR1">
-<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR1', 
-'<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
-</div></li>
+<li>Examples</li>
+<li>Intervention versus biological competing event</li>
+<li>Main time-to-event quantities</li>
+<li>Multi-state and subdistribution approach</li>
+<li>Marginal or cause-specific distribution</li>
+<li>Data structure</li>
 </ol>
 </section>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!-- <div id="QR1"> -->
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR1',  -->
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!--     '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!--     Click to unlock QR code -->
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!--   </button> -->
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<!-- </div> -->
+</div>
 <section id="materials" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="materials">Materials</h4>
 <ul>
-<li><strong>Lecture:</strong> <a href="slides/day_1/1.SlidesDescriptives.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
+<li><strong>Lecture:</strong> <a href="slides/day_1/1.CourseSlidesBasicConcepts.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
 <ul>
 <li><a href="handouts/day_1/ExerciseWebr-1.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
@@ -322,20 +343,17 @@ cookieconsent.run({
 <section id="contents-1" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="contents-1">Contents</h4>
 <ol type="1">
-<li>Baseline tables</li>
-<li>Graphs for categorical variables</li>
-<li>Numeric variables by group</li>
-<li>2-variable numeric plots
-<div id="QR2">
-<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR2', 
-'<a href=\'./handouts/QR_code/02.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
-</div></li>
+<li>Cause-specific hazard</li>
+<li>Aalen-Johansen estimator</li>
+<li>Display formats</li>
+<li>Independent censoring?</li>
+<li>Cause-specific hazard: a standard Cox model</li>
 </ol>
 </section>
 <section id="materials-1" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="materials-1">Materials</h4>
 <ul>
-<li><strong>Lecture:</strong> <a href="slides/day_1/2.SlidesEDA.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
+<li><strong>Lecture:</strong> <a href="slides/day_1/2.CourseSlidesMultiStateApproach.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
 <ul>
 <li><a href="handouts/day_1/ExerciseWebr-2.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
@@ -355,14 +373,14 @@ cookieconsent.run({
 </div>
 </details>
 </section>
-<section id="day-2-statistical-analysis-principles-distributions-confidence-intervals" class="level2">
-<h2 class="anchored" data-anchor-id="day-2-statistical-analysis-principles-distributions-confidence-intervals">Day 2: Statistical analysis principles, Distributions, Confidence Intervals</h2>
+<section id="day-2-competing-risks" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-competing-risks">Day 2: Competing Risks</h2>
 <details>
 <summary>
 <span style="color:blue">Click to view the materials</span>
 </summary>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">☀️ Morning: Main principles &amp; Binomial</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">🌤️ Afternoon: Normal &amp; Confidence Intervals</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">☀️ Morning: Estimation: Subdistribution Approach</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">🌤️ Afternoon: Normal &amp; Confidence Intervals</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
@@ -370,20 +388,16 @@ cookieconsent.run({
 <section id="contents-2" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="contents-2">Contents</h4>
 <ol type="1">
-<li>Types of study questions</li>
-<li>Sampling variation</li>
-<li>Binomial distribution</li>
-<li>Testing hypotheses
-<div id="QR3">
-<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR3', 
- '<a href=\'./handouts/QR_code/03.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
-</div></li>
+<li>Subdistribution hazard</li>
+<li>Product-limit estimator</li>
+<li>Log-rank tests</li>
+<li>From hazard regression to cumulative incidence</li>
 </ol>
 </section>
 <section id="materials-2" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="materials-2">Materials</h4>
 <ul>
-<li><strong>Lecture:</strong> <a href="slides/day_2/3.SlidesStatisticsPrinciples.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
+<li><strong>Lecture:</strong> <a href="slides/day_2/3.CourseSlidesSubdistributionApproach.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
 <ul>
 <li><a href="handouts/day_2/ExerciseWebr-3.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
@@ -437,6 +451,75 @@ cookieconsent.run({
 </div>
 </details>
 </section>
+<section id="competing-risks-exercises-and-practicals" class="level2">
+<h2 class="anchored" data-anchor-id="competing-risks-exercises-and-practicals">Competing Risks: Exercises and Practicals</h2>
+<details>
+<summary>
+<span style="color:blue">Click to view the materials</span>
+</summary>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">☀️ Morning: Study design, Sample size</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">🌤️ Afternoon: Quantitative research</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="contents-4" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-4">Contents</h4>
+<ol type="1">
+<li>Study design</li>
+<li>Sample size calculation
+<div id="QR9">
+<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR9', 
+ '<a href=\'./handouts/QR_code/09.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
+</div></li>
+</ol>
+</section>
+<section id="materials-4" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-4">Materials</h4>
+<ul>
+<li><strong>Lecture:</strong> <a href="slides/day_5/9.SampleSize.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
+<li><strong>Exercises:</strong>
+<ul>
+<li><a href="handouts/day_5/ExerciseWebr-9.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
+<li><a href="handouts/day_5/ExerciseRStudio-9.html" class="btn btn-outline-primary btn-sm" target="_blank">RStudio version</a> <a href="handouts/day_5/ExerciseCode-9.R" class="btn btn-outline-primary btn-sm" target="_blank">Script</a><br>
+</li>
+</ul></li>
+<li><strong>Answers:</strong> <!-- <div id="day5-morning"> --> <!--   <button class="btn btn-primary" onclick="unlockSession('ContactBiostat', 'day5-morning',  --> <!--     '<a href=\'./handouts/day_5/ExerciseWebrAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + --> <!--     '<a href=\'./handouts/day_5/ExerciseRStudioAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> --> <!--     Click to unlock answer --> <!--   </button> --> <!-- </div> -->
+<ul>
+<li><a href="handouts/day_5/ExerciseWebrAnswers-9.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
+<li><a href="handouts/day_5/ExerciseRStudioAnswers-9.html" class="btn btn-outline-primary btn-sm" target="_blank">RStudio version</a></li>
+</ul></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="contents-5" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-5">Contents</h4>
+<ol type="1">
+<li>Quantitative research
+<div id="QR10">
+<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
+'<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
+</div></li>
+</ol>
+</section>
+<section id="materials-5" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-5">Materials</h4>
+<ul>
+<li><strong>Lecture:</strong> <a href="slides/day_5/10.CourseSlides.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+</section>
 <section id="day-3-comparing-continuous-variables-and-simple-linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="day-3-comparing-continuous-variables-and-simple-linear-regression">Day 3: Comparing continuous variables and Simple linear regression</h2>
 <details>
@@ -444,13 +527,13 @@ cookieconsent.run({
 <span style="color:blue">Click to view the materials</span>
 </summary>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">☀️ Morning: Comparing continuous variables</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">🌤️ Afternoon: Simple linear regression</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">☀️ Morning: Comparing continuous variables</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">🌤️ Afternoon: Simple linear regression</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="contents-4" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-4">Contents</h4>
+<section id="contents-6" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-6">Contents</h4>
 <ol type="1">
 <li>Student’s t-test vs.&nbsp;Wilcoxon rank-sum test</li>
 <li>Paired t-test vs.&nbsp;Wilcoxon signed-rank test
@@ -460,8 +543,8 @@ cookieconsent.run({
 </div></li>
 </ol>
 </section>
-<section id="materials-4" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-4">Materials</h4>
+<section id="materials-6" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-6">Materials</h4>
 <ul>
 <li><strong>Lecture:</strong> <a href="slides/day_3/5_Group comparison_Slides.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
@@ -479,11 +562,11 @@ cookieconsent.run({
 </div>
 </div>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="contents-5" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-5">Contents</h4>
+<section id="contents-7" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-7">Contents</h4>
 <ol type="1">
 <li>Visualizing Relationships</li>
 <li>The Linear Regression Model</li>
@@ -495,8 +578,8 @@ cookieconsent.run({
 </div></li>
 </ol>
 </section>
-<section id="materials-5" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-5">Materials</h4>
+<section id="materials-7" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-7">Materials</h4>
 <ul>
 <li><strong>Lecture:</strong> <a href="slides/day_3/6.simpleLinearRegression_Slides.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
@@ -525,13 +608,13 @@ cookieconsent.run({
 <span style="color:blue">Click to view the materials</span>
 </summary>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">☀️ Morning: Multivariable linear regression</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">🌤️ Afternoon: Logistic regression</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">☀️ Morning: Multivariable linear regression</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">🌤️ Afternoon: Logistic regression</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="contents-6" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-6">Contents</h4>
+<section id="contents-8" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-8">Contents</h4>
 <ol type="1">
 <li>Model formulation</li>
 <li>Estimation</li>
@@ -542,8 +625,8 @@ cookieconsent.run({
 </div></li>
 </ol>
 </section>
-<section id="materials-6" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-6">Materials</h4>
+<section id="materials-8" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-8">Materials</h4>
 <ul>
 <li><strong>Lecture:</strong> <a href="slides/day_4/7.multipleRegression.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
@@ -561,11 +644,11 @@ cookieconsent.run({
 </div>
 </div>
 </div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="contents-7" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-7">Contents</h4>
+<section id="contents-9" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="contents-9">Contents</h4>
 <ol type="1">
 <li>Risk/odds, risk ratio (RR)/odds ratio (OR)</li>
 <li>Logistic regression model</li>
@@ -577,8 +660,8 @@ cookieconsent.run({
 </div></li>
 </ol>
 </section>
-<section id="materials-7" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-7">Materials</h4>
+<section id="materials-9" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="materials-9">Materials</h4>
 <ul>
 <li><strong>Lecture:</strong> <a href="slides/day_4/8.Logistic Regression_Slides.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 <li><strong>Exercises:</strong>
@@ -591,75 +674,6 @@ cookieconsent.run({
 <li><a href="handouts/day_4/Exercise8_Answers.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
 <li><a href="handouts/day_4/Exercise8_Answers.pdf" class="btn btn-outline-primary btn-sm" target="_blank">RStudio version</a></li>
 </ul></li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-</div>
-</div>
-</details>
-</section>
-<section id="day-5-study-design-sample-size-calculation-steps-in-quantitative-research" class="level2">
-<h2 class="anchored" data-anchor-id="day-5-study-design-sample-size-calculation-steps-in-quantitative-research">Day 5: Study design, sample size calculation &amp; Steps in quantitative research</h2>
-<details>
-<summary>
-<span style="color:blue">Click to view the materials</span>
-</summary>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">☀️ Morning: Study design, Sample size</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">🌤️ Afternoon: Quantitative research</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<section id="contents-8" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-8">Contents</h4>
-<ol type="1">
-<li>Study design</li>
-<li>Sample size calculation
-<div id="QR9">
-<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR9', 
- '<a href=\'./handouts/QR_code/09.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
-</div></li>
-</ol>
-</section>
-<section id="materials-8" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-8">Materials</h4>
-<ul>
-<li><strong>Lecture:</strong> <a href="slides/day_5/9.SampleSize.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
-<li><strong>Exercises:</strong>
-<ul>
-<li><a href="handouts/day_5/ExerciseWebr-9.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
-<li><a href="handouts/day_5/ExerciseRStudio-9.html" class="btn btn-outline-primary btn-sm" target="_blank">RStudio version</a> <a href="handouts/day_5/ExerciseCode-9.R" class="btn btn-outline-primary btn-sm" target="_blank">Script</a><br>
-</li>
-</ul></li>
-<li><strong>Answers:</strong> <!-- <div id="day5-morning"> --> <!--   <button class="btn btn-primary" onclick="unlockSession('ContactBiostat', 'day5-morning',  --> <!--     '<a href=\'./handouts/day_5/ExerciseWebrAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + --> <!--     '<a href=\'./handouts/day_5/ExerciseRStudioAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> --> <!--     Click to unlock answer --> <!--   </button> --> <!-- </div> -->
-<ul>
-<li><a href="handouts/day_5/ExerciseWebrAnswers-9.html" class="btn btn-outline-primary btn-sm" target="_blank">Web-R version</a></li>
-<li><a href="handouts/day_5/ExerciseRStudioAnswers-9.html" class="btn btn-outline-primary btn-sm" target="_blank">RStudio version</a></li>
-</ul></li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<section id="contents-9" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="contents-9">Contents</h4>
-<ol type="1">
-<li>Quantitative research
-<div id="QR10">
-<p><button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
-'<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> Click to unlock QR code </button></p>
-</div></li>
-</ol>
-</section>
-<section id="materials-9" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="materials-9">Materials</h4>
-<ul>
-<li><strong>Lecture:</strong> <a href="slides/day_5/10.CourseSlides.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Slides</a></li>
 </ul>
 </section>
 </div>

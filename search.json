@@ -60,28 +60,35 @@
     "href": "index.html",
     "title": "Welcome to the course!",
     "section": "",
-    "text": "Concepts: Hypothesis tests, p-values, & confidence intervals.\nMethods: t-tests, chi-square, linear & logistic regression.\nSkills: Perform and interpret basic statistical analyses.\n\nWelcome to the Course Competing Risks and Multi-State Models. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.\nWelcome note\n\n\n\n\n\n\nNote📅 Logistics & Schedule\n\n\n\n\nTime: 09:15 – 16:45 (UTC +7) daily\nLunch Break: 12:30 – 13:30 (UTC +7)\nFull Schedule: Timetable\nNote: Lunch is provided for in-person attendees.\n\n\n\n\n\n\n\n\n\nProf. Ronald Geskus\nDr. Duc Du Hong\nDr. Hoang Van Thuan\nDr. Nguyen Lam Vuong\nDr. Tran Thai Hung"
+    "text": "Decide which quantity is best suited to answer a specific research question in a setting with competing risks\nUnderstand the concepts of cause-specific hazard, subdistribution hazard and cause-specific cumulative incidence\nBe able to choose between a Cox model and a Fine and Gray model\nUnderstand the concepts in multi-state models like transition hazards/intensities, transition probabilities, state occupation probabilities, the Markov assumption\nUnderstand the relation between transition intensities and transition probabilities, and be acquainted with the Aalen-Johansen estimator\nUnderstand how (transition-specific) covariables can be included in proportional hazard models for the transition hazards\nKnow how to perform the analysis using R\nBe able to correctly interpret the results that are obtained.\n\nWelcome to the Course Competing Risks and Multi-State Models. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.\n\n\n\n\n\n\n\nNote📅 Logistics & Schedule\n\n\n\n\nTime: 09:15 – 16:45 (UTC +7) daily\nLunch Break: 12:30 – 13:30 (UTC +7)\nFull Schedule: Timetable\nNote: Lunch is provided for in-person attendees.\n\n\n\n\n\n\n\n\n\nProf. Ronald Geskus\nProf. Hein Putter"
   },
   {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
+    "objectID": "index.html#lecturers",
+    "href": "index.html#lecturers",
     "title": "Welcome to the course!",
     "section": "",
-    "text": "Prof. Ronald Geskus\nDr. Duc Du Hong\nDr. Hoang Van Thuan\nDr. Nguyen Lam Vuong\nDr. Tran Thai Hung"
+    "text": "Prof. Ronald Geskus\nProf. Hein Putter"
   },
   {
-    "objectID": "index.html#day-1-descriptive-and-exploratory-data-analysis",
-    "href": "index.html#day-1-descriptive-and-exploratory-data-analysis",
+    "objectID": "index.html#day-1-competing-risks",
+    "href": "index.html#day-1-competing-risks",
     "title": "Welcome to the course!",
-    "section": "Day 1: Descriptive and Exploratory Data Analysis",
-    "text": "Day 1: Descriptive and Exploratory Data Analysis\n\n\nClick to view the materials\n\n\n☀️ Morning: Descriptive Analysis🌤️ Afternoon: Exploratory Analysis\n\n\n\n\n\nContents\n\nData characteristics & Variable types\nNumerical & Graphical summaries\nIntro to R and RStudio\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nBaseline tables\nGraphs for categorical variables\nNumeric variables by group\n2-variable numeric plots\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+    "section": "Day 1: Competing Risks",
+    "text": "Day 1: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Main Concepts and Quantities🌤️ Afternoon: Estimation: Multi-State Approach\n\n\n\n\n\nContents\n\nExamples\nIntervention versus biological competing event\nMain time-to-event quantities\nMulti-state and subdistribution approach\nMarginal or cause-specific distribution\nData structure\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nCause-specific hazard\nAalen-Johansen estimator\nDisplay formats\nIndependent censoring?\nCause-specific hazard: a standard Cox model\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
   {
-    "objectID": "index.html#day-2-statistical-analysis-principles-distributions-confidence-intervals",
-    "href": "index.html#day-2-statistical-analysis-principles-distributions-confidence-intervals",
+    "objectID": "index.html#day-2-competing-risks",
+    "href": "index.html#day-2-competing-risks",
     "title": "Welcome to the course!",
-    "section": "Day 2: Statistical analysis principles, Distributions, Confidence Intervals",
-    "text": "Day 2: Statistical analysis principles, Distributions, Confidence Intervals\n\n\nClick to view the materials\n\n\n☀️ Morning: Main principles & Binomial🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nTypes of study questions\nSampling variation\nBinomial distribution\nTesting hypotheses\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+    "section": "Day 2: Competing Risks",
+    "text": "Day 2: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Estimation: Subdistribution Approach🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nSubdistribution hazard\nProduct-limit estimator\nLog-rank tests\nFrom hazard regression to cumulative incidence\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+  },
+  {
+    "objectID": "index.html#competing-risks-exercises-and-practicals",
+    "href": "index.html#competing-risks-exercises-and-practicals",
+    "title": "Welcome to the course!",
+    "section": "Competing Risks: Exercises and Practicals",
+    "text": "Competing Risks: Exercises and Practicals\n\n\nClick to view the materials\n\n\n☀️ Morning: Study design, Sample size🌤️ Afternoon: Quantitative research\n\n\n\n\n\nContents\n\nStudy design\nSample size calculation\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nQuantitative research\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides"
   },
   {
     "objectID": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
@@ -96,13 +103,6 @@
     "title": "Welcome to the course!",
     "section": "Day 4: Multivariable linear and logistic regression",
     "text": "Day 4: Multivariable linear and logistic regression\n\n\nClick to view the materials\n\n\n☀️ Morning: Multivariable linear regression🌤️ Afternoon: Logistic regression\n\n\n\n\n\nContents\n\nModel formulation\nEstimation\nTesting\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:      \n\nWeb-R version\n\n\n\n\n\n\n\n\n\n\nContents\n\nRisk/odds, risk ratio (RR)/odds ratio (OR)\nLogistic regression model\nInterpreting Univariable Logistic Regression\nInterpreting Multivariable Logistic Regression\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
-  },
-  {
-    "objectID": "index.html#day-5-study-design-sample-size-calculation-steps-in-quantitative-research",
-    "href": "index.html#day-5-study-design-sample-size-calculation-steps-in-quantitative-research",
-    "title": "Welcome to the course!",
-    "section": "Day 5: Study design, sample size calculation & Steps in quantitative research",
-    "text": "Day 5: Study design, sample size calculation & Steps in quantitative research\n\n\nClick to view the materials\n\n\n☀️ Morning: Study design, Sample size🌤️ Afternoon: Quantitative research\n\n\n\n\n\nContents\n\nStudy design\nSample size calculation\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nQuantitative research\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides"
   },
   {
     "objectID": "others/other_resources.html",
