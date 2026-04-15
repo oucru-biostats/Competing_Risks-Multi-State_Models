@@ -213,70 +213,14 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 </details>
 
-## Competing Risks: Exercises and Practicals
+## Exercises and Practicals Competing Risks
 
-<details>
-<summary>[Click to view the materials]{style="color:blue"}</summary>
-
-::: {.panel-tabset}
-
-### ☀️ Morning: Study design, Sample size
-
-::: {layout-ncol="2"}
-#### Contents
-
-1. Study design
-2. Sample size calculation
-<div id="QR9">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR9', 
-    '<a href=\'./handouts/QR_code/09.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
-
-#### Materials
+### 🛠️ Materials
 
 -   **Lecture:** [Slides](slides/day_5/9.SampleSize.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_5/ExerciseRStudio-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_5/ExerciseCode-9.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
--   **Answers:**
-<!-- <div id="day5-morning"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('ContactBiostat', 'day5-morning',  -->
-<!--     '<a href=\'./handouts/day_5/ExerciseWebrAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_5/ExerciseRStudioAnswers-9.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_5/ExerciseWebrAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_5/ExerciseRStudioAnswers-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-
-:::
-
-
-### 🌤️ Afternoon: Quantitative research
-
-::: {layout-ncol="2"}
-#### Contents
-
-1.  Quantitative research
-<div id="QR10">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR10', 
-    '<a href=\'./handouts/QR_code/10.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
-
-#### Materials
-
--   **Lecture:** [Slides](slides/day_5/10.CourseSlides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
-
-
-:::
-
-:::
-
-</details>
 
 
 ## Day 3: Comparing continuous variables and Simple linear regression
