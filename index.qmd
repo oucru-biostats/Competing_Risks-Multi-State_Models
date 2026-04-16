@@ -14,7 +14,7 @@ date-format: "MMMM D, YYYY"
 
 ::: {.column-margin}
 ### Learning Objectives
-1. Decide which quantity is best suited to answer a specific research question in a setting with competing risks
+1. We decide which quantity is best suited to answer a specific research question in a setting with competing risks
 2. Understand the concepts of cause-specific hazard, subdistribution hazard and cause-specific cumulative incidence
 3. Be able to choose between a Cox model and a Fine and Gray model
 4. Understand the concepts in multi-state models like transition hazards/intensities, transition probabilities, state occupation probabilities, the Markov assumption
