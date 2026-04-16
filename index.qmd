@@ -1,6 +1,6 @@
 ---
-title: "Medical Statistics"
-subtitle: "Course: Competing Risks and Multi-State Models"
+title: "Competing Risks and Multi-State Models"
+subtitle: "Concepts, methods and software"
 date: last-modified
 date-format: "MMMM D, YYYY"
 format: 
@@ -108,7 +108,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 :::
 
 
-### 🌤️ Afternoon: Estimation: Multi-State Approach
+### 🌤️ Afternoon: Multi-State Approach to Estimation
 
 ::: {layout-ncol="2"}
 #### Contents
@@ -151,7 +151,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 ::: {.panel-tabset}
 
-### ☀️ Morning: Estimation: Subdistribution Approach
+### ☀️ Morning: Subdistribution Approach to Estimation
 
 ::: {layout-ncol="2"}
 #### Contents
@@ -160,6 +160,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 2. Product-limit estimator
 3. Log-rank tests
 4. From hazard regression to cumulative incidence
+5. Proportional subdistribution hazards: Fine and Gray model
 
 #### Materials
 -   **Lecture:** [Slides](slides/day_2/3.CourseSlidesSubdistributionApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}

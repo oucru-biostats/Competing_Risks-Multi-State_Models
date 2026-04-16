@@ -9,10 +9,10 @@ project:
     - "handouts/"
     - "slides/"
     - "site_imgs/"
-keywords: ["Medical Statistics"]
+keywords: ["Competing Risks, Multi-State Models"]
 
 website:
-  title: "Medical Statistics"
+  title: "Competing Risks and Multi-State Models"
   description: ""
   site-url: "https://oucru-biostats.github.io/Competing_Risks-Multi-State_Models/"
   
@@ -53,13 +53,13 @@ website:
     type: textbox
   page-footer: 
     left: |
-      <span class="faux-block">&#169; 2026 Tran Thai Hung and the Biostatistics group <br></span>
-      <span class="faux-block">Contact: [hungtt@oucru.org](mailto:hungtt@oucru.org) <br></span>      
+      <span class="faux-block">&#169; 2026 Ronald Geskus <br></span>
+      <span class="faux-block">Contact: [rgeskus@oucru.org](mailto:rgeskus@oucru.org) <br></span>      
       <span class="faux-block">All content licensed under [Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)</span>
     center: |
      
     right: |
-      <span class="faux-block"><a href="https://github.com/TranHung93/Introduction-to-Medical-Statistics">View source on GitHub</a></span>
+      <span class="faux-block"><a href="https://github.com/oucru-biostats/Competing_Risks-Multi-State_Models">View source on GitHub</a></span>
 
 toc: true
 number-sections: true
