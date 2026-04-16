@@ -1,13 +1,25 @@
 ---
-format: 
-  html:
-    link-external-icon: true
-    link-external-newwindow: true
-from: markdown+autolink_bare_uris
-number-depth: 1
-toc-depth: 2
+title: "Medical Statistics"
+subtitle: "Course: Competing Risks and Multi-State Models"
 date: last-modified
 date-format: "MMMM D, YYYY"
+format: 
+  html:
+    theme: cosmo
+    page-layout: article
+    grid:
+      body-width: 1200px
+      margin-width: 300px
+      sidebar-width: 250px
+    link-external-icon: true
+    link-external-newwindow: true
+    toc: true
+    toc-location: left
+    toc-title: "On this page"
+    number-sections: true
+    number-depth: 1
+    code-fold: show
+from: markdown+autolink_bare_uris
 ---
 
 # Welcome to the course! {.unnumbered}
