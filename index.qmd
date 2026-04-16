@@ -76,13 +76,6 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 5. Marginal or cause-specific distribution
 6. Data structure
  
-<!-- <div id="QR1"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR1',  -->
-<!--     '<a href=\'./handouts/QR_code/01.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
-<!--     Click to unlock QR code -->
-<!--   </button> -->
-<!-- </div> -->
-
 #### Materials 
 
 -   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
