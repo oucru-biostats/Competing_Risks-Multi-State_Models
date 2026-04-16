@@ -58,49 +58,49 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "",
     "text": "We decide which quantity is best suited to answer a specific research question in a setting with competing risks\nUnderstand the concepts of cause-specific hazard, subdistribution hazard and cause-specific cumulative incidence\nBe able to choose between a Cox model and a Fine and Gray model\nUnderstand the concepts in multi-state models like transition hazards/intensities, transition probabilities, state occupation probabilities, the Markov assumption\nUnderstand the relation between transition intensities and transition probabilities, and be acquainted with the Aalen-Johansen estimator\nUnderstand how (transition-specific) covariables can be included in proportional hazard models for the transition hazards\nKnow how to perform the analysis using R\nBe able to correctly interpret the results that are obtained.\n\nWelcome to the Course Competing Risks and Multi-State Models. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.\n\n\n\n\n\n\n\nNote📅 Logistics & Schedule\n\n\n\n\nTime: 09:15 – 16:45 (UTC +7) daily\nLunch Break: 12:30 – 13:30 (UTC +7)\nFull Schedule: Timetable\nNote: Lunch is provided for in-person attendees.\n\n\n\n\n\n\n\n\n\nProf. Ronald Geskus\nProf. Hein Putter"
   },
   {
     "objectID": "index.html#lecturers",
     "href": "index.html#lecturers",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "",
     "text": "Prof. Ronald Geskus\nProf. Hein Putter"
   },
   {
     "objectID": "index.html#day-1-competing-risks",
     "href": "index.html#day-1-competing-risks",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "Day 1: Competing Risks",
-    "text": "Day 1: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Main Concepts and Quantities🌤️ Afternoon: Estimation: Multi-State Approach\n\n\n\n\n\nContents\n\nExamples\nIntervention versus biological competing event\nMain time-to-event quantities\nMulti-state and subdistribution approach\nMarginal or cause-specific distribution\nData structure\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nCause-specific hazard\nAalen-Johansen estimator\nDisplay formats\nIndependent censoring?\nCause-specific hazard: a standard Cox model\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+    "text": "Day 1: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Main Concepts and Quantities🌤️ Afternoon: Multi-State Approach to Estimation\n\n\n\n\n\nContents\n\nExamples\nIntervention versus biological competing event\nMain time-to-event quantities\nMulti-state and subdistribution approach\nMarginal or cause-specific distribution\nData structure\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nCause-specific hazard\nAalen-Johansen estimator\nDisplay formats\nIndependent censoring?\nCause-specific hazard: a standard Cox model\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
   {
     "objectID": "index.html#day-2-competing-risks",
     "href": "index.html#day-2-competing-risks",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "Day 2: Competing Risks",
-    "text": "Day 2: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Estimation: Subdistribution Approach🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nSubdistribution hazard\nProduct-limit estimator\nLog-rank tests\nFrom hazard regression to cumulative incidence\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
+    "text": "Day 2: Competing Risks\n\n\nClick to view the materials\n\n\n☀️ Morning: Subdistribution Approach to Estimation🌤️ Afternoon: Normal & Confidence Intervals\n\n\n\n\n\nContents\n\nSubdistribution hazard\nProduct-limit estimator\nLog-rank tests\nFrom hazard regression to cumulative incidence\nProportional subdistribution hazards: Fine and Gray model\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nThe normal distribution\nConfidence intervals\nHypothesis tests and p-values\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
   {
     "objectID": "index.html#exercises-and-practicals-competing-risks",
     "href": "index.html#exercises-and-practicals-competing-risks",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "Exercises and Practicals Competing Risks",
     "text": "Exercises and Practicals Competing Risks\n\n🛠️ Materials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script"
   },
   {
     "objectID": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
     "href": "index.html#day-3-comparing-continuous-variables-and-simple-linear-regression",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "Day 3: Comparing continuous variables and Simple linear regression",
     "text": "Day 3: Comparing continuous variables and Simple linear regression\n\n\nClick to view the materials\n\n\n☀️ Morning: Comparing continuous variables🌤️ Afternoon: Simple linear regression\n\n\n\n\n\nContents\n\nStudent’s t-test vs. Wilcoxon rank-sum test\nPaired t-test vs. Wilcoxon signed-rank test\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version\n\n\n\n\n\n\n\n\n\n\nContents\n\nVisualizing Relationships\nThe Linear Regression Model\nInterpreting Results\nRegression Diagnostics\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
   {
     "objectID": "index.html#day-4-multivariable-linear-and-logistic-regression",
     "href": "index.html#day-4-multivariable-linear-and-logistic-regression",
-    "title": "Medical Statistics",
+    "title": "Competing Risks and Multi-State Models",
     "section": "Day 4: Multivariable linear and logistic regression",
     "text": "Day 4: Multivariable linear and logistic regression\n\n\nClick to view the materials\n\n\n☀️ Morning: Multivariable linear regression🌤️ Afternoon: Logistic regression\n\n\n\n\n\nContents\n\nModel formulation\nEstimation\nTesting\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\n\nAnswers:      \n\nWeb-R version\n\n\n\n\n\n\n\n\n\n\nContents\n\nRisk/odds, risk ratio (RR)/odds ratio (OR)\nLogistic regression model\nInterpreting Univariable Logistic Regression\nInterpreting Multivariable Logistic Regression\n\n Click to unlock QR code \n\n\n\n\nMaterials\n\nLecture: Slides\nExercises:\n\nWeb-R version\nRStudio version Script\n\nAnswers:       \n\nWeb-R version\nRStudio version"
   },
