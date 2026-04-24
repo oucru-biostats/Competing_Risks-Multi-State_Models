@@ -52,8 +52,7 @@ Once R and RStudio are installed, you need to install the specific libraries we 
 
 ```r
 # List of required packages
-pkgs <- c("ggplot2", "gtsummary", "ggrain", "GGally", "patchwork", 
-          "ggExtra", "ggResidpanel", "performance", "see", "ggeffects")
+pkgs <- c("ggplot2", "mstate", "ggsurvfit", "survminer", "eventglm")
 
 # Install packages
 install.packages(pkgs)

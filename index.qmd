@@ -44,15 +44,15 @@ Welcome to the **Course Competing Risks and Multi-State Models**. This course is
 ## 📅 Logistics & Schedule
 -   **Time:** 09:15 – 16:45 (UTC +7) daily
 -   **Lunch Break:** 12:30 – 13:30 (UTC +7)
--   **Full Schedule:** [Timetable](handouts/Agenda_StatCourse_23-27March2026.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Full Schedule:** [Timetable](handouts/Schedule5-8May2026.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   *Note: Lunch is provided for in-person attendees.*
 :::
 
 ## Lecturers {.unnumbered}
 
 ::: {layout-ncol="2"}
--   **Prof. Ronald Geskus**
--   **Prof. Hein Putter**
+-   **Prof. Ronald Geskus**, Oxford University Clinical Research Unit, Vietnam
+-   **Prof. Hein Putter**, Leiden University Medical Center, Leiden
 :::
 
 ------------------------------------------------------------------------
@@ -65,11 +65,11 @@ Welcome to the **Course Competing Risks and Multi-State Models**. This course is
 We will make the practicals using **RStudio**. Please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
 :::
 
-# Course Topics
+# Competing Risks
 
-**Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}; [Dictionary](handouts/Dictionary_for_statistical_terms_in_Vietnamese.xlsx){.btn .btn-outline-primary .btn-sm target="_blank"}
+**Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
-## Day 1: Competing Risks
+## Day 1
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
@@ -144,7 +144,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 
 
-## Day 2: Competing Risks
+## Day 2
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
@@ -181,7 +181,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 :::
 
-### 🌤️ Afternoon: Normal & Confidence Intervals
+### 🌤️ Afternoon: Type of Study Question; Predictive and Causal
 
 ::: {layout-ncol="2"}
 #### Contents
@@ -198,7 +198,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_2/4_MainConceptsPrinciples.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_2/4.CourseTypeOfAnalysis.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
     -   [Web-R version](handouts/day_2/Exercise4Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [RStudio version](handouts/day_2/Exercise4_RStudio.qmd){.btn .btn-outline-primary .btn-sm target="_blank"}
@@ -223,11 +223,12 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 ### 🛠️ Materials
 
--   **Lecture:** [Slides](slides/day_5/9.SampleSize.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_5/ExerciseRStudio-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_5/ExerciseCode-9.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
+    <!-- -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+    -   [RStudio version](handouts/ExercisesPracticals/ComputerPracticalsAnswers.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/ExercisesPracticals/ComputerPracticals.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
 
+# Multi-State Models
 
 ## Day 3: Comparing continuous variables and Simple linear regression
 
