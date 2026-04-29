@@ -72,70 +72,70 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 **Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
-## Day 1
+<!-- ## Day 1 -->
 
-<details>
-<summary>[Click to view the materials]{style="color:blue"}</summary>
+<!-- <details> -->
+<!-- <summary>[Click to view the materials]{style="color:blue"}</summary> -->
 
-::: {.panel-tabset}
+<!-- ::: {.panel-tabset} -->
 
-### ☀️ Morning: Main Concepts and Quantities
+<!-- ### ☀️ Morning: Main Concepts and Quantities -->
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1. Examples
-2. Intervention versus biological competing event
-3. Main time-to-event quantities
-4. Multi-state and subdistribution approach 
-5. Marginal or cause-specific distribution
-6. Data structure
+<!-- 1. Examples -->
+<!-- 2. Intervention versus biological competing event -->
+<!-- 3. Main time-to-event quantities -->
+<!-- 4. Multi-state and subdistribution approach  -->
+<!-- 5. Marginal or cause-specific distribution -->
+<!-- 6. Data structure -->
  
-#### Materials 
+<!-- #### Materials  -->
 
--   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Practicals:** 
+<!-- -   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!-- -   **Practicals:**  -->
 <!-- <div id="day1-morning"> -->
 <!--   <button class="btn btn-primary" onclick="unlockSession('Basics', 'day1-morning', -->
 <!--     '<a href=\'./handouts/day_1/PracticalsAnswersStandardSurvival.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')"> -->
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [R code](handouts/day_1/PracticalsAnswersStandardSurvival.R){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [Answers](handouts/day_1/PracticalsAnswersStandardSurvival.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+<!--     -   [R code](handouts/day_1/PracticalsAnswersStandardSurvival.R){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!--     -   [Answers](handouts/day_1/PracticalsAnswersStandardSurvival.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
-:::
+<!-- ::: -->
 
 
-### 🌤️ Afternoon: Multi-State Approach to Estimation
+<!-- ### 🌤️ Afternoon: Multi-State Approach to Estimation -->
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1. Cause-specific hazard
-2. Aalen-Johansen estimator
-3. Display formats 
-4. Independent censoring? 
-5. Cause-specific hazard: a standard Cox model
+<!-- 1. Cause-specific hazard -->
+<!-- 2. Aalen-Johansen estimator -->
+<!-- 3. Display formats  -->
+<!-- 4. Independent censoring?  -->
+<!-- 5. Cause-specific hazard: a standard Cox model -->
 
-#### Materials
+<!-- #### Materials -->
 
--   **Lecture:** [Slides](slides/day_1/2.CourseSlidesMultiStateApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Practicals:** 
+<!-- -   **Lecture:** [Slides](slides/day_1/2.CourseSlidesMultiStateApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!-- -   **Practicals:**  -->
 <!-- <div id="day1-afternoon"> -->
 <!--   <button class="btn btn-primary" onclick="unlockSession('AalenJ', 'day1-afternoon', -->
 <!--     '<a href=\'./handouts/day_1/PracticalsAnswersStandardCompetingRisks.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')"> -->
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [R code](handouts/day_1/PracticalsAnswersStandardCompetingRisks.R){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [Answers](handouts/day_1/PracticalsAnswersStandardCompetingRisks.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+<!--     -   [R code](handouts/day_1/PracticalsAnswersStandardCompetingRisks.R){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!--     -   [Answers](handouts/day_1/PracticalsAnswersStandardCompetingRisks.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
-:::
+<!-- ::: -->
 
-:::
+<!-- ::: -->
 
-</details>
+<!-- </details> -->
 
 
 
