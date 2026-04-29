@@ -95,12 +95,12 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 -   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Practicals:** 
-<div id="day1-morning">
-  <button class="btn btn-primary" onclick="unlockSession('Basics', 'day1-morning',
-    '<a href=\'./handouts/day_1/PracticalsAnswersStandardSurvival.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
-    Click to unlock answer
-  </button>
-</div>
+<!-- <div id="day1-morning"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('Basics', 'day1-morning', -->
+<!--     '<a href=\'./handouts/day_1/PracticalsAnswersStandardSurvival.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')"> -->
+<!--     Click to unlock answer -->
+<!--   </button> -->
+<!-- </div> -->
     -   [R code](handouts/day_1/PracticalsAnswersStandardSurvival.R){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [Answers](handouts/day_1/PracticalsAnswersStandardSurvival.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
@@ -122,12 +122,12 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 -   **Lecture:** [Slides](slides/day_1/2.CourseSlidesMultiStateApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Practicals:** 
-<div id="day1-afternoon">
-  <button class="btn btn-primary" onclick="unlockSession('AalenJ', 'day1-afternoon',
-    '<a href=\'./handouts/day_1/PracticalsAnswersStandardCompetingRisks.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
-    Click to unlock answer
-  </button>
-</div>
+<!-- <div id="day1-afternoon"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('AalenJ', 'day1-afternoon', -->
+<!--     '<a href=\'./handouts/day_1/PracticalsAnswersStandardCompetingRisks.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')"> -->
+<!--     Click to unlock answer -->
+<!--   </button> -->
+<!-- </div> -->
     -   [R code](handouts/day_1/PracticalsAnswersStandardCompetingRisks.R){.btn .btn-outline-primary .btn-sm target="_blank"}
     -   [Answers](handouts/day_1/PracticalsAnswersStandardCompetingRisks.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
