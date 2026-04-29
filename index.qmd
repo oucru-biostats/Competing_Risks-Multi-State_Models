@@ -36,7 +36,10 @@ from: markdown+autolink_bare_uris
 8. Be able to correctly interpret the results that are obtained.
 :::
 
-Welcome to the **Course Competing Risks and Multi-State Models**. This course is designed to provide clinicians and researchers with the fundamental statistical tools required for medical research.
+Welcome to the **Course Competing Risks and Multi-State Models**. This course is
+designed to enhance the understanding of competing risks and multi-state models and
+allow participants to perform such analyses in R. The focus is on applications in
+medical research.
 
 <!-- [Welcome note](handouts/0_welcome.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
@@ -91,19 +94,15 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 #### Materials 
 
 -   **Lecture:** [Slides](slides/day_1/1.CourseSlidesBasicConcepts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_1/ExerciseWebr-1.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudio-1.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/ExerciseCode-1.R){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:** 
-<!-- <div id="day1-morning"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('TooEasy?', 'day1-morning',  -->
-<!--     '<a href=\'./handouts/day_1/ExerciseWebrAnswers-1.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-1.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_1/ExerciseWebrAnswers-1.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudioAnswers-1.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Practicals:** 
+<div id="day1-morning">
+  <button class="btn btn-primary" onclick="unlockSession('Basics', 'day1-morning',
+    '<a href=\'./handouts/day_1/PracticalsAnswersStandardSurvival.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
+    Click to unlock answer
+  </button>
+</div>
+    -   [R code](handouts/day_1/PracticalsAnswersStandardSurvival.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Answers](handouts/day_1/PracticalsAnswersStandardSurvival.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
 
@@ -122,19 +121,15 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 #### Materials
 
 -   **Lecture:** [Slides](slides/day_1/2.CourseSlidesMultiStateApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_1/ExerciseWebr-2.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudio-2.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/ExerciseCode-2.R){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:** 
-<!-- <div id="day1-afternoon"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('RealFun!', 'day1-afternoon',  -->
-<!--     '<a href=\'./handouts/day_1/ExerciseWebrAnswers-2.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-2.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_1/ExerciseWebrAnswers-2.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_1/ExerciseRStudioAnswers-2.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Practicals:** 
+<div id="day1-afternoon">
+  <button class="btn btn-primary" onclick="unlockSession('AalenJ', 'day1-afternoon',
+    '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-2.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
+    Click to unlock answer
+  </button>
+</div>
+    -   [R code](handouts/day_1/PracticalsAnswersStandardCompetingRisks.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Answers](handouts/day_1/PracticalsAnswersStandardCompetingRisks.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
 
