@@ -124,7 +124,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 -   **Practicals:** 
 <div id="day1-afternoon">
   <button class="btn btn-primary" onclick="unlockSession('AalenJ', 'day1-afternoon',
-    '<a href=\'./handouts/day_1/ExerciseRStudioAnswers-2.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
+    '<a href=\'./handouts/day_1/PracticalsAnswersStandardCompetingRisks.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Answers</a>')">
     Click to unlock answer
   </button>
 </div>
