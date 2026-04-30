@@ -52,8 +52,15 @@ Once R and RStudio are installed, you need to install the specific libraries we 
 
 ```r
 # List of required packages
-pkgs <- c("ggplot2", "mstate", "ggsurvfit", "survminer", "eventglm")
+update.packages()
 
-# Install packages
-install.packages(pkgs)
+pkgs <- c("ggplot2", "ggsurvfit", "survminer", "eventglm", "cmprsk")
+
+# Install packages if not installed yet
+for (i in pkg) {
+  if (i %in% rownames(installed.packages()) == FALSE) {
+  install.packages(i, repos = "http://cran.rstudio.com")
+}
+
+devtools::install_github("hputter/mstate")
 ```
