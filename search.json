@@ -25,7 +25,7 @@
     "href": "others/precourse_setup.html#r-packages",
     "title": "Pre-course setups and requirements",
     "section": "R Packages",
-    "text": "R Packages\nOnce R and RStudio are installed, you need to install the specific libraries we will use for data visualization and analysis.\nInstructions:\n\nOpen RStudio.\nCopy the code below and paste it into the Console (the bottom-left pane).\nPress Enter.\n\n# List of required packages\npkgs &lt;- c(\"ggplot2\", \"mstate\", \"ggsurvfit\", \"survminer\", \"eventglm\")\n\n# Install packages\ninstall.packages(pkgs)"
+    "text": "R Packages\nOnce R and RStudio are installed, you need to install the specific libraries we will use for data visualization and analysis.\nInstructions:\n\nOpen RStudio.\nCopy the code below and paste it into the Console (the bottom-left pane).\nPress Enter.\n\n# List of required packages\nupdate.packages()\n\npkgs &lt;- c(\"ggplot2\", \"ggsurvfit\", \"survminer\", \"eventglm\", \"cmprsk\")\n\n# Install packages if not installed yet\nfor (i in pkg) {\n  if (i %in% rownames(installed.packages()) == FALSE) {\n  install.packages(i, repos = \"http://cran.rstudio.com\")\n}\n\ndevtools::install_github(\"hputter/mstate\")"
   },
   {
     "objectID": "index.html",
