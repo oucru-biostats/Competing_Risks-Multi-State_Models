@@ -65,7 +65,8 @@ medical research.
 ::: callout-tip
 ## 🛠️ Your Environment for the Practicals
 
-We will make the practicals using **RStudio**. Please complete the [Pre-course Setup Handout](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
+We will make the practicals using **RStudio**. Please complete the [Pre-course
+Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
 :::
 
 # Competing Risks
@@ -159,10 +160,7 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 
 #### Materials
 -   **Lecture:** [Slides](slides/day_2/3.CourseSlidesSubdistributionApproach.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_2/ExerciseWebr-3.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_2/ExerciseRStudio-3.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_2/ExerciseCode-3.R){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:** 
+-   **Practicals:** 
 <!-- <div id="day2-morning"> -->
 <!--   <button class="btn btn-primary" onclick="unlockSession('TheBasic', 'day2-morning',  -->
 <!--     '<a href=\'./handouts/day_2/ExerciseWebrAnswers-3.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
@@ -170,8 +168,8 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [Web-R version](handouts/day_2/ExerciseWebrAnswers-3.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_2/ExerciseRStudioAnswers-3.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [R code](handouts/day_2/PracticalsAnswersSubdistribution.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Answers](handouts/day_2/PracticalsAnswersSubdistribution.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 
 :::
@@ -181,23 +179,14 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 ::: {layout-ncol="2"}
 #### Contents
 
-1.  The normal distribution
-2.  Confidence intervals
-3.  Hypothesis tests and p-values
-<div id="QR4">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR4', 
-    '<a href=\'./handouts/QR_code/04.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+1.  Stacked data set: advantages
+2.  From hazard regression to cumulative incidence
+3.  Which quantity to use?
 
 #### Materials
 
 -   **Lecture:** [Slides](slides/day_2/4.CourseTypeOfAnalysis.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_2/Exercise4Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_2/Exercise4_RStudio.qmd){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:**
+-   **Practicals:**
 <!-- <div id="day2-afternoon"> -->
 <!--   <button class="btn btn-primary" onclick="unlockSession('Useless?', 'day2-afternoon',  -->
 <!--     '<a href=\'./handouts/day_2/Exercise4Answer_Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
@@ -205,8 +194,8 @@ We will make the practicals using **RStudio**. Please complete the [Pre-course S
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [Web-R version](handouts/day_2/Exercise4Answer_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_2/Exercise4Answer_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Web-R version](handouts/day_2/PracticalsAnswersSubdistribution.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_2/PracticalsAnswersSubdistribution.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
 
