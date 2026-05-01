@@ -4,7 +4,7 @@
     "href": "others/precourse_setup.html",
     "title": "Pre-course setups and requirements",
     "section": "",
-    "text": "Here we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course."
+    "text": "Here we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course. If you already have R and RStudio installed, then it is important to install a couple of packages. It is important that you install the latest version of mstate, which is currently only available on GitHub. See the instructions at the end of this file."
   },
   {
     "objectID": "others/precourse_setup.html#r",
