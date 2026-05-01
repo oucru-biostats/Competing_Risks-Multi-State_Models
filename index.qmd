@@ -250,8 +250,6 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 -   **Lecture:** [Slides](slides/day_3/Multistate models 1 - nonparametric.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 
-:::
-
 
 ### 🌤️ Afternoon:  incorporating covariates
 
@@ -279,7 +277,6 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 <!--     -   [Web-R version](handouts/day_3/Exercise6_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 <!--     -   [RStudio version](handouts/day_3/Exercise6_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
-:::
 
 :::
 
@@ -314,8 +311,6 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 -   **Exercises:**
 
 
-:::
-
 
 ### 🌤️ Afternoon: Markov issues
 
@@ -336,9 +331,6 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 #### Materials
 
 -   **Lecture:** [Slides](slides/day_4/Multistate models 4 - Markov issues.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
-
-
-:::
 
 :::
 
