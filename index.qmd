@@ -65,8 +65,7 @@ medical research.
 ::: callout-tip
 ## 🛠️ Your Environment for the Practicals
 
-We will make the practicals using **RStudio**. Please complete the [Pre-course
-Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
+We will make the practicals using **RStudio**. Please complete the [Preparations and Packages](others/precourse_setup.qmd){.btn .btn-outline-primary .btn-sm target="_blank"} before joining.
 :::
 
 # Competing Risks
@@ -196,8 +195,8 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 <!--     Click to unlock answer -->
 <!--   </button> -->
 <!-- </div> -->
-    -   [Web-R version](handouts/day_2/PracticalsAnswersSubdistribution.R){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_2/PracticalsAnswersSubdistribution.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [Web-R version](handouts/day_2/PracticalsAnswersPredictionCausal.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+    -   [RStudio version](handouts/day_2/PracticalsAnswersPredictionCausal.html){.btn .btn-outline-primary .btn-sm target="_blank"}
 
 :::
 
