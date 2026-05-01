@@ -73,6 +73,8 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 
 **Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
+**Software:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
 ## Day 1
 
 <details>
@@ -203,90 +205,79 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 
 </details>
 
-## Exercises and Practicals Competing Risks
+<!-- ## Exercises and Practicals Competing Risks -->
 
-### 🛠️ Materials
+<!-- ### 🛠️ Materials -->
 
--   **Lecture:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    <!-- -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
-    -   [RStudio version](handouts/ExercisesPracticals/ComputerPracticalsAnswers.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/ExercisesPracticals/ComputerPracticals.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
+<!-- -   **Lecture:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!-- -   **Exercises:** -->
+<!--     <\!-- -   [Web-R version](handouts/day_5/ExerciseWebr-9.html){.btn .btn-outline-primary .btn-sm target="_blank"} -\-> -->
+<!--     -   [RStudio version](handouts/ExercisesPracticals/ComputerPracticalsAnswers.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/ExercisesPracticals/ComputerPracticals.R){.btn .btn-outline-primary .btn-sm target="_blank"}     -->
 
 # Multi-State Models
 
-## Day 3: Comparing continuous variables and Simple linear regression
+## Practicals
+
+**Exercises:** [Exercises](handouts/PracticalsMstate/Mstate_practical_exercises.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+**R code:** [Script file](handouts/PracticalsMstate/Mstate_practical.R){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+**Answers to Exercises:** [Answers](handouts/PracticalsMstate/Mstate_practical_answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
+## Day 3
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
-### ☀️ Morning: Comparing continuous variables
+### ☀️ Morning:  terminology and non-parametric estimation
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1.  Student’s t-test vs. Wilcoxon rank-sum test
-2.  Paired t-test vs. Wilcoxon signed-rank test
-<div id="QR5">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR5', 
-    '<a href=\'./handouts/QR_code/05.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+<!-- 1.  Student’s t-test vs. Wilcoxon rank-sum test -->
+<!-- 2.  Paired t-test vs. Wilcoxon signed-rank test -->
+<!-- <div id="QR5"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR5',  -->
+<!--     '<a href=\'./handouts/QR_code/05.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+<!--     Click to unlock QR code -->
+<!--   </button> -->
+<!-- </div> -->
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_3/5_Group comparison_Slides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_3/Exercise5_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_3/Exercise5_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/ExerciseCode.R){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:**
-<!-- <div id="day3-morning"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('Testing', 'day3-morning',  -->
-<!--     '<a href=\'./handouts/day_3/Exercise5_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_3/Exercise5_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_3/Exercise5_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_3/Exercise5_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} 
+-   **Lecture:** [Slides](slides/day_3/Multistate models 1 - nonparametric.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
 
 :::
 
 
-### 🌤️ Afternoon: Simple linear regression
+### 🌤️ Afternoon:  incorporating covariates
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1.  Visualizing Relationships
-2.  The Linear Regression Model
-3.  Interpreting Results
-4.  Regression Diagnostics
-<div id="QR6">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR6', 
-    '<a href=\'./handouts/QR_code/06.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+<!-- 1.  Visualizing Relationships -->
+<!-- 2.  The Linear Regression Model -->
+<!-- 3.  Interpreting Results -->
+<!-- 4.  Regression Diagnostics -->
+<!-- <div id="QR6"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR6',  -->
+<!--     '<a href=\'./handouts/QR_code/06.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+<!--     Click to unlock QR code -->
+<!--   </button> -->
+<!-- </div> -->
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_3/6.simpleLinearRegression_Slides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_3/Exercise6_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_3/Exercise6_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/Exercise6Code.R){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Answers:**
-<!-- <div id="day3-afternoon"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('LinearTrend', 'day3-afternoon',  -->
-<!--     '<a href=\'./handouts/day_3/Exercise6_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_3/Exercise6_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_3/Exercise6_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_3/Exercise6_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_3/Multistate models 2 - covariates.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+<!-- -   **Exercises:** -->
+<!--     -   [Web-R version](handouts/day_3/Exercise6_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!--     -   [RStudio version](handouts/day_3/Exercise6_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_1/Exercise6Code.R){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!-- -   **Answers:** -->
+<!--     -   [Web-R version](handouts/day_3/Exercise6_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"} -->
+<!--     -   [RStudio version](handouts/day_3/Exercise6_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
 :::
 
@@ -295,78 +286,57 @@ Preparations (packages)](others/precourse_setup.qmd){.btn .btn-outline-primary .
 </details>
 
 
-## Day 4: Multivariable linear and logistic regression
+## Day 4
 
 <details>
 <summary>[Click to view the materials]{style="color:blue"}</summary>
 
 ::: {.panel-tabset}
 
-### ☀️ Morning: Multivariable linear regression
+### ☀️ Morning: dynamic prediction
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1. Model formulation
-2. Estimation
-3. Testing
-<div id="QR7">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR7', 
-    '<a href=\'./handouts/QR_code/07.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+<!-- 1. Model formulation -->
+<!-- 2. Estimation -->
+<!-- 3. Testing -->
+<!-- <div id="QR7"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR7',  -->
+<!--     '<a href=\'./handouts/QR_code/07.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+<!--     Click to unlock QR code -->
+<!--   </button> -->
+<!-- </div> -->
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_4/7.multipleRegression.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_4/Multistate models 3 - dynamic prediction.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 -   **Exercises:**
-    -   [Web-R version](handouts/day_4/Exercise7_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_4/Exercise7_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_4/Exercise7Code.R){.btn .btn-outline-primary .btn-sm target="_blank"}    
--   **Answers:**
-<!-- <div id="day4-morning"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('MoreLinear', 'day4-morning',  -->
-<!--     '<a href=\'./handouts/day_4/Exercise7-Answer-Webr.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_4/Exercise7-Answer-Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
+
 
 :::
 
 
-### 🌤️ Afternoon: Logistic regression
+### 🌤️ Afternoon: Markov issues
 
-::: {layout-ncol="2"}
-#### Contents
+<!-- ::: {layout-ncol="2"} -->
+<!-- #### Contents -->
 
-1.  Risk/odds, risk ratio (RR)/odds ratio (OR)
-2.  Logistic regression model
-3.  Interpreting Univariable Logistic Regression
-4.  Interpreting Multivariable Logistic Regression
-<div id="QR8">
-  <button class="btn btn-primary" onclick="unlockSession('306', 'QR8', 
-    '<a href=\'./handouts/QR_code/08.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')">
-    Click to unlock QR code
-  </button>
-</div>
+<!-- 1.  Risk/odds, risk ratio (RR)/odds ratio (OR) -->
+<!-- 2.  Logistic regression model -->
+<!-- 3.  Interpreting Univariable Logistic Regression -->
+<!-- 4.  Interpreting Multivariable Logistic Regression -->
+<!-- <div id="QR8"> -->
+<!--   <button class="btn btn-primary" onclick="unlockSession('306', 'QR8',  -->
+<!--     '<a href=\'./handouts/QR_code/08.png\' class=\'btn btn-success btn-sm\' target=\'_blank\'>QR code</a>')"> -->
+<!--     Click to unlock QR code -->
+<!--   </button> -->
+<!-- </div> -->
 
 #### Materials
 
--   **Lecture:** [Slides](slides/day_4/8.Logistic Regression_Slides.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
-    -   [Web-R version](handouts/day_4/Exercise8_Webr.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_4/Exercise8_RStudio.html){.btn .btn-outline-primary .btn-sm target="_blank"} [Script](handouts/day_4/Exercise8Code.R){.btn .btn-outline-primary .btn-sm target="_blank"} 
--   **Answers:**
-<!-- <div id="day4-afternoon"> -->
-<!--   <button class="btn btn-primary" onclick="unlockSession('LogOdds', 'day4-afternoon',  -->
-<!--     '<a href=\'./handouts/day_4/Exercise8_Answers.html\' class=\'btn btn-success btn-sm\' target=\'_blank\'>Web-R Answers</a> ' + -->
-<!--     '<a href=\'./handouts/day_4/Exercise8_Answers.pdf\' class=\'btn btn-success btn-sm\' target=\'_blank\'>RStudio Answers</a>')"> -->
-<!--     Click to unlock answer -->
-<!--   </button> -->
-<!-- </div> -->
-    -   [Web-R version](handouts/day_4/Exercise8_Answers.html){.btn .btn-outline-primary .btn-sm target="_blank"}
-    -   [RStudio version](handouts/day_4/Exercise8_Answers.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+-   **Lecture:** [Slides](slides/day_4/Multistate models 4 - Markov issues.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+
 
 :::
 
