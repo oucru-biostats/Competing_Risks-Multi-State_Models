@@ -307,7 +307,6 @@ We will make the practicals using **RStudio**. Please complete the [Preparations
 #### Materials
 
 -   **Lecture:** [Slides](slides/day_4/Multistate models 3 - dynamic prediction.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
--   **Exercises:**
 
 
 
