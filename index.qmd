@@ -72,7 +72,10 @@ We will make the practicals using **RStudio**. Please complete the [Preparations
 
 **Course handout:** [Course handout](handouts/CourseHandouts.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
 
-**Software:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn .btn-outline-primary .btn-sm target="_blank"}
+**Software:** [Slides](slides/ExercisesPracticals/CourseSlidesSoftware.pdf){.btn
+.btn-outline-primary .btn-sm target="_blank"}
+
+<!-- **Exercises:** [Answers](slides/handouts/AnswerstoExercises.pdf){.btn .btn-outline-primary .btn-sm target="_blank"} -->
 
 ## Day 1
 
