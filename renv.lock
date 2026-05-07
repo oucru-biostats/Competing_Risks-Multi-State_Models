@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.1",
+    "Version": "4.5.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -185,7 +185,8 @@
       "NeedsCompilation": "yes",
       "Author": "Brian Ripley [aut, cre, cph], Bill Venables [aut, cph], Douglas M. Bates [ctb], Kurt Hornik [trl] (partial port ca 1998), Albrecht Gebhardt [trl] (partial port ca 1998), David Firth [ctb] (support functions for polr)",
       "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Encoding": "UTF-8"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -794,8 +795,7 @@
       "License": "Unlimited",
       "NeedsCompilation": "no",
       "Author": "Angelo Canty [aut] (author of original code for S), Brian Ripley [aut, trl] (conversion to R, maintainer 1999--2022, author of parallel support), Alessandra R. Brazzale [ctb, cre] (minor bug fixes)",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     },
     "broom": {
       "Package": "broom",
@@ -2567,48 +2567,6 @@
       "Author": "Daniel Lüdecke [aut, cre] (ORCID: <https://orcid.org/0000-0002-8895-3206>), Frederik Aust [ctb] (ORCID: <https://orcid.org/0000-0003-4900-788X>), Sam Crawley [ctb] (ORCID: <https://orcid.org/0000-0002-7847-0411>), Mattan S. Ben-Shachar [ctb] (ORCID: <https://orcid.org/0000-0002-4287-4801>), Sean C. Anderson [ctb] (ORCID: <https://orcid.org/0000-0001-9563-1937>)",
       "Repository": "CRAN"
     },
-    "gghighlight": {
-      "Package": "gghighlight",
-      "Version": "0.5.0",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "Highlight Lines and Points in 'ggplot2'",
-      "Authors@R": "person(given = \"Hiroaki\", family = \"Yutani\", role = c(\"aut\", \"cre\"), email = \"yutani.ini@gmail.com\", comment = c(ORCID = \"0000-0002-3385-7233\"))",
-      "Description": "Make it easier to explore data with highlights.",
-      "License": "MIT + file LICENSE",
-      "URL": "https://yutannihilation.github.io/gghighlight/, https://github.com/yutannihilation/gghighlight",
-      "BugReports": "https://github.com/yutannihilation/gghighlight/issues",
-      "Depends": [
-        "ggplot2 (>= 3.3.6)",
-        "R (>= 3.4.0)"
-      ],
-      "Imports": [
-        "dplyr (>= 1.0.4)",
-        "ggrepel",
-        "lifecycle",
-        "purrr",
-        "rlang",
-        "tibble",
-        "scales",
-        "grDevices"
-      ],
-      "Suggests": [
-        "geomtextpath",
-        "knitr",
-        "rmarkdown",
-        "sf",
-        "testthat",
-        "vdiffr (>= 0.3.0)"
-      ],
-      "VignetteBuilder": "knitr",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.2",
-      "Config/testthat/edition": "3",
-      "NeedsCompilation": "no",
-      "Author": "Hiroaki Yutani [aut, cre] (ORCID: <https://orcid.org/0000-0002-3385-7233>)",
-      "Maintainer": "Hiroaki Yutani <yutani.ini@gmail.com>",
-      "Repository": "CRAN"
-    },
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "4.0.2",
@@ -4090,7 +4048,8 @@
       "NeedsCompilation": "yes",
       "Author": "Deepayan Sarkar [aut, cre] (<https://orcid.org/0000-0003-4107-1553>), Felix Andrews [ctb], Kevin Wright [ctb] (documentation), Neil Klepeis [ctb], Johan Larsson [ctb] (miscellaneous improvements), Zhijian (Jason) Wen [cph] (filled contour code), Paul Murrell [ctb], Stefan Eng [ctb] (violin plot improvements), Achim Zeileis [ctb] (modern colors), Alexandre Courtiol [ctb] (generics for larrows, lpolygon, lrect and lsegments)",
       "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Encoding": "UTF-8"
     },
     "lazyeval": {
       "Package": "lazyeval",
@@ -4797,35 +4756,6 @@
       "Maintainer": "Torsten Hothorn <Torsten.Hothorn@R-project.org>",
       "Repository": "CRAN",
       "Encoding": "UTF-8"
-    },
-    "nhstplot": {
-      "Package": "nhstplot",
-      "Version": "1.4.2",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "Plot Null Hypothesis Significance Tests",
-      "Authors@R": "person(\"Nils\", \"Myszkowski\", email = \"nilsmyszkowskiscience@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-1322-0777\"))",
-      "Description": "Illustrate graphically the most common Null Hypothesis Significance Testing procedures. More specifically, this package provides functions to plot Chi-Squared, F, t (one- and two-tailed) and z (one- and two-tailed) tests, by plotting the probability density under the null hypothesis as a function of the different test statistic values. Although highly flexible (color theme, fonts, etc.), only the minimal number of arguments (observed test statistic, degrees of freedom) are necessary for a clear and useful graph to be plotted, with the observed test statistic and the p value, as well as their corresponding value labels. The axes are automatically scaled to present the relevant part and the overall shape of the probability density function. This package is especially intended for education purposes, as it provides a helpful support to help explain the Null Hypothesis Significance Testing process, its use and/or shortcomings.",
-      "License": "GPL-3",
-      "Depends": [
-        "R (>= 3.5.0)"
-      ],
-      "Imports": [
-        "ggplot2 (>= 3.5.0)",
-        "stats",
-        "grDevices"
-      ],
-      "RoxygenNote": "7.3.2",
-      "Suggests": [
-        "knitr",
-        "rmarkdown"
-      ],
-      "VignetteBuilder": "knitr",
-      "Encoding": "UTF-8",
-      "NeedsCompilation": "no",
-      "Author": "Nils Myszkowski [aut, cre] (ORCID: <https://orcid.org/0000-0003-1322-0777>)",
-      "Maintainer": "Nils Myszkowski <nilsmyszkowskiscience@gmail.com>",
-      "Repository": "CRAN"
     },
     "nlme": {
       "Package": "nlme",
